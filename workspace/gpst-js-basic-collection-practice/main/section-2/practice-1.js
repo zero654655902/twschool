@@ -47,16 +47,22 @@ module.exports = function countSameElements(collection) {
         if(collection[i]==collection[i+1])
         {
             num++;
+            // console.log(num);
+            if(i!=collection.length-2)
             continue;
         }
         var tep=new Object();
         tep.key=collection[i];
         tep.count=num;
+        // console.log(num);
         out.push(tep);
         num=1;
 
-
     }
+
+
+    console.log(out);
+
     return out;
 
 }
