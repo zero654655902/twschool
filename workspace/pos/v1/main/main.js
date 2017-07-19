@@ -27,15 +27,23 @@ function isInArr(element,strArr) {
     return index;
 }
 
-function isInItem(element,allItemCollection){
-    for(let i=0;i<allItemCollection[i].length;++i){
-        if(element===allItemCollection[i].barcode)
-        {
-            return true;
+function IndexofItem(element,allItemCollection){
+    // for(let i=0;i<allItemCollection[i].length;++i){
+    //     if(element===allItemCollection[i].barcode)
+    //     {
+    //         return true;
+    //     }
+    //
+    // }
+    //return false;
+    let index=-1;
+    for(let i=0;i<allItemCollection.length;++i) {
+        if(element===allItemCollection[i].barcode) {
+            //元素在数组中已经找到，并返回下标
+            index=i;
         }
-
     }
-    return false;
+    return index;
 }
 function processingDate(collectionA,collectionB) {
     for (let i=0;i<collectionA.length;++i) {
@@ -48,9 +56,11 @@ function processingDate(collectionA,collectionB) {
 function caclulatePrice(collectionB,allItemsCollection) {
 
     for(let i=0; i<collectionB.length; ++i) {
-
-
+       let index=IndexofItem(collectionB[i].key,allItemsCollection);
+       collectionB[i].price=collectionB[i].count*allItemsCollection[index].price;
     }
+    return collectionB;
 }
+
 
 
