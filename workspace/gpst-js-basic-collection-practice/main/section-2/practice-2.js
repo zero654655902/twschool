@@ -8,8 +8,7 @@ module.exports = function countSameElements(collection) {
             var key_count=collection[i].split('-');
             result.push({key:key_count[0],count:eval(key_count[1])});
         }
-        else
-            {
+        else {
                 var index = isInArr(collection[i], result);
                 if (index == -1) {
                     result.push({key: collection[i], count: 1});
