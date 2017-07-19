@@ -150,10 +150,10 @@ function collectSameElements(collection) {
     for (let i = 0; i < collection.length; ++i) {
         let index = isInArr(collection[i].border, newCollection);
         if (index == -1) {
-            newCollection.push({border: collection[i].border,hh: collection[i].count});
+            newCollection.push({border: collection[i].border,count: collection[i].count});
         }
         else {
-            newCollection[index].hh+=collection[i].count;
+            newCollection[index].count+=collection[i].count;
         }
     }
     return newCollection;
@@ -172,6 +172,31 @@ function isInArr(element,strArr) {
     return index;
 }
 
+function isDiscount(element,discountCollection) {
+
+    for(let i=0;i<discountCollection.length;++i) {
+        if(element===discountCollection[i]) {
+            //元素在数组中已经找到，并返回下标
+            return true
+        }
+    }
+    return false;
+}
+
+function afterDiscount(collection,discountCollection) {
+    let hasDiscountCollection=[];
+    for (let i=0;i<collection.length;++i) {
+        let countTep=collection[i].count;
+        if(isDiscount(collection[i].border,discountCollection) && collection[i].count>=3)
+        {
+            countTep--;
+
+        }
+        hasDiscountCollection.push({border:collection[i].border,count :countTep});
+
+    }
+    return hasDiscountCollection;
+}
 
 
 
