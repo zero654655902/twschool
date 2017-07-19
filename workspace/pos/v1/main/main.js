@@ -63,4 +63,11 @@ function caclulatePrice(collectionB,allItemsCollection) {
 }
 
 
+function caclulateTotalPrice(collectionB) {
+    let totalPrice=0;
+    for(let i=0;i<collectionB.length;++i){
+        totalPrice+=collectionB[i].price;
+    }
+}
+
 
