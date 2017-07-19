@@ -136,10 +136,10 @@ function creatNewCollection(collection) {
     for(let i=0;i<collection.length;++i) {
         if(isContainSpecialStr(collection[i])){
             var key_count = collection[i].split('-');
-            newTags.push({border: key_count[0], count: parseFloat(key_count[1])});
+            newTags.push({barcode: key_count[0], count: parseFloat(key_count[1])});
         }else
         {
-            newTags.push({border: collection[i], count: 1});
+            newTags.push({barcode: collection[i], count: 1});
         }
     }
     return newTags;
@@ -148,9 +148,9 @@ function creatNewCollection(collection) {
 function collectSameElements(collection) {
     let newCollection =[];
     for (let i = 0; i < collection.length; ++i) {
-        let index = isInArr(collection[i].border, newCollection);
+        let index = IndexofItem(collection[i].barcode, newCollection);
         if (index == -1) {
-            newCollection.push({border: collection[i].border,count: collection[i].count});
+            newCollection.push({barcode: collection[i].barcode,count: collection[i].count});
         }
         else {
             newCollection[index].count+=collection[i].count;
@@ -161,10 +161,10 @@ function collectSameElements(collection) {
 }
 
 
-function isInArr(element,strArr) {
+function IndexofItem(element,strArr) {
     let index=-1;
     for(let i=0;i<strArr.length;++i) {
-        if(element==strArr[i].border) {
+        if(element==strArr[i].barcode) {
             index=i;   //元素在数组中已经找到，跳出不在查找该元素
             break;
         }
@@ -187,17 +187,26 @@ function afterDiscount(collection,discountCollection) {
     let hasDiscountCollection=[];
     for (let i=0;i<collection.length;++i) {
         let countTep=collection[i].count;
-        if(isDiscount(collection[i].border,discountCollection) && collection[i].count>=3)
+        if(isDiscount(collection[i].barcode,discountCollection) && collection[i].count>=3)
         {
             countTep--;
 
         }
-        hasDiscountCollection.push({border:collection[i].border,count :countTep});
+        hasDiscountCollection.push({barcode:collection[i].barcode,count :countTep});
 
     }
     return hasDiscountCollection;
 }
 
 
+function caclulatePrice(collection,allItemsCollection) {
+    let discountCollectionAddPrice=[];
+    for(let i=0; i<collection.length; ++i) {
+        let index=IndexofItem(collection[i].barcode,allItemsCollection);
+        let price=collection[i].count*allItemsCollection[index].price;
+        discountCollectionAddPrice.push({barcode:collection[i].barcode,count:collection[i].count,price:price.toFixed(2)});
+    }
+    return discountCollectionAddPrice;
+}
 
 
