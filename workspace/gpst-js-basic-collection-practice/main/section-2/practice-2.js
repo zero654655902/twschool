@@ -20,7 +20,6 @@ module.exports = function countSameElements(collection) {
             }
             }
     return result;
-
 }
 
 function isInArr(element,strArr) {
@@ -32,5 +31,5 @@ function isInArr(element,strArr) {
         }
     }
     return index;
-
 }
+
