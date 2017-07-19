@@ -2,19 +2,22 @@
 
 module.exports = function collectSameElements(collectionA, collectionB) {
 
-    var same=[];
-    var tmp=collectionB[0];
-    for(var i =0;i<collectionA.length;++i){
-        var temp=collectionA[i];
-        for(var j=0;j<tmp.length;++j){
-            if(temp==tmp[j])
-            {
-                same.push(temp);
-                break;
-            }
+var sameArr=[];
+for(var i =0;i<collectionA.length;++i) {
+    if(isInArr(collectionA[i],collectionB[0])) {
+        sameArr.push(collectionA[i])
+    }
+}
+return sameArr;
+}
 
+function isInArr(element,strArr) {
+    var flag=false;
+    for(let i=0;i<strArr.length;++i) {
+        if(element===strArr[i]) {
+            flag=true;
+            break;        //元素在数组中已经找到，跳出不在查找该元素
         }
     }
-
-    return same;
+    return flag;
 }

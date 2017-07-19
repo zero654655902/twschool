@@ -1,26 +1,36 @@
 'use strict';
 
 module.exports = function countSameElements(collection) {
-  // return '实现练习要求，并改写该行代码。';
-    var num=1;
-    var out=[];
-for(var i =0; i<collection.length-1;++i)
-{
-  if(collection[i]==collection[i+1])
-  {
-    num++;
-    continue;
-  }
-  var tep=new Object();
-  tep.key=collection[i];
-  tep.count=num;
-  out.push(tep);
-  num=1;
-
+    var result = [];
+    for (let i = 0; i < collection.length; ++i) {
+        var regx=/[A-Za-z][-][0-9]+/;
+        if(collection[i].match(regx)){
+            var key_count=collection[i].split('-');
+            result.push({key:key_count[0],count:eval(key_count[1])});
+        }
+        else
+            {
+                var index = isInArr(collection[i], result);
+                if (index == -1) {
+                    result.push({key: collection[i], count: 1});
+                }
+                else {
+                    result[index].count++;
+                }
+            }
+            }
+    return result;
 
 }
-return out;
 
-
+function isInArr(element,strArr) {
+    var index=-1;
+    for(let i=0;i<strArr.length;++i) {
+        if(element===strArr[i].key) {
+            //元素在数组中已经找到，并返回下标
+            index=i;
+        }
+    }
+    return index;
 
 }

@@ -1,68 +1,31 @@
-/*'use strict';
-
-module.exports = function countSameElements(collection) {
-  //return '实现练习要求，并改写该行代码。';
-  //   var num= new Array(26)[0];
-  //   var num=new Array(26)
-    var num=new Array();
-    for(var i=0;i<26;++i)
-    {
-      num[i]=0;
-    }
-    for(var i=0; i<collection.length;++i)
-    {
-      num[collection[i].charCodeAt()-97]++;
-    }
-    //return num;
-
-    var out=[];
-
-
-
-
-
-    for(var j=0;j<num.length;++j){
-      var tmp=new Object();
-      if(num[j]!=0)
-      {
-        tmp.key=String.fromCharCode(j+97);
-        tmp.count=num[j];
-        out.push(tmp);
-
-      }
-    }
-    return out;
-
-}
-*/
 
 'use strict';
 
 module.exports = function countSameElements(collection) {
-    // return '实现练习要求，并改写该行代码。';
-    var num=1;
-    var out=[];
-    for(var i =0; i<collection.length-1;++i)
-    {
-        if(collection[i]==collection[i+1])
-        {
-            num++;
-            // console.log(num);
-            if(i!=collection.length-2)
-            continue;
+
+    var result = [];
+    for (let i = 0; i < collection.length; ++i) {
+        var index = isInArr(collection[i], result);
+        if (index == -1) {
+            result.push({key: collection[i], count: 1});
         }
-        var tep=new Object();
-        tep.key=collection[i];
-        tep.count=num;
-        // console.log(num);
-        out.push(tep);
-        num=1;
-
+        else {
+            result[index].count++;
+        }
     }
-
-
-    console.log(out);
-
-    return out;
+    return result;
 
 }
+
+function isInArr(element,strArr) {
+    var index=-1;
+    for(let i=0;i<strArr.length;++i) {
+        if(element===strArr[i].key) {
+            //元素在数组中已经找到，并返回下标
+            index=i;
+        }
+    }
+    return index;
+}
+
+

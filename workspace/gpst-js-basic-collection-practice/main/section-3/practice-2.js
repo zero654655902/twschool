@@ -1,21 +1,28 @@
 'use strict';
 
 module.exports = function createUpdatedCollection(collectionA, objectB) {
-  // return '实现练习要求，并改写该行代码。';
-    var arr=objectB.value;
-    for(var i=0; i<arr.length; ++i){
-        for(var j=0; j<collectionA.length; ++j)
-        {
-            if(arr[i]==collectionA[j].key)
-            {
-
-              var n=(collectionA[j].count%3);
-              n=(collectionA[j].count-n)/3;
-                collectionA[j].count-=n;
-
-            }
+    var arrB=objectB.value;
+    for(let i=0;i<collectionA.length;++i) {
+        if(isInArr(collectionA[i].key,arrB)) {
+            //collectionA[i].count--;
+            var n=(collectionA[i].count%3);
+            n=(collectionA[i].count-n)/3;
+            collectionA[i].count-=n;
         }
-
     }
     return collectionA;
+
 }
+
+function isInArr(element,strArr) {
+    var flag=false;
+    for(let i=0;i<strArr.length;++i) {
+        if(element===strArr[i]) {
+            flag=true;
+            break;        //元素在数组中已经找到，跳出不在查找该元素
+        }
+    }
+    return flag;
+}
+
+
