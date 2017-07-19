@@ -210,3 +210,37 @@ function caclulatePrice(collection,allItemsCollection) {
 }
 
 
+
+function saveItemMassege(collectionA,collectionB,allItemsCollection) {
+    let massage=[];
+    for (let i = 0; i < collectionA.length; ++i) {
+        let index = IndexofItem(collectionA[i].barcode, allItemsCollection);
+        massage.push({
+            "名称": allItemsCollection[index].name,
+            "数量": collectionB[i].count,
+            "单价": allItemsCollection[index].price.toFixed(2),
+            "小计": collectionA[i].price
+        });
+    }
+    return massage;
+
+}
+
+function caclulateTotalPrice(collection) {
+    let totalPrice=0;
+    for(let i=0;i<collection.length;++i){
+        totalPrice+=parseFloat(collection[i].price);
+    }
+    return totalPrice;
+}
+function caclulateDiffPrice(collectionA,collectionB,allItemsCollection)
+{
+    let diffprice=0;
+    let oldPrice=caclulatePrice(collectionA,allItemsCollection);
+    let newPrice=caclulatePrice(collectionB,allItemsCollection);
+    diffprice=(caclulateTotalPrice(oldPrice)-caclulateTotalPrice(newPrice)).toFixed(2);
+    return diffprice;
+}
+
+
+
