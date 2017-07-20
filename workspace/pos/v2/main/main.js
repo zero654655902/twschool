@@ -71,8 +71,10 @@
 
 */
 
-function printTag(tag) {
+function printTag(tags) {
 let tagCollection=tagsSplit(tags);
+let allItems=loadAllItems();
+let tagsItem=buildItem(tagCollection,allItems);
 
 }
 
@@ -97,4 +99,30 @@ function tagsSplit(collection) {
         }
     }
     return newTags;
+}
+
+
+
+
+function indexOfItem(element,strArr) {
+    let index=-1;
+    for(let i=0;i<strArr.length;++i) {
+        if(element==strArr[i].barcode) {
+            index=i;   //元素在数组中已经找到，跳出不在查找该元素
+            break;
+        }
+    }
+    return index;
+}
+
+
+function buildItem(collection,allItems){
+    let tagsItem=[];
+
+    for(let i=0;i<collection.length;++i)
+    {
+        let index=indexOfItem(collection[i].barcode,allItems);
+        tagsItem.push(allItems[index],collection[i].count);
+    }
+    return tagsItem;
 }
