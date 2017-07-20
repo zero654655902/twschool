@@ -4,59 +4,6 @@
 /*
  'use strict';
 
- function loadAllItems() {
- return [
- {
- barcode: 'ITEM000000',
- name: '可口可乐',
- unit: '瓶',
- price: 3.00
- },
- {
- barcode: 'ITEM000001',
- name: '雪碧',
- unit: '瓶',
- price: 3.00
- },
- {
- barcode: 'ITEM000002',
- name: '苹果',
- unit: '斤',
- price: 5.50
- },
- {
- barcode: 'ITEM000003',
- name: '荔枝',
- unit: '斤',
- price: 15.00
- },
- {
- barcode: 'ITEM000004',
- name: '电池',
- unit: '个',
- price: 2.00
- },
- {
- barcode: 'ITEM000005',
- name: '方便面',
- unit: '袋',
- price: 4.50
- }
- ];
- }
-
- function loadPromotions() {
- return [
- {
- type: 'BUY_TWO_GET_ONE_FREE',
- barcodes: [
- 'ITEM000000',
- 'ITEM000001',
- 'ITEM000005'
- ]
- }
- ];
- }
 
  const tags = [
  'ITEM000001',
@@ -70,28 +17,31 @@
  ];
 
 */
-
 function printTag(tags) {
-let tagCollection=tagsSplit(tags);
-let allItems=loadAllItems();
-let tagsItem=buildItem(tagCollection,allItems);
+    let tagCollection=tagsSplit(tags);
+    let allItems=loadAllItems();
+    let tagsItem=buildItem(tagCollection,allItems);
+    let promotion=loadPromotions();
+    let tagsItemMassege=calculateItemCount(tagsItem);
+    let discount=discountItem(tagsItemMassege,promotion[0].barcodes);
+    let lastPrice=priceMassege(discount);
+    let str=printMassege(discount,lastPrice);
 
 }
 
 
 function isContainSpecialStr(element)
 {
-    if(-1!=element.indexOf('-')){
+    if(-1!==element.indexOf('-')){
         return true;
     }
     return false;
-
 }
 function tagsSplit(collection) {
     let newTags=[];
     for(let i=0;i<collection.length;++i) {
         if(isContainSpecialStr(collection[i])){
-            var key_count = collection[i].split('-');
+            let key_count = collection[i].split('-');
             newTags.push({barcode: key_count[0], count: parseFloat(key_count[1])});
         }else
         {
@@ -101,28 +51,88 @@ function tagsSplit(collection) {
     return newTags;
 }
 
-
-
-
-function indexOfItem(element,strArr) {
-    let index=-1;
-    for(let i=0;i<strArr.length;++i) {
-        if(element==strArr[i].barcode) {
-            index=i;   //元素在数组中已经找到，跳出不在查找该元素
-            break;
-        }
-    }
-    return index;
-}
-
-
 function buildItem(collection,allItems){
     let tagsItem=[];
 
     for(let i=0;i<collection.length;++i)
     {
         let index=indexOfItem(collection[i].barcode,allItems);
-        tagsItem.push(allItems[index],collection[i].count);
+        // allItems[index].count=collection[i].count;
+
+        tagsItem.push({barcode:allItems[index].barcode,name:allItems[index].name,
+            unit:allItems[index].unit,price:allItems[index].price,count:collection[i].count});
     }
     return tagsItem;
 }
+
+function getIndexOfCollection(element,Collection) {
+    for(let i=0; i<Collection.length;++i){
+        if(element===Collection[i].barcode)
+        {
+            return i;
+        }
+    }
+    return -1;
+
+}
+
+function calculateItemCount(collection) {
+    let itemMassege=[];
+    for(let i=0;i<collection.length; ++i)
+    {
+        let index=getIndexOfCollection(collection[i].barcode,itemMassege);
+        if(-1===index)
+        {
+
+            itemMassege.push(collection[i]);
+
+        }
+        else
+            itemMassege[index].count+=collection[i].count;
+
+    }
+    return itemMassege;
+}
+
+function isDiscount(element,promotion) {
+    if(isInArr(element.barcode,promotion)&&element.count>=3)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+function discountItem(item,promotion)
+{
+    let itemDiscount=[];
+    for(let i=0;i<item.length;++i){
+        if(isDiscount(item[i],promotion)){
+            item[i].totalPrice=(item[i].count-1)*item[i].price;
+        }
+        else
+        {
+            item[i].totalPrice=item[i].count*item[i].price;
+        }
+        itemDiscount.push({barcode:item[i].barcode,name:item[i].name,unit:item[i].unit,price:item[i].price,count:item[i].count,totalPrice:item[i].totalPrice});
+    }
+    return itemDiscount;
+}
+
+function priceMassege(allItemsMassege)
+{
+    let lastPrice=[];
+    let totalPrice=0;
+    let diffPrice=0;
+    for(let i=0;i<allItemsMassege.length;++i)
+    {
+        totalPrice+=allItemsMassege[i].totalPrice;
+        diffPrice+=(allItemsMassege[i].price*allItemsMassege[i].count-allItemsMassege[i].totalPrice);
+    }
+    lastPrice.push({总计:totalPrice.toFixed(2),节省:diffPrice.toFixed(2)});
+    return lastPrice;
+}
+
+
+
+
