@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58159eb7-498a-4f47-9c5e-9138debe63be" name="Default" comment="" />
+    <list default="true" id="97e1cc23-f3ba-4b75-8e7d-923614029b30" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,14 +11,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main-test.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/main-test.js">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/v2/main/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-              <folding>
-                <marker date="1500538512000" expanded="true" signature="895:1128" ph="..." />
-              </folding>
+            <state relative-caret-position="317">
+              <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -33,7 +31,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/main-test.js" />
+        <option value="$PROJECT_DIR$/v1/test/fixtures.js" />
+        <option value="$PROJECT_DIR$/v2/main/main.js" />
       </list>
     </option>
   </component>
@@ -64,14 +63,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="v2" />
+              <option name="myItemId" value="pos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="v2" />
@@ -80,8 +84,12 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="v2" />
+              <option name="myItemId" value="pos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="v2" />
@@ -94,8 +102,12 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="v2" />
+              <option name="myItemId" value="pos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="v2" />
@@ -106,9 +118,68 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -435,7 +506,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="v2" />
+      <module name="pos" />
       <envs />
       <method />
     </configuration>
@@ -515,17 +586,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="58159eb7-498a-4f47-9c5e-9138debe63be" name="Default" comment="" />
-      <created>1500538229249</created>
+      <changelist id="97e1cc23-f3ba-4b75-8e7d-923614029b30" name="Default" comment="" />
+      <created>1500538532911</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1500538229249</updated>
-      <workItem from="1500538230416" duration="229000" />
+      <updated>1500538532911</updated>
+      <workItem from="1500538535060" duration="2590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229000" />
+    <option name="totallyTimeSpent" value="2590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="153" width="1280" height="630" extended-state="0" />
@@ -572,21 +643,96 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/main.js">
+    <entry file="file://$PROJECT_DIR$/v2/test/main-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="233">
+          <caret line="27" column="55" lean-forward="true" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+          <folding>
+            <marker date="1500538512000" expanded="true" signature="37:65" ph="{...}" />
+            <marker date="1500538512000" expanded="true" signature="37:1198" ph="{...}" />
+            <marker date="1500538512000" expanded="true" signature="72:1194" ph="{...}" />
+            <marker date="1500538512000" expanded="true" signature="92:265" ph="[...]" />
+            <marker date="1500538512000" expanded="true" signature="895:1128" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/main-test.js">
+    <entry file="file://$PROJECT_DIR$/v1/test/fixtures.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+        <state relative-caret-position="300">
+          <caret line="20" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
-            <marker date="1500538512000" expanded="true" signature="895:1128" ph="..." />
+            <marker date="1487693750000" expanded="true" signature="39:631" ph="{...}" />
+            <marker date="1487693750000" expanded="true" signature="50:628" ph="[...]" />
+            <marker date="1487693750000" expanded="true" signature="56:147" ph="{&quot;name&quot;: '可口可乐'...}" />
+            <marker date="1487693750000" expanded="true" signature="153:242" ph="{&quot;name&quot;: '雪碧'...}" />
+            <marker date="1487693750000" expanded="true" signature="248:337" ph="{&quot;name&quot;: '苹果'...}" />
+            <marker date="1487693750000" expanded="true" signature="343:433" ph="{&quot;name&quot;: '荔枝'...}" />
+            <marker date="1487693750000" expanded="true" signature="439:528" ph="{&quot;name&quot;: '电池'...}" />
+            <marker date="1487693750000" expanded="true" signature="534:624" ph="{&quot;name&quot;: '方便面'...}" />
+            <marker date="1487693750000" expanded="true" signature="659:817" ph="{...}" />
+            <marker date="1487693750000" expanded="true" signature="670:814" ph="[...]" />
+            <marker date="1487693750000" expanded="true" signature="676:810" ph="{&quot;type&quot;: 'BUY_TWO_GET_ONE_FREE'...}" />
+            <marker date="1487693750000" expanded="true" signature="730:804" ph="[...]" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/main/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="35" selection-end-column="1" />
+          <folding>
+            <marker date="1500530503000" expanded="true" signature="69:596" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="635:718" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="669:697" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="749:1123" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="812:1101" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="860:1009" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="1022:1095" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="1157:1557" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="1234:1528" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="1332:1436" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="1450:1522" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="1597:1797" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="1654:1777" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="1695:1771" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="1847:2037" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="1899:2017" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="1945:2011" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="2091:2476" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="2169:2440" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="2312:2348" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="2534:2933" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="2618:2892" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="3006:3410" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="3077:3387" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="3177:3379" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="3453:3602" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="3517:3577" ph="{...}" />
+            <marker date="1500530503000" expanded="true" signature="3675:3939" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/test/main-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1487693750000" expanded="true" signature="37:606" ph="{...}" />
+            <marker date="1487693750000" expanded="true" signature="72:602" ph="{...}" />
+            <marker date="1487693750000" expanded="true" signature="92:265" ph="[...]" />
+            <marker date="1487693750000" expanded="true" signature="354:536" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v2/main/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
