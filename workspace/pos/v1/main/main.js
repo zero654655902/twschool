@@ -120,9 +120,13 @@ function addTotal(eveMassge,collectionA,collectionB)
     eveMassge.push({"总计":newPrice});
     eveMassge.push({"节省":(oldPrice-newPrice)});
 
-
 }
 */
+function printReceipt(tags){
+    let sameElement=collectSameElements(tags);
+
+
+}
 function isContainSpecialStr(element)
 {
     if(-1!=element.indexOf('-')){
