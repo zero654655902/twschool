@@ -1,130 +1,16 @@
 'use strict';
 
 //TODO: 请在该文件中实现练习要求并删除此注释
-
-/*function printReceipt(tags){
-    let collectionA=collectSameElements(tags);
-    let collectionB=processingDate(collectionA);
-    let allItemLoads=loadAllItems();
-    let discountCollection=caclulatePrice(collectionB,allItemLoads);
-    let eveMassege=saveEveMassege(collectionA,discountCollection,allItemCollection);
-    let result=addTotal(eveMassege,collectionA,discountCollection);
-    return result;
-
-}
-
-
-function collectSameElements(collection) {
-    let result = [];
-    for (let i = 0; i < collection.length; ++i) {
-        let index = isInArr(collection[i], result);
-        if (index == -1) {
-            result.push({key: collection[i], count: 1});
-        }
-        else {
-            result[index].count++;
-        }
-    }
-    return result;
-
-}
-
-
-function isInArr(element,strArr) {
-    var flag=false;
-    for(let i=0;i<strArr.length;++i) {
-        if(element===strArr[i]) {
-            flag=true;
-            break;        //元素在数组中已经找到，跳出不在查找该元素
-        }
-    }
-    return flag;
-}
-
-
-
-function isDiscount(element,discountCollection) {
-
-    for(let i=0;i<discountCollection.length;++i) {
-        if(element===discountCollection[i].key) {
-            //元素在数组中已经找到，并返回下标
-            return true
-        }
-    }
-    return false;
-}
-
-function IndexofItem(element,allItemCollection){
-
-    let index=-1;
-    for(let i=0;i<allItemCollection.length;++i) {
-        if(element===allItemCollection[i].barcode) {
-            //元素在数组中已经找到，并返回下标
-            index=i;
-        }
-    }
-    return index;
-}
-function processingDate(collectionA,discountCollection) {
-    let collectionB=[];
-    for (let i=0;i<collectionA.length;++i) {
-        let countTep=collectionA[i].count;
-        if(isDiscount(collectionA[i],discountCollection) && collectionA[i].count>=3)
-        {
-            countTep--;
-        }
-        collectionB.push(collectionA[i].border,countTep);
-    }
-    return collectionB;
-}
-
-function caclulatePrice(collectionB,allItemsCollection) {
-    let discountCollection=[];
-    for(let i=0; i<collectionB.length; ++i) {
-       let index=IndexofItem(collectionB[i].key,allItemsCollection);
-       let price=collectionB[i].count*allItemsCollection[index].price;
-       discountCollection.push({border:collectionB[i].border,count:collectionB[i].count,price:price});
-    }
-    return discountCollection;
-}
-
-
-function caclulateTotalPrice(collection) {
-    let totalPrice=0;
-    for(let i=0;i<collection.length;++i){
-        totalPrice+=collection[i].price;
-    }
-    return totalPrice;
-}
-
-function saveEveMassege(collectionA,collectionB,allItemsCollection) {
-    let result = [];
-    for (let i = 0; i < collectionA.length; ++i) {
-        let index = IndexofItem(collectionA[i], allItemsCollection);
-        result.push({
-            "名称": allItemsCollection[index].name,
-            "数量": collectionA[i],
-            "单价": allItemsCollection[index].price,
-            "小计": collectionB[i]
-        });
-
-    }
-    return result;
-    
-}
-
-function addTotal(eveMassge,collectionA,collectionB)
-{
-    let oldPrice=caclulateTotalPrice(collectionA);
-    let newPrice=caclulateTotalPrice(collectionB);
-    eveMassge.push({"总计":newPrice});
-    eveMassge.push({"节省":(oldPrice-newPrice)});
-
-}
-*/
 function printReceipt(tags){
-    let sameElement=collectSameElements(tags);
-
+    let allItems=loadAllItems();
+    let promotion=loadPromotions();
+    let tagAddCount=tagSplit(tags);
+    let tagAndCount=getSameTag(tagAddCount);
+    let hasDiscountTag=getDiscount(tagAndCount,promotion[0].barcodes);
+    let hasDiscountItemAddPrice=calculatePrice(hasDiscountTag,allItems);
+    let allItemMassege=saveItemMassege(hasDiscountItemAddPrice,hasDiscountTag,allItems);
+    let totalPrice=calculateTotalPrice(hasDiscountItemAddPrice);
+    let diffPrice=calculateDiffPrice(tagAndCount,hasDiscountTag,allItems);
 
 }
 function isContainSpecialStr(element)
@@ -135,7 +21,7 @@ function isContainSpecialStr(element)
     return false;
 
 }
-function creatNewCollection(collection) {
+function tagSplit(collection) {
     let newTags=[];
     for(let i=0;i<collection.length;++i) {
         if(isContainSpecialStr(collection[i])){
@@ -149,7 +35,7 @@ function creatNewCollection(collection) {
     return newTags;
 }
 
-function collectSameElements(collection) {
+function getSameTag(collection) {
     let newCollection =[];
     for (let i = 0; i < collection.length; ++i) {
         let index = IndexofItem(collection[i].barcode, newCollection);
@@ -187,7 +73,7 @@ function isDiscount(element,discountCollection) {
     return false;
 }
 
-function afterDiscount(collection,discountCollection) {
+function getDiscount(collection,discountCollection) {
     let hasDiscountCollection=[];
     for (let i=0;i<collection.length;++i) {
         let countTep=collection[i].count;
@@ -203,7 +89,7 @@ function afterDiscount(collection,discountCollection) {
 }
 
 
-function caclulatePrice(collection,allItemsCollection) {
+function calculatePrice(collection,allItemsCollection) {
     let discountCollectionAddPrice=[];
     for(let i=0; i<collection.length; ++i) {
         let index=IndexofItem(collection[i].barcode,allItemsCollection);
@@ -230,20 +116,20 @@ function saveItemMassege(collectionA,collectionB,allItemsCollection) {
 
 }
 
-function caclulateTotalPrice(collection) {
+function calculateTotalPrice(collection) {
     let totalPrice=0;
     for(let i=0;i<collection.length;++i){
         totalPrice+=parseFloat(collection[i].price);
     }
     return totalPrice;
 }
-function caclulateDiffPrice(collectionA,collectionB,allItemsCollection)
+function calculateDiffPrice(collectionA,collectionB,allItemsCollection)
 {
-    let diffprice=0;
-    let oldPrice=caclulatePrice(collectionA,allItemsCollection);
-    let newPrice=caclulatePrice(collectionB,allItemsCollection);
-    diffprice=(caclulateTotalPrice(oldPrice)-caclulateTotalPrice(newPrice)).toFixed(2);
-    return diffprice;
+    let diffPrice=0;
+    let oldPrice=calculatePrice(collectionA,allItemsCollection);
+    let newPrice=calculatePrice(collectionB,allItemsCollection);
+    diffPrice=(calculateTotalPrice(oldPrice)-calculateTotalPrice(newPrice)).toFixed(2);
+    return diffPrice;
 }
 
 
