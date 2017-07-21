@@ -5,7 +5,7 @@ describe("OO入门", function() {
 
         let person = new Person('Tom', 21)
 
-        expect((person.introduce()).toEqual('My name is Tom. I am 21 years old.'))
+        expect(person.introduce()).toEqual('My name is Tom. I am 21 years old.')
 
     });
 });
