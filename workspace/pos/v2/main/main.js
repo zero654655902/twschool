@@ -19,13 +19,18 @@
 */
 function printReceipt(tags) {
     let tagCollection=tagsSplit(tags);
-    let allItems=loadAllItems();
+    let allItems=Item.all();
+
+   // let allItems=loadAllItems();
     let tagsItem=buildItem(tagCollection,allItems);
-    let promotion=loadPromotions();
+   // let promotion=loadPromotions();
+    let promotion=Promotion.all();
     let tagsItemMassege=calculateItemCount(tagsItem);
     let discount=discountItem(tagsItemMassege,promotion[0].barcodes);
     let lastPrice=priceMassege(discount);
     let str=printMassege(discount,lastPrice);
+    console.log(str);
+    //return str;
 
 }
 
@@ -143,6 +148,7 @@ function priceMassege(allItemsMassege)
 }
 
 function getCurrentDate() {
+    const dateDigitToString = num => (num < 10 ? `0${num}` : num);
     let currentDate = new Date(),
         year = dateDigitToString(currentDate.getFullYear()),
         month = dateDigitToString(currentDate.getMonth() + 1),
@@ -150,11 +156,30 @@ function getCurrentDate() {
         hour = dateDigitToString(currentDate.getHours()),
         minute = dateDigitToString(currentDate.getMinutes()),
         second = dateDigitToString(currentDate.getSeconds());
-        return `${year}年${month}月${date}日${hour}${minute}${second}`;
+        return `${year}年${month}月${date}日 ${hour}:${minute}:${second}`;
 
 }
 
 function printMassege(allItemsMassege,lastPrice) {
+    let storeName=`***<没钱赚商店>收据***
+`;
+    let printTime=`打印时间：${getCurrentDate()}\n`
+    let itemsMassege="";
+    for(let i=0;i<allItemsMassege.length;++i){
+        itemsMassege+='名称：'+(allItemsMassege[i].name)
+            +'，数量：'+(allItemsMassege[i].count)+(allItemsMassege[i].unit)
+            +'，单价：'+(allItemsMassege[i].price.toFixed(2))+'(元)'
+            +'，小计：'+(allItemsMassege[i].totalPrice.toFixed(2))+'(元)\n';
+    }
+    let totalPriceText='总计：'+lastPrice[0].总计+'(元)\n';
+
+    let diffPriceText='节省：'+lastPrice[0].节省+'(元)\n';
+    let result=storeName+printTime+'----------------------\n'+itemsMassege+'----------------------\n'+totalPriceText+diffPriceText+'**********************';
+    return result;
+
+}
+
+/*function printMassege(allItemsMassege,lastPrice) {
     let storeName=`***<没钱赚商店>收据***\n`;
     let printTime=`打印时间：${getCurrentDate()}\n`
    let itemsMassege="";
@@ -169,8 +194,17 @@ function printMassege(allItemsMassege,lastPrice) {
     let result=storeName+printTime+'----------------------\n'+itemsMassege+'----------------------'+totalPriceText+diffPriceText+'**********************';
     return result;
 
-}
+}*/
 
 
 
 
+/*打印时间：${formattedDateString}
+----------------------
+    名称：雪碧，数量：5瓶，单价：3.00(元)，小计：12.00(元)
+名称：荔枝，数量：2.5斤，单价：15.00(元)，小计：37.50(元)
+名称：方便面，数量：3袋，单价：4.50(元)，小计：9.00(元)
+----------------------
+    总计：58.50(元)
+节省：7.50(元)
+**********************`;*/

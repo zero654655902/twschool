@@ -45,7 +45,7 @@ describe('pos', () => {
   });
 });
 
-describe ('tagsSplit',() =>{
+/*describe ('tagsSplit',() =>{
     const tags = [
         'ITEM000001',
         'ITEM000001',
@@ -65,4 +65,4 @@ describe ('tagsSplit',() =>{
     { barcode: 'ITEM000005', count: 1 },
     { barcode: 'ITEM000005', count: 2 } ];
   expect(console.log).toHaveBeenCalledWith(expectText);
-});
+});*/
