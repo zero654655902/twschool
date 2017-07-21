@@ -10,6 +10,13 @@ class Person{
     }
 }
 
+class Class{
+    constructor(number)
+    {
+        this.number=number
+    }
+}
+
 class Student extends Person{
     constructor(name,age,classNum){
         super(name,age)
@@ -56,5 +63,6 @@ module.exports={
     Person,
     Student,
     Worker,
-    Teacher
+    Teacher,
+    Class
 }

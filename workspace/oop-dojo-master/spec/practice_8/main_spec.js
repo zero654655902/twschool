@@ -1,10 +1,12 @@
 "use strict";
-import {Person,Student,Worker,Teacher} from '../../main/practice_8'
+import {Person,Student,Worker,Teacher,Class} from '../../main/practice_8'
 describe("OO入门", function(){
     it("对象之间的交互-2", function(){
         let person=new Person('Tom',21)
-        let student=new Student('Jerry',21,2)
-        let student1=new Student('Jerry',21,3)
+        let classNum=new Class(2)
+        let classNum2=new Class(3)
+        let student=new Student('Jerry',21,classNum.number)
+        let student1=new Student('Jerry',21,classNum2.number)
         let worker=new Worker('Jorn',32)
         let teacher=new Teacher('Lina',28)
         let teacher2=new Teacher('Lina',28,2)
