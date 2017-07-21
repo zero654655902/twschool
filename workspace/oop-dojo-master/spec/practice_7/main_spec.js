@@ -13,6 +13,5 @@ describe("OO入门", function(){
         expect(person.introduce()+' '+worker.introduce()).toEqual('My name is Tom, I am 21 years old. I am a Worker, I have a job.')
         expect(person.introduce()+' '+teacher.introduce()).toEqual('My name is Tom, I am 21 years old. I am a teacher, I teach No Class.')
         expect(person.introduce()+' '+teacher2.introduce()).toEqual('My name is Tom, I am 21 years old. I am a teacher, I teach Class 2.')
-
     });
 });
