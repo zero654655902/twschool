@@ -1,4 +1,4 @@
-export default class Person{
+class Person{
     constructor(name,age){
         this.name=name
         this.age=age
@@ -8,14 +8,14 @@ export default class Person{
     }
 }
 
-class Student extends Person{
+export default class Student extends Person{
     constructor(name,age,classNum)
     {
         super(name,age)
         this.classNum=classNum
     }
     introduce(){
-        return 'I am a Student. I am at Class '+this.classNum
+        return 'I am a Student. I am at Class '+this.classNum+'.'
     }
 
 }
