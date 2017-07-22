@@ -173,6 +173,49 @@ describe('unit test',() =>{
 
 })
 
+describe('unit test',() =>{
+    it('discountItem() should print text',() =>{
+        const tags = [
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000003-2.5',
+            'ITEM000005',
+            'ITEM000005-2',
+        ];
+
+        const tagsSplitResult=tagsSplit(tags)
+        let allItems=Item.all();
+        let tagsItem=buildItem(tagsSplitResult,allItems)
+        let tagsItemMassege=calculateItemCount(tagsItem);
+        let promotion=Promotion.all();
+        let discount=discountItem(tagsItemMassege,promotion[0].barcodes)
+        const expectText=[ { barcode: 'ITEM000001',
+            name: '雪碧',
+            unit: '瓶',
+            price: 3,
+            count: 5,
+            totalPrice: 12 },
+            { barcode: 'ITEM000003',
+                name: '荔枝',
+                unit: '斤',
+                price: 15,
+                count: 2.5,
+                totalPrice: 37.5 },
+            { barcode: 'ITEM000005',
+                name: '方便面',
+                unit: '袋',
+                price: 4.5,
+                count: 3,
+                totalPrice: 9 } ]
+        expect(discount).toEqual(expectText);
+
+    })
+
+})
+
 
 
 
