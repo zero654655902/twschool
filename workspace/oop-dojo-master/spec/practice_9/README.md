@@ -6,7 +6,7 @@ My name is Tom. I am 21 years old.
 再写一个Student类继承Person类，除了id，name，age属性，还有要有class属性。也有一个introduce方法，
 introduce方法返回一个字符串形如：
 
-My name is Tom. I am 21 years old. I am a Student. I am at Class 2.
+My name is Tom. I am 21 years old. I am a Student. I am at Class 2.__
 
 但是Student的class属性不是一个数字，而是一个对象，写一个Class类，有number属性还有一个leader属性。但是leader属性不在构造器里。
 
