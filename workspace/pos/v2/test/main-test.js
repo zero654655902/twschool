@@ -220,6 +220,32 @@ describe('unit test',() =>{
 
 
 
+describe('unit test',() =>{
+    it('priceMassege() should print text',() =>{
+        const tags = [
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000003-2.5',
+            'ITEM000005',
+            'ITEM000005-2',
+        ];
+
+        const tagsSplitResult=tagsSplit(tags)
+        let allItems=Item.all();
+        let tagsItem=buildItem(tagsSplitResult,allItems)
+        let tagsItemMassege=calculateItemCount(tagsItem);
+        let promotion=Promotion.all();
+        let discount=discountItem(tagsItemMassege,promotion[0].barcodes)
+        let lastPrice=priceMassege(discount)
+        const expectText=[ { '总计': '58.50', '节省': '7.50' } ]
+        expect(lastPrice).toEqual(expectText);
+
+    })
+
+})
 
 
 
