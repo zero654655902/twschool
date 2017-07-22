@@ -1,22 +1,7 @@
 'use strict';
 
 //TODO: 请在该文件中实现练习要求并删除此注释
-/*
- 'use strict';
 
-
- const tags = [
- 'ITEM000001',
- 'ITEM000001',
- 'ITEM000001',
- 'ITEM000001',
- 'ITEM000001',
- 'ITEM000003-2.5',
- 'ITEM000005',
- 'ITEM000005-2',
- ];
-
-*/
 function printReceipt(tags) {
     let tagCollection=tagsSplit(tags);
     let allItems=Item.all();
