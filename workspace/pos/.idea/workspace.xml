@@ -15,8 +15,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/v2/main/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="21" />
+            <state relative-caret-position="63">
+              <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="12" selection-end-column="53" />
               <folding>
                 <marker date="1500706739000" expanded="true" signature="4788:4794" ph="..." />
               </folding>
@@ -37,8 +37,8 @@
       <file leaf-file-name="promotion.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/v2/main/model/promotion.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state relative-caret-position="30">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -47,10 +47,10 @@
       <file leaf-file-name="main-test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/v2/test/main-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="136" column="2" lean-forward="true" selection-start-line="136" selection-start-column="2" selection-end-line="136" selection-end-column="2" />
+            <state relative-caret-position="98">
+              <caret line="140" column="25" lean-forward="true" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
               <folding>
-                <marker date="1500708830000" expanded="true" signature="897:1130" ph="..." />
+                <marker date="1500709419000" expanded="true" signature="897:1130" ph="..." />
               </folding>
             </state>
           </provider>
@@ -683,16 +683,15 @@
       <workItem from="1500554288868" duration="9827000" />
       <workItem from="1500565336109" duration="1791000" />
       <workItem from="1500598433381" duration="5452000" />
-      <workItem from="1500706181167" duration="2607000" />
+      <workItem from="1500706181167" duration="3245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27258000" />
+    <option name="totallyTimeSpent" value="27896000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="433" y="8" width="1280" height="630" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -708,7 +707,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1542811" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1542811" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -869,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/v2/main/model/promotion.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -885,8 +884,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/v2/main/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="63">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="12" selection-end-column="53" />
           <folding>
             <marker date="1500706739000" expanded="true" signature="4788:4794" ph="..." />
           </folding>
@@ -895,10 +894,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/v2/test/main-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="136" column="2" lean-forward="true" selection-start-line="136" selection-start-column="2" selection-end-line="136" selection-end-column="2" />
+        <state relative-caret-position="98">
+          <caret line="140" column="25" lean-forward="true" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
           <folding>
-            <marker date="1500708830000" expanded="true" signature="897:1130" ph="..." />
+            <marker date="1500709419000" expanded="true" signature="897:1130" ph="..." />
           </folding>
         </state>
       </provider>
