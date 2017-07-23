@@ -15,7 +15,49 @@ class Person{
     }
 }
 
+class Class{
+    constructor(number)
+    {
+        this.number=number
+    }
+    getClassNum()
+    {
+        return number
+    }
+    assignLeader(student)
+    {
+        this.leader=student
+    }
+    isLeader(){
+        return (this.leader)
+    }
 
+}
+
+class Student extends Person{
+    constructor(id,name,age,_class)
+    {
+        super(id,name,age)
+        this._class=_class
+    }
+
+    introduce()
+    {
+        let str=`${super.introduce()}`
+        if(this._class.isLeader())
+        {
+            str+=` I am a student, I am the leader of class ${this._class.number}`
+            return str
+        }
+        else
+        {
+            str+=` I am a student, I am at class ${this._class.number}`
+            return str
+        }
+    }
+}
 module.exports={
-    Person
+    Person,
+    Student,
+    Class
 }
