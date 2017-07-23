@@ -42,7 +42,7 @@ class Class{
         return this.student
     }
     isIn(student){
-        return student._class.number===number
+        return student._class.number===this.number
 
     }
 
@@ -98,9 +98,13 @@ class Teacher extends Person{
 
 
     }
-  //  isTeaching(student){
-   //     return student._class.isIn()
-   // }
+    isTeaching(student){
+        for(let i=0;i<this.classes.length;++i){
+            if(this.classes[i].isIn(student))
+                return true
+        }
+        return false
+    }
 }
 
 /*

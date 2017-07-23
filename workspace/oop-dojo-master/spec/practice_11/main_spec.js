@@ -27,12 +27,18 @@ describe("OO入门", function(){
         _class2.assignLeader(student2)
         expect(student2.introduce()).toEqual('My name is Tom, I am 21 years old. I am a student, I am the leader of Class 4.')
 
-        const teacher=new Teacher(23,'Tom',21)
-        expect(teacher.introduce()).toEqual('My name is Tom, I am 21 years old. I am a teacher, I teach No Class.')
+        const teacher=new Teacher(14,'Lina',28)
+        expect(teacher.introduce()).toEqual('My name is Lina, I am 28 years old. I am a teacher, I teach No Class.')
 
 
-        const teacher1=new Teacher(23,'Tom',21,classes)
-        expect(teacher1.introduce()).toEqual('My name is Tom, I am 21 years old. I am a teacher, I teach Class 2, 3, 4.')
+        const teacher1=new Teacher(13,'Lina',28,classes)
+        expect(teacher1.introduce()).toEqual('My name is Lina, I am 28 years old. I am a teacher, I teach Class 2, 3, 4.')
+        expect(teacher1.isTeaching(student1)).toEqual(true)
 
+        const _class3=new Class(5)
+        const student3=new Student(11,'Tom',21,_class3)
+        const teacher2=new Teacher(15,'Lina',28,classes)
+
+        expect(teacher2.isTeaching(student3)).toEqual(false)
     });
 });
