@@ -65,7 +65,7 @@ class Student extends Person{
 
         }
         else
-            return `${super.introduce()} I am a student, I am at Class ${this._class.number}`
+            return `${super.introduce()} I am a student, I am at Class ${this._class.number}.`
 
     }
 }

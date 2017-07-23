@@ -12,5 +12,11 @@ describe("OO入门", function(){
         _class.assignLeader(student)
         expect(student.introduce()).toEqual('It is not of us.')
 
+        let _class1=new Class(2)
+        let student1=new Student(11,'Tom',21,_class1)
+        _class1.appendMember(student1)
+        expect(student1.introduce()).toEqual('My name is Tom, I am 21 years old. I am a student, I am at Class 2.')
+
+
     });
 });
