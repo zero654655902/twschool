@@ -23,7 +23,8 @@ class Student extends Person{
         this.classNum=classNum
     }
     introduce(){
-        return 'I am a student, I am at Class '+this.classNum+'.'
+        return  `${super.introduce()} I am a student, I am at Class ${this.classNum}.`
+
     }
 }
 
@@ -32,7 +33,7 @@ class Worker extends Person{
         super(name,age)
     }
     introduce(){
-        return 'I am a Worker, I have a job.'
+        return `${super.introduce()} I am a Worker, I have a job.`
     }
 }
 
@@ -44,17 +45,17 @@ class Teacher extends Person{
     }
     introduce(){
         if(this.classNum==null)
-            return 'I am a teacher, I teach No Class.'
+            return `${super.introduce()} I am a teacher, I teach No Class.`
 
         else
-            return 'I am a teacher, I teach Class '+this.classNum+'.'
+            return `${super.introduce()} I am a teacher, I teach Class ${this.classNum}.`
 
     }
     introduceWith(student){
         if(this.classNum==student.classNum)
-            return 'I am a teacher. I teach Jerry.'
+            return `${super.introduce()} I am a teacher. I teach Jerry.`
         else
-            return 'I am a teacher. I don\'t teach Jerry.'
+            return `${super.introduce()} I am a teacher. I don\'t teach Jerry.`
 
 
     }
