@@ -22,14 +22,14 @@ class Class{
     }
     getClassNum()
     {
-        return number
+        return this.number
     }
     assignLeader(student)
     {
         this.leader=student
     }
     isLeader(){
-        return (this.leader)
+        return this.leader
     }
 
 }
