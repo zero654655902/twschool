@@ -8,7 +8,7 @@ class Person{
     }
     introduce()
     {
-        return 'My name is '+this.name+', I am '+this.age+' years old.'
+        return `My name is ${this.name}, I am ${this.age} years old.`
     }
     isSamePerson(person){
         return (this.id===person.id)
@@ -46,12 +46,12 @@ class Student extends Person{
         let str=`${super.introduce()}`
         if(this._class.isLeader())
         {
-            str+=` I am a student, I am the leader of class ${this._class.number}`
+            str+=` I am a student, I am the leader of class ${this._class.getClassNum()}`
             return str
         }
         else
         {
-            str+=` I am a student, I am at class ${this._class.number}`
+            str+=` I am a student, I am at class ${this._class.getClassNum()}`
             return str
         }
     }
@@ -68,7 +68,7 @@ class Teacher extends Person{
             return `${super.introduce()} I am a teacher, I teach No Class.`
 
         else
-            return `${super.introduce()} I am a teacher, I teach Class ${this._class.number}.`
+            return `${super.introduce()} I am a teacher, I teach Class ${this._class.getClassNum()}.`
 
     }
 }
