@@ -61,7 +61,7 @@ class Student extends Person{
         }
         else if(this._class.isLeader())
         {
-            return `${super.introduce()} I am a student, I am the leader of class ${this._class.number}`
+            return `${super.introduce()} I am a student, I am the leader of Class ${this._class.number}.`
 
         }
         else
