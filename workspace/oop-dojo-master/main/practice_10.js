@@ -70,8 +70,26 @@ class Student extends Person{
     }
 }
 
+class Teacher extends Person{
+    constructor(id,name,age,_class)
+    {
+        super(id,name,age)
+        this._class=_class
+    }
+    introduce(){
+        if(this._class==null)
+            return `${super.introduce()} I am a teacher, I teach No Class.`
+
+        else
+            return `${super.introduce()} I am a teacher, I teach Class ${this._class.number}.`
+
+    }
+}
+
+
 module.exports={
     Person,
     Student,
-    Class
+    Class,
+    Teacher
 }
