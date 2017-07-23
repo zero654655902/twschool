@@ -86,11 +86,13 @@ class Teacher extends Person{
 
         else
         {
-            let str=`${super.introduce()} I am a teacher, I teach Class ${this.classes.number}`
-            //for(let _class in this.classes)
-           // {
-            //    str+=` ${_class.getClassNum()}`
-           // }
+            let str=`${super.introduce()} I am a teacher, I teach Class`
+
+            for(let i=0;i<this.classes.length-1;++i)
+
+                str+=` ${this.classes[i].number},`
+
+            str+=` ${this.classes[this.classes.length-1].number}.`
            return str
         }
 
