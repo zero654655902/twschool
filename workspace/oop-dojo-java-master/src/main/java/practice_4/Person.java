@@ -4,8 +4,8 @@ package practice_4;
  * Created by lwan on 24/07/2017.
  */
 public class Person {
-    private String name;
-    private int age;
+    protected String name;
+    protected int age;
     public Person(String name, int age) {
         this.name=name;
         this.age=age;
