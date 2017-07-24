@@ -18,6 +18,12 @@ public class PersonTest {
         assertEquals("My name is Tom Wu, I am 21 years old",person.introuce());
 
     }
+    @Test public void testToString(){
+        Person person=new Person("Tom",21);
+        assertEquals("My name is Tom, I am 21 years old", person.toString());
+
+
+    }
 
 
 

@@ -14,5 +14,17 @@ public class Person {
     public String introuce(){
         return "My name is "+this.name+", I am "+this.age+" years old";
     }
+    public String getPersonName(){
+        return this.name;
+    }
+    public int getPersonAge(){
+        return this.age;
+    }
 
+    @Override
+    public String toString() {
+        //return super.toString();
+        return "My name is "+this.name+", I am "+this.age+" years old";
+
+    }
 }
