@@ -44,14 +44,5 @@ public class testIntroduce {
 
     }
 
-    @Test
-    public void testTeacherIntroduceWith(){
-        Class kclass=new Class(2);
-        Student student1=new Student("Jerry",21,kclass);
-        Teacher teacher2= new Teacher("Tom", 21,kclass);
 
-        assertEquals("My name is Tom, I am 21 years old. I am a teacher, I teach Jerry.", teacher2.introducewith(student1));
-
-
-    }
 }

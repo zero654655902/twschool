@@ -27,9 +27,4 @@ public class Teacher extends Person {
         return str;
     }
 
-    public String introducewith(Student student1) {
-        String str=super.introduce();
-        str+=" I am a teacher, I teach Jerry.";
-        return str;
-    }
 }
