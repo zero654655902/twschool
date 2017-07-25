@@ -2,6 +2,10 @@ package FrequencyWords;
 
 import org.apache.commons.math3.ml.neuralnet.MapUtils;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 //import java.util.Map;
 
@@ -12,6 +16,19 @@ public class FrequencyWord {
 
 
     //String str="the day is sunny the the the sunny is is";
+    public String readFileTxt(String fileAddress) throws IOException {
+        String strTxt="";
+        FileReader fr=new FileReader(fileAddress);
+        BufferedReader br=new BufferedReader(fr);
+        while(br.readLine()!=null)
+        {
+            strTxt+=br.readLine();
+        }
+        return strTxt;
+    }
+
+
+
 
     public String[] splitStr(String strTxt) {
         String regex = " +";
@@ -50,6 +67,14 @@ public class FrequencyWord {
         return result;
     }
 
+    public String printFrequencyWordsResult(Map<String, Integer> wordMassege){
+        String result="";
+        for(String key:wordMassege.keySet())
+            result+=key+" "+wordMassege.keySet()+"\n";
+
+        return result;
+
+    }
 
 }
 
