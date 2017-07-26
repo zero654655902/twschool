@@ -4,6 +4,8 @@ package practice_11;
 import org.junit.Test;
 
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -37,12 +39,20 @@ public class testIntroduce {
 
     @Test
     public void testTeacherIntroduce(){
+        ArrayList<Class> classList=new ArrayList<Class>();
+
         Teacher teacher1 = new Teacher(11,"Tom", 21);
         assertEquals("My name is Tom, I am 21 years old. I am a teacher, I teach No Class.", teacher1.introduce());
 
-        Class kclass=new Class(2);
-        Teacher teacher2= new Teacher(12,"Tom", 21,kclass);
-        assertEquals("My name is Tom, I am 21 years old. I am a teacher, I teach Class 2.", teacher2.introduce());
+       Class kclass=new Class(2);
+        classList.add(kclass);
+        //Teacher teacher2= new Teacher(12,"Tom", 21,classList);
+        //assertEquals("My name is Tom, I am 21 years old. I am a teacher, I teach Class 2.", teacher2.introduce());
+
+      Class kclass1=new Class(3);
+        classList.add(kclass1);
+        Teacher teacher3= new Teacher(12,"Tom", 21,classList);
+        assertEquals("My name is Tom, I am 21 years old. I am a teacher, I teach Class 2, 3.", teacher3.introduce());
 
     }
 
