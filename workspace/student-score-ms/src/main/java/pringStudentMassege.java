@@ -32,7 +32,8 @@ public class pringStudentMassege {
 
     public boolean isStudentMassegeFormatCorrect(String studentMessage){
         //String regex1="";
-       if(studentMessage.contains("数学:")&&studentMessage.contains("语文:")&& studentMessage.contains("英语:")&&studentMessage.contains("编程:"))
+       if(studentMessage.contains("数学:")&&studentMessage.contains("语文:")
+               && studentMessage.contains("英语:")&&studentMessage.contains("编程:"))
        {
            String regex=",";
            String regex2=":";
@@ -54,6 +55,17 @@ public class pringStudentMassege {
        return true;
        }
             return  false;
+
+//        String regex="(^,),(\\w+),语文:(\\d+),数学:(\\d+),英语:(\\d+),编程:(\\d+)";
+//        return studentMessage.matches(regex);
+
+
+//        return false;
+
+
+
+
+
    }
 
     public void addStudentMassege(ArrayList<Student> _class,String input){
