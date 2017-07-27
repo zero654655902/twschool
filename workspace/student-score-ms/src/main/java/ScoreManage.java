@@ -13,6 +13,7 @@ public class ScoreManage {
             {
                 if(kclass.get(i).getId()==id[j])
                 {
+                    kclass.get(i).calculateScore();
                     idStudent.add(kclass.get(i));
                     break;
                 }
@@ -22,6 +23,13 @@ public class ScoreManage {
         return idStudent;
     }
 
+//    public float calculateTotal(List<Student> kclass){
+//        for(int i=0;i<kclass.size();++i)
+//        {
+//
+//        }
+
+    }
 
 
 

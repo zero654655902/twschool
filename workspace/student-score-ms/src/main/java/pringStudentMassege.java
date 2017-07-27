@@ -18,18 +18,7 @@ public class pringStudentMassege {
 
 
 
-//public ArrayList<Student> savePrintStudentMessage(ArrayList<Student> stu,String[] ids){
-//    for(int i=0;i<stu.size();++i)
-//    {
-//        for(int j=0;j<ids.length;++j){
-//            //if(stu[i].)
-//
-//        }
-//    }
-//
-//
-//
-//}
+
 
     public String printMessage(List<Student> stu) {
         String message="成绩单\n"
