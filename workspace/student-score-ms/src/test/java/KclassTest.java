@@ -10,20 +10,21 @@ import static org.junit.Assert.assertEquals;
  */
 public class KclassTest {
     @Test
-    public void should_add_Student(){
-        Kclass _class=new Kclass();
+    public void should_add_Student() {
+        Kclass _class = new Kclass();
 
-      Student ZhangSan = new Student("张三", 1200, 75, 95, 80, 80);
-      Student Lisi = new Student("李四", 1200, 75, 95, 80, 80);
+        Student ZhangSan = new Student("张三", 1200, 75, 95, 80, 80);
+        Student Lisi = new Student("李四", 1200, 75, 95, 80, 80);
 
-        List<Student> kclass=new ArrayList<Student>() ;
+        List<Student> kclass = new ArrayList<Student>();
         kclass.add(ZhangSan);
+
         kclass.add(Lisi);
         _class.setKclass(kclass);
         Student Wanwu = new Student("王五", 1200, 75, 95, 80, 80);
         _class.addStudentMessage(Wanwu);
 
-        assertEquals(3,_class.getTotalStudent().size());
+        assertEquals(3, _class.getTotalStudent().size());
 
 
     }
