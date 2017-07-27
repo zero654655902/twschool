@@ -60,9 +60,8 @@ public class strParseTest {
     }
     @Test
     //
-    public void testMessageProcess(){
+    public void should_get_student_when_str_parse(){
         strParse sp=new strParse();
-
         String message="张三,1200,语文:75,数学:95,英语:80,编程:80";
         Student ZhangSan=sp.processMassege(message);
         assertEquals(true,ZhangSan.getName().equals("张三"));

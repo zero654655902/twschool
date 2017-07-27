@@ -13,15 +13,15 @@ public class KclassTest {
     public void should_add_Student() {
         Kclass _class = new Kclass();
 
-        Student ZhangSan = new Student("张三", 1200, 75, 95, 80, 80);
-        Student Lisi = new Student("李四", 1200, 75, 95, 80, 80);
+        Student ZhangSan = new Student("张三", 1201, 65, 95, 80, 80);
+        Student Lisi = new Student("李四", 1202, 75, 85, 80, 80);
 
         List<Student> kclass = new ArrayList<Student>();
         kclass.add(ZhangSan);
 
         kclass.add(Lisi);
         _class.setKclass(kclass);
-        Student Wanwu = new Student("王五", 1200, 75, 95, 80, 80);
+        Student Wanwu = new Student("王五", 1203, 75, 95, 70, 85);
         _class.addStudentMessage(Wanwu);
 
         assertEquals(3, _class.getTotalStudent().size());

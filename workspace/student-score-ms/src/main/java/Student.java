@@ -72,4 +72,6 @@ public class Student {
     public int getTotalScore() {
         return this.totalScore;
     }
+
+
 }
