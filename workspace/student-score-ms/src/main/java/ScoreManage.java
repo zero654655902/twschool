@@ -42,6 +42,4 @@ public class ScoreManage {
         return middleScore;
     }
 
-
-
 }

@@ -23,4 +23,7 @@ public class Kclass {
     }
 
 
+    public static Kclass getInstance() {
+        return new Kclass();
+    }
 }

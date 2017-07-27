@@ -30,17 +30,6 @@ public class Student {
 
     }
 
-    public Student(String name, int id, int math, int chinese , int english, int coding, double average, int totalScore) {
-        this.name=name;
-        this.id=id;
-        this.math=math;
-        this.chinese=chinese;
-        this.english=english;
-        this.coding=coding;
-        this.average=average;
-        this.totalScore=totalScore;
-
-    }
     public int getMath() {
         return this.math;
     }
@@ -71,6 +60,22 @@ public class Student {
 
     public int getTotalScore() {
         return this.totalScore;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this.name == ((Student)obj).getName()) {
+            if (this.id == ((Student) obj).getId()) {
+                if (this.math == ((Student) obj).getMath()) {
+                    if (this.chinese == ((Student) obj).getChinese()) {
+                        if (this.english == ((Student) obj).getEnglish()) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
     }
 
 
