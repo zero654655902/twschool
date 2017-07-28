@@ -7,6 +7,7 @@ import java.util.List;
 public class Kclass {
     private List<Student> kclass = new ArrayList<Student>();
 
+
     public void setKclass(List<Student> kclass) {
         this.kclass = kclass;
 
@@ -23,7 +24,6 @@ public class Kclass {
     }
 
 
-    public static Kclass getInstance() {
-        return new Kclass();
-    }
+
+
 }

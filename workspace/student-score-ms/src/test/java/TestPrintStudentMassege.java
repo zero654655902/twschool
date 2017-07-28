@@ -18,8 +18,8 @@ public class TestPrintStudentMassege {
         //Given
         pringStudentMassege psm=new pringStudentMassege();
         List<Student> stu=new ArrayList<Student>();
-        Student student1= new Student("张三", 1200, 75, 95, 80, 80);
-        Student student2= new Student("李四", 1201, 85, 80, 70, 90);
+        Student student1= new Student("张三", "1200", 75, 95, 80, 80);
+        Student student2= new Student("李四", "1201", 85, 80, 70, 90);
         student1.calculateScore();
         student2.calculateScore();
         stu.add(student1);
@@ -29,10 +29,10 @@ public class TestPrintStudentMassege {
         String expect="成绩单\n"
                 +"姓名|数学|语文|英语|编程|平均分|总分\n"
                 +"========================\n"
-                +"张三|75|95|80|80|82.5|330\n"
+                +"张三|75|95|80|80|82.50|330\n"
                 +"李四|85|80|70|90|81.25|325\n"
                 +"========================\n";
-        assertEquals(true,result.equals(expect));
+        assertEquals(expect,result);
         //assertThat(result,is(expect));
 
     }

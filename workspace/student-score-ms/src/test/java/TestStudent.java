@@ -10,7 +10,7 @@ public class TestStudent {
 @Test
     public void testStudent(){
     //Give
-        Student ZhangSan=new Student("张三",1200,75,95,80,80);
+        Student ZhangSan=new Student("张三","1200",75,95,80,80);
      //when
         ZhangSan.calculateScore();
         //then

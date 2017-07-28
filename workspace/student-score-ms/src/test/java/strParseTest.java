@@ -74,10 +74,21 @@ public class strParseTest {
         String message="张三,1200,语文:75,数学:95,英语:80,编程:80";
         //when
         Student ZhangSan=sp.processMassege(message);
-        Student student1= new Student("张三", 1200, 75, 95, 80, 80);
+        Student student1= new Student("张三", "1200", 75, 95, 80, 80);
         //then
-        assertEquals(true,ZhangSan.getId()==1200);
+        assertEquals(true,ZhangSan.getId().equals("1200"));
         assertEquals(true,ZhangSan.getName().equals("张三"));
+    }
+
+
+    @Test
+    public void should_get_student_id(){
+        //Given
+        strParse sp=new strParse();
+        String ids="1200,1201,1203";
+        String[] id=sp.processId(ids);
+
+        assertEquals(true,id[1].equals("1201"));
     }
 
 }

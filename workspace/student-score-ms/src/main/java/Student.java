@@ -7,26 +7,24 @@ public class Student {
     private final int english;
     private final int coding;
     private final String name;
-    private final int id;
-    private double average=0;
-    private int totalScore=0;
+    private final String id;
+    private double average = 0;
+    private int totalScore = 0;
 
 
-
-    public Student(String name, int id, int math, int chinese , int english, int coding) {
-        this.name=name;
-        this.id=id;
-        this.math=math;
-        this.chinese=chinese;
-        this.english=english;
-        this.coding=coding;
+    public Student(String name, String id, int math, int chinese, int english, int coding) {
+        this.name = name;
+        this.id = id;
+        this.math = math;
+        this.chinese = chinese;
+        this.english = english;
+        this.coding = coding;
 
     }
 
-    public void calculateScore()
-    {
-        this.totalScore=this.chinese+this.math+this.coding+this.english;
-        this.average=(this.chinese+this.math+this.coding+this.english)/4.0;
+    public void calculateScore() {
+        this.totalScore = this.chinese + this.math + this.coding + this.english;
+        this.average = (this.chinese + this.math + this.coding + this.english) / 4.0;
 
     }
 
@@ -50,7 +48,7 @@ public class Student {
         return this.name;
     }
 
-    public int getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -64,12 +62,14 @@ public class Student {
 
     @Override
     public boolean equals(Object obj) {
-        if(this.name == ((Student)obj).getName()) {
-            if (this.id == ((Student) obj).getId()) {
-                if (this.math == ((Student) obj).getMath()) {
-                    if (this.chinese == ((Student) obj).getChinese()) {
-                        if (this.english == ((Student) obj).getEnglish()) {
-                            return true;
+        if (obj.getClass() == this.getClass()) {
+            if (this.name == ((Student) obj).getName()) {
+                if (this.id == ((Student) obj).getId()) {
+                    if (this.math == ((Student) obj).getMath()) {
+                        if (this.chinese == ((Student) obj).getChinese()) {
+                            if (this.english == ((Student) obj).getEnglish()) {
+                                return true;
+                            }
                         }
                     }
                 }
