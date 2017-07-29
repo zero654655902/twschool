@@ -17,21 +17,29 @@ public class FrequencyWord {
 
     //String str="the day is sunny the the the sunny is is";
     public String readFileTxt(String fileAddress) throws IOException {
-        String strTxt="";
-        FileReader fr=new FileReader(fileAddress);
-        BufferedReader br=new BufferedReader(fr);
-        while(br.readLine()!=null)
-        {
-            strTxt+=br.readLine();
+
+        StringBuilder strTxt=new StringBuilder();
+        try{
+            BufferedReader BR=new BufferedReader(new FileReader(fileAddress));
+            String line=BR.readLine();
+            while (line!=null){
+                strTxt.append(line);
+                strTxt.append("\n");
+                line=BR.readLine();
+            }
+        }catch (IOException e){
+            e.printStackTrace();
         }
-        return strTxt;
+        return strTxt.toString();
+
+
     }
 
 
 
 
     public String[] splitStr(String strTxt) {
-        String regex = " +";
+        String regex = "\\s+";
         String[] words = strTxt.split(regex);
         return words;
     }
@@ -69,8 +77,9 @@ public class FrequencyWord {
 
     public String printFrequencyWordsResult(Map<String, Integer> wordMassege){
         String result="";
-        for(String key:wordMassege.keySet())
-            result+=key+" "+wordMassege.keySet()+"\n";
+        Set<Map.Entry<String,Integer>> sets=wordMassege.entrySet();
+        for(Map.Entry<String ,Integer> set:sets)
+            result+=set.getKey()+" "+set.getValue()+"\n";
 
         return result;
 

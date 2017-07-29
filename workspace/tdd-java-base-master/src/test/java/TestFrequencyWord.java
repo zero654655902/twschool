@@ -13,21 +13,21 @@ import static org.junit.Assert.assertThat;
  * Created by lwan on 25/07/2017.
  */
 public class TestFrequencyWord {
-//    @Test
-//    public void shoule_get_file_txt() throws IOException {
-//        FrequencyWord fw=new FrequencyWord();
-//        String strTxt="the day is sunny the the the  sunny  is is";
-//        String strTxtResult=fw.readFileTxt("address?");
-//        assertEquals(strTxt,strTxtResult);
-//
-//    }
+    @Test
+    public void shoule_get_file_txt() throws IOException {
+        FrequencyWord fw=new FrequencyWord();
+        String strTxt="the day is sunny the the\nthe sunny is is\n";
+        String strTxtResult=fw.readFileTxt("./src/word.txt");
+        assertEquals(strTxt,strTxtResult);
+
+    }
 
 
     @Test
     public void testSplitStr(){
         //Given
         FrequencyWord fw=new FrequencyWord();
-        String strTxt="the day is sunny the the the  sunny  is is";
+        String strTxt="the day is sunny  the the\n the  sunny  is is\n";
         String[] s = new String[]{"the","day","is","sunny","the","the","the","sunny","is","is"};
         //when
         String[] strSplitResult=fw.splitStr(strTxt);
