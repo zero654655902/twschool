@@ -27,7 +27,7 @@ public class ScoreManage {
         for (int i = 0; i < kclass.size(); ++i) {
             totalScore += kclass.get(i).getTotalScore();
         }
-        return totalScore;
+        return totalScore/kclass.size();
     }
 
     public int calculateMiddleScore(List<Student> kclass) {

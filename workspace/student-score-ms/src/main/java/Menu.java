@@ -88,7 +88,12 @@ public class Menu {
                 String[] ids = sp.processId(strInput);
                 students=studentScoreService.getScoreManage().getIdStudent(students, ids);
                 String result=psm.printStuMessage(students);
+                int totalScore=studentScoreService.getScoreManage().calculateTotal(students);
+                int middleScore=studentScoreService.getScoreManage().calculateMiddleScore(students);
                 System.out.println(result);
+                System.out.println("全班总分平均分"+totalScore);
+                System.out.println("全部总分中位数"+middleScore);
+
             }
         }
 

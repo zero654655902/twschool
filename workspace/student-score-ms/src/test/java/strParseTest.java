@@ -43,6 +43,8 @@ public class strParseTest {
         //Given
         strParse sp=new strParse();
         String message="张三,1200,语文:75,数学:95,英语:80,编程:80";
+        //李四,1201,语文:75,数学:95,英语:87,编程:80
+        //王五,1203,语文:79,数学:95,英语:80,编程:80
         //when-then
         assertEquals(true,sp.isStudentMassegeFormatCorrect(message));
 
