@@ -87,7 +87,6 @@ public class strParseTest {
         strParse sp=new strParse();
         String ids="1200,1201,1203";
         String[] id=sp.processId(ids);
-
         assertEquals(true,id[1].equals("1201"));
     }
 

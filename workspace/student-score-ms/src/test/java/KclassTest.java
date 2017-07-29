@@ -23,6 +23,7 @@ public class KclassTest {
         kclass.add(Lisi);
         _class.setKclass(kclass);
         Student Wanwu = new Student("王五", "1203", 75, 95, 70, 85);
+
         _class.addStudentMessage(Wanwu);
         //then
         assertEquals(3, _class.getTotalStudent().size());

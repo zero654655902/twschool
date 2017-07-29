@@ -15,13 +15,36 @@ public class Menu {
 
 
     private strParse sp = new strParse();
-    Kclass kclass=new Kclass();
-    ScoreManage scoreManage=new ScoreManage();
-    private StudentScoreService studentScoreService = new StudentScoreService(kclass,scoreManage);
+    Kclass kclass = new Kclass();
+    ScoreManage scoreManage = new ScoreManage();
+    private StudentScoreService studentScoreService = new StudentScoreService(kclass, scoreManage);
 
     private pringStudentMassege psm = new pringStudentMassege();
     private ScoreManage sm = new ScoreManage();
-    //System.out.println(menu);
+
+
+    private static final String MAIN_MENU_STATUS = "MAIN_MENU_STATUS";
+    private static final String ADD_STUDENT_STATUS = "ADD_STUDENT_STATUS";
+    private static final String ADD_STUDENT_ID_STATUS = "ADD_STUDENT_ID_STATUS";
+    private static final String EXIT_APP_STATUS = "EXIT_APP_STATUS";
+
+
+    private String status = MAIN_MENU_STATUS;
+
+    public String getStatus() {
+        return this.status;
+    }
+
+
+    private void changeStatus(String statusCommand) {
+        if (statusCommand.equals("1")) {
+            this.status = ADD_STUDENT_STATUS;
+        } else if (statusCommand.equals("2")) {
+            this.status = ADD_STUDENT_ID_STATUS;
+        } else if (statusCommand.equals("3")) {
+            this.status = EXIT_APP_STATUS;
+        }
+    }
 
 
     public String getInput() {
@@ -29,31 +52,53 @@ public class Menu {
         return scanner.nextLine();
     }
 
-    public void app(String input) {
-        if (input.matches("1")) {
-            System.out.println(studentPrompt);
-            String strInput=getInput();
-            while (!sp.isStudentMassegeFormatCorrect(strInput)){
-                System.out.println(studentWarning);
-                strInput=getInput();
-            }
-            studentScoreService.getkclass().addStudentMessage(sp.processMassege(strInput));
-            System.out.println(successNotice);
-        }
 
-        if(input.matches("2")){
-            String strId=getInput();
-            while (!sp.isStudentIdFormateCorrect(strId))
-            {
+    public void appInterface() {
+        String strInput = "";
+        while (!this.status.equals(EXIT_APP_STATUS)) {
+            if (this.status.equals(MAIN_MENU_STATUS)) {
+                System.out.println(menu);
+                strInput = getInput();
+                if(strInput.matches("[1|2|3]"))
+                    changeStatus(strInput);
+            }
+            if (this.status.equals(ADD_STUDENT_STATUS)) {
+                System.out.println(studentPrompt);
+                strInput = getInput();
+                while ( !sp.isStudentMassegeFormatCorrect(strInput)) {
+                    System.out.println(studentWarning);
+                    strInput = getInput();
+                }
+                Student student = sp.processMassege(strInput);
+                studentScoreService.getkclass().addStudentMessage(student);
+                System.out.println(successNotice);
+                strInput = getInput();
+                if(strInput.matches("[1|2|3]"))
+                    changeStatus(strInput);
+            }
+            if (this.status.equals(ADD_STUDENT_ID_STATUS)) {
                 System.out.println(studentIdPrompt);
-                strId=getInput();
+                strInput = getInput();
+                while (!sp.isStudentIdFormateCorrect(strInput)) {
+                    System.out.println(studentIdWarning);
+                    strInput = getInput();
+                }
+                Kclass kclass = studentScoreService.getkclass();
+                List<Student> students = kclass.getTotalStudent();
+                String[] ids = sp.processId(strInput);
+                students=studentScoreService.getScoreManage().getIdStudent(students, ids);
+                String result=psm.printStuMessage(students);
+                System.out.println(result);
             }
-            List<Student> allStuden=studentScoreService.getkclass().getTotalStudent();
-            allStuden=studentScoreService.getScoreManage().getIdStudent(allStuden,sp.processId(strId));
-            psm.printStuMessage(allStuden);
         }
 
+        System.exit(0);
     }
 
-
+    public static void main(String[] args){
+        Menu menu=new Menu();
+        menu.appInterface();
+    }
 }
+
+

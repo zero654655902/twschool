@@ -39,8 +39,8 @@ public class Student {
     public int getEnglish() {
         return this.english;
     }
-
     public int getCoding() {
+
         return this.coding;
     }
 

@@ -14,7 +14,6 @@ public class Kclass {
     }
 
     public void addStudentMessage(Student stu) {
-
         this.kclass.add(stu);
     }
 
