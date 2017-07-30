@@ -17,15 +17,6 @@ public class strParseTest {
         assertEquals(false,sp.isStudentMassegeFormatCorrect(message1));
 
     }
-    @Test
-    public void should_false_when_score_not_resonable() {
-        //Given
-        strParse sp=new strParse();
-        String message2="张三,1200,语文:75,数学:95,英语:80,编程:120";
-        //when-then
-        assertEquals(false,sp.isStudentMassegeFormatCorrect(message2));
-    }
-
 
     @Test
     public void should_false_when_score_missing() {

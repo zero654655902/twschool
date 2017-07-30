@@ -9,7 +9,7 @@ import static java.lang.Integer.parseInt;
 public class strParse {
     public Student processMassege(String input) {
 
-        String regex="([^,]+),(\\w+),语文:(\\d+),数学:(\\d+),英语:(\\d+),编程:(\\d+)";
+        String regex=Constants.regex;
         Pattern pattern=Pattern.compile(regex);
         Matcher matcher=pattern.matcher(input);
         if(matcher.matches()){
@@ -26,7 +26,7 @@ public class strParse {
 
     public boolean isStudentMassegeFormatCorrect(String studentMessage){
 
-       String regex="([^,]+),(\\w+),语文:(\\d+),数学:(\\d+),英语:(\\d+),编程:(\\d+)";
+       String regex=Constants.regex;
       return studentMessage.matches(regex);
 
     }
