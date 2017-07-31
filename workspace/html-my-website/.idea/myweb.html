@@ -4,61 +4,76 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        * {
+            margin: 0;
+        }
+
         header .header_info {
             background-color: black;
             height: 100px;
         }
 
-            header .header_info .header_info_right ul li a {
+        header .header_info .insert_img {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        header .header_info a {
+
+            padding-left: 10px;
+            color: white;
+            text-decoration: none;
+
+        }
+
+        header .header_info ul li a {
             font-size: 14px;
             color: white;
-            margin-right: 10px;
             text-decoration: none;
         }
 
-        header .header_info .My_Website a {
-            font-size: 14px;
-           color: white;
-            text-decoration: none;
+        nav info_nav ul {
+            padding-top: 40px;
+        }
+
+        nav .info_nav ul li {
+            margin-bottom: 10px;
+
         }
 
         nav .info_nav ul li a {
             font-size: 14px;
             color: black;
-            margin-bottom: 20px;
             text-decoration: none;
         }
-        nav .info_nav ul li  {
-            margin-bottom: 10px;
 
-        }
-
-        header .header_info .header_info_right {
-            float: right;
-            width: 300px;
-            height: 10px;
-            margin: 20px, 50px;
-        }
-        header .header_info .header_info_right ul li{
+        header .header_info ul li {
+            padding-right: 10px;
             float: left;
         }
 
-        header .header_info .header_info_right ul{
-            margin-top: -30px;
+        header .header_info ul {
+            float: right;
+            margin-top: 40px;
+            margin-right: 70px;
         }
 
         nav .info_nav {
-            width: 220px;
-            height: 500px;
+            width: 15%;
             background-color: beige;
-            float: left
+            float: left;
+            height: 460px;
+            padding-top: 40px;
+
         }
 
         nav .content {
-            background-color: antiquewhite;
-            width: 1200px;
+            background-color: white;
+            width: 85%;
+            float: right;
+            margin-top: 0px;
+            vertical-align: top;
             height: 500px;
-            float: left;
         }
 
         footer .footer_info {
@@ -68,38 +83,66 @@
         }
 
         header .header_info .insert_img {
-            margin-left: 10px;
-            margin-top: 20px;
+            margin-left: 30px;
+            margin-top: 25px;
             width: 50px;
             height: 50px;
 
         }
-        header .header_info .My_Website{
+
+        header .header_info .My_Website {
             margin-left: 100px;
+            width: 100px;
+            height: 100px;
         }
 
+        nav .content .content_left {
+            width: 50%;
+            margin-top: 50px;
+            margin-left: 30px;
+            float: left;
+        }
+
+        nav .content .content_left .city {
+            font-size: 20px;
+            line-height: 1.5em;
+        }
+
+        nav .content .content_right {
+            float: right;
+
+
+        }
+
+        nav .content .content_right .img_insert {
+            margin-top: 65px;
+            margin-right: 70px;
+        }
+
+        footer .footer_info p {
+            color: white;
+            text-align: center;
+            padding-top: 8px;
+
+        }
     </style>
 </head>
 <body>
 <header>
     <div class="header_info">
-        <div class="insert_img">
-            <img src="../WechatIMG2.jpeg" alt="图片" width="50px" ; height="50px"; style="margin-top: 20px; margin-left: 20px;" >
+
+        <img class="insert_img" src="../WechatIMG2.jpeg" alt="图片" width="50px" height="50px">
 
 
-        </div>
+        <a href="">MyWebsite</a>
 
-        <div class="My_Website">
-            <a href="">My Website</a>
-        </div>
-        <div class="header_info_right">
-            <ul>
-                <li type="none"><a href="">Feature </a></li>
-                <li type="none"> <a href="">Pricing</a></li>
-                <li type="none"> <a href="">About</a></li>
-                <li type="none"> <a href="">Sing up</a></li>
-            </ul>
-        </div>
+
+        <ul>
+            <li type="none"><a href="">Feature </a></li>
+            <li type="none"><a href="">Pricing</a></li>
+            <li type="none"><a href="">About</a></li>
+            <li type="none"><a href="">Sing up</a></li>
+        </ul>
 
 
     </div>
@@ -109,34 +152,47 @@
     <div class="info_nav">
         <ul>
             <li type="none"><a href="">London </a></li>
-            <li type="none"> <a href="">Paris</a></li>
-            <li type="none"> <a href="">Tokyo</a></li>
-            <li type="none"> <a href="">China</a></li>
+            <li type="none"><a href="">Paris</a></li>
+            <li type="none"><a href="">Tokyo</a></li>
+            <li type="none"><a href="">China</a></li>
             <li type="none"><a href="">Chengdu </a></li>
-            <li type="none"> <a href="">Beijing</a></li>
-            <li type="none"> <a href="">Xian</a></li>
-            <li type="none"> <a href="">Shuangliu</a></li>
+            <li type="none"><a href="">Beijing</a></li>
+            <li type="none"><a href="">Xian</a></li>
+            <li type="none"><a href="">Shuangliu</a></li>
             <li type="none"><a href="">Newyork </a></li>
-            <li type="none"> <a href="">Canada</a></li>
-            <li type="none"> <a href="">Tokyo</a></li>
-            <li type="none"> <a href="">Brisban</a></li>
+            <li type="none"><a href="">Canada</a></li>
+            <li type="none"><a href="">Tokyo</a></li>
+            <li type="none"><a href="">Brisban</a></li>
             <li type="none"><a href="">Sydney </a></li>
-            <li type="none"> <a href="">Melbourne</a></li>
-            <li type="none"> <a href="">Xinjiang</a></li>
+            <li type="none"><a href="">Melbourne</a></li>
+            <li type="none"><a href="">Xinjiang</a></li>
         </ul>
 
 
     </div>
     <div class="content">
 
+
+        <div class="content_left">
+            <p class="city">London</p><br>
+            <p>London is the capital city of England.It
+                is the most populous city in the United Kingdom,with a
+                metropolitan area of over 13 million inhabitans. </p><br>
+            <p>Standing on the River Thames, London has been a major
+                settlement for two millennia, its history going back to its
+                founding by the Romans,who named it Londinium</p>
+        </div>
+
+        <div class="content_right">
+            <img class="img_insert" src="../WechatIMG2.jpeg" width="200px" height="200px" ;>
+        </div>
     </div>
 </nav>
 
-<article>
-
-</article>
 <footer>
-    <div class="footer_info"></div>
+    <div class="footer_info">
+        <p>Copyright? W3Schools.com</p>
+    </div>
 
 </footer>
 
