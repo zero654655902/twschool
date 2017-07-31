@@ -18,9 +18,11 @@
       <file leaf-file-name="uml_testing.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/uml_testing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="1290">
+              <caret line="86" column="8" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
+              <folding>
+                <element signature="n#style#0;n#textarea#0;n#p#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,7 +55,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="682" />
+    <option name="x" value="408" />
+    <option name="y" value="54" />
     <option name="width" value="1311" />
     <option name="height" value="833" />
   </component>
@@ -522,15 +525,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1501469546071</updated>
-      <workItem from="1501469547322" duration="3868000" />
+      <workItem from="1501469547322" duration="5263000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3868000" />
+    <option name="totallyTimeSpent" value="5263000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="682" y="0" width="1311" height="833" extended-state="0" />
+    <frame x="408" y="54" width="1311" height="833" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -576,9 +579,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/uml_testing.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="1290">
+          <caret line="86" column="8" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#p#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
