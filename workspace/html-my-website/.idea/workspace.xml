@@ -15,8 +15,8 @@
       <file leaf-file-name="myweb.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/myweb.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+            <state relative-caret-position="187">
+              <caret line="125" column="13" lean-forward="true" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -52,8 +52,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="110" />
-    <option name="y" value="67" />
+    <option name="x" value="401" />
+    <option name="y" value="52" />
     <option name="width" value="1280" />
     <option name="height" value="658" />
   </component>
@@ -532,15 +532,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1501487785039</updated>
-      <workItem from="1501487786167" duration="7361000" />
+      <workItem from="1501487786167" duration="8496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7361000" />
+    <option name="totallyTimeSpent" value="8496000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="110" y="67" width="1280" height="658" extended-state="0" />
+    <frame x="401" y="52" width="1280" height="658" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -594,8 +594,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/myweb.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+        <state relative-caret-position="187">
+          <caret line="125" column="13" lean-forward="true" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
