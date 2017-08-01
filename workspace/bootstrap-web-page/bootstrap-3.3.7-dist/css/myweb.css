@@ -18,7 +18,7 @@
 }
 
 #keyFeature {
-    background-color: #2b542c;
+    background-color: white;
     height: 400px;
 }
 
@@ -69,7 +69,8 @@
 }
 
 #signUp {
-    background-image: url("../../mountain-star-min-mobile.png")
+    background-image: url("../../mountain-star-min-mobile.png");
+    background-size: cover;
 }
 
 #p1 {
@@ -88,11 +89,12 @@
 #a1 {
     color: white;
     display: inline-block;
-    border: 1px white solid;
+    border: 3px white solid;
     font-size: 30px;
     border-radius: 2px;
     padding: 8px;
-    margin-left: 40%;
+    margin-left: 20px;
+    margin-right: 20px;
     text-decoration: none;
 }
 
@@ -100,12 +102,17 @@
 #a2 {
     color: white;
     display: inline-block;
-    border: 1px white solid;
+    border: 3px white solid;
     font-size: 30px;
     border-radius: 2px;
     padding: 8px;
-    margin-left:20px;
+    /*margin-left:20px;*/
     text-decoration: none;
 }
+
+#section-feature{text-align: center; padding-top: 70px; font-size: 35px; color:#9d9d9d; }
+img{margin-top: 20px; width: 80px; margin-bottom: 20px; margin-left: 40%;}
+h5{text-align: center; color: #9d9d9d}
+p{text-align: center;}
 
 
