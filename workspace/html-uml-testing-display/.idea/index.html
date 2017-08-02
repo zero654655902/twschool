@@ -46,100 +46,124 @@
     </style>
 </head>
 <body>
-<h2>统一建模语言理论测试</h2>
-<div>
+<form>
+    <h2>统一建模语言理论测试</h2>
+    <div>
 
-    <table>
-        <tr>
-            <td>考试科目：</td>
-            <td>统一建模语言</td>
-            <td>时间</td>
-            <td>100分钟</td>
-            <td>得分：</td>
-            <td>100</td>
+        <table>
+            <tr>
+                <td>考试科目：</td>
+                <td>统一建模语言</td>
+                <td>时间</td>
+                <td>100分钟</td>
+                <td>得分：</td>
+                <td>100</td>
 
-        </tr>
-        <tr>
-            <td> 班级：</td>
-            <td><input class="fill_vacancy" type="text" value="1班"></td>
-            <td> 学号：</td>
-            <td><input class="fill_vacancy" type="text" value="1班"></td>
-            <td>姓名：</td>
-            <td><input class="fill_vacancy" type="text" value="王小闹"></td>
-        </tr>
-    </table>
+            </tr>
+            <tr>
+                <td> 班级：</td>
+                <td><input class="fill_vacancy" type="text" value="1班" name="classNum"></td>
+                <td> 学号：</td>
+                <td><input class="fill_vacancy" type="text" value="1班" name="stuId"></td>
+                <td>姓名：</td>
+                <td><input class="fill_vacancy" type="text" value="王小闹" name="stuName"></td>
+            </tr>
+        </table>
 
-</div>
+    </div>
+    <h3>一、填空题 （每空5分，共20分）</h3>
+    <div>
+        <p>
+            1.UML的中文全称是：
+            <input class="fill_vacancy" type="text" name="1.1" value="统一建模语言"><br>
+            2.对象最突出的特征是：
+            <input class="fill_vacancy" type="text" name="1.2.1" value="封装性">
+            <input class="fill_vacancy" type="text" name="1.2.2" value="继承性">
+            <input class="fill_vacancy" type="text" name="1.2.3" value="多态性">
+        </p>
+    </div>
 
-<h3>一、填空题 （每空5分，共20分）</h3>
-<div>
-    <p>
-        1.UML的中文全称是：<input class="fill_vacancy" type="text" value="统一建模语言"><br>
-        2.对象最突出的特征是：<input class="fill_vacancy" type="text" value="封装性">
-        <input class="fill_vacancy" type="text" value="继承性">
-        <input class="fill_vacancy" type="text" value="多态性">
-    </p>
-</div>
+    <h3>二、选择题 （每空10分，共20分）</h3>
+    <div>
+        <span>1.UML与软件工程的关系是：<br></span>
+        <ul>
+            <li type="none"><input type="radio" name="2,1" value="A">(A)UML就是软件工程<br></li>
+            <li type="none"><input type="radio" name="2.1" value="B" checked>(B)UML参与到软件工程中软件开发过程的几个阶段</li>
+            <li type="none"><input type="radio" name="2.1" value="C">(C)UML与软件工程无关</li>
+            <li type="none"><input type="radio" name="2.1" value="D">(D)UML是软件工程的一部分<br></li>
+        </ul>
 
-<h3>二、选择题 （每空10分，共20分）</h3>
-<div>
-    <span>1.UML与软件工程的关系是：<br></span>
-    <ul>
-        <li type="none"><input type="radio">(A)UML就是软件工程<br></li>
-        <li type="none"><input type="radio" name="2.1" checked>(B)UML参与到软件工程中软件开发过程的几个阶段</li>
-        <li type="none"><input type="radio" name="2.1">(C)UML与软件工程无关</li>
-        <li type="none"><input type="radio" name="2.1">(D)UML是软件工程的一部分<br></li>
-    </ul>
+        <span>2.Java语言支持：<br></span>
+        <ul>
+            <li type="none"><input type="radio" name="2.2" value="A" checked>(A)单继承<br></li>
+            <li type="none"><input type="radio" name="2.2" value="B">(B)多继承<br></li>
+            <li type="none"><input type="radio" name="2.2" value="C">(C)单继承和多继承都支持<br></li>
+            <li type="none"><input type="radio" name="2.2" value="D">(D)单继承和多继承都不支持</li>
+        </ul>
+    </div>
 
-    <span>2.Java语言支持：<br></span>
-    <ul>
-        <li type="none"><input type="radio" name="2.2" checked>(A)单继承<br></li>
-        <li type="none"><input type="radio" name="2.2">(B)多继承<br></li>
-        <li type="none"><input type="radio" name="2.2">(C)单继承和多继承都支持<br></li>
-        <li type="none"><input type="radio" name="2.2">(D)单继承和多继承都不支持</li>
-    </ul>
-</div>
+    <h3>三、多选题 （每题10分，共20分）</h3>
+    <div>
+        <span>1.用例的粒度分为以下哪三种：<br></span>
+        <ul>
+            <li type="none"><input type="checkbox" name="3.1.1" value="A" checked>(A)概述级</li>
+            <li type="none"><input type="checkbox" name="3.1.2" value="B"checked>(B)需求级</li>
+            <li type="none"><input type="checkbox" name="3.1.3" value="C">(C)用户目标级</li>
+            <li type="none"><input type="checkbox" name="3.1.4" value="D" checked>(D)子功能级</li>
+        </ul>
 
+        <span>2.类图由以下哪三部分组成：<br></span>
+        <ul>
+            <li type="none"><input type="checkbox" name="3.2.1" value="A" checked>(A)名称(Name)</li>
+            <li type="none"><input type="checkbox" name="3.2.2" value="B" checked>(B)属性(Attribute)</li>
+            <li type="none"><input type="checkbox" name="3.2.3" value="C" checked>(C)操作(Operation)</li>
+            <li type="none"><input type="checkbox" name="3.2.4" value="D">(D)方法(Function)</li>
+        </ul>
 
-<h3>三、多选题 （每题10分，共20分）</h3>
-<div>
-    <span>1.用例的粒度分为以下哪三种：<br></span>
-    <ul>
-        <li type="none"><input type="checkbox" checked>(A)概述级</li>
-        <li type="none"><input type="checkbox" checked>(B)需求级</li>
-        <li type="none"><input type="checkbox">(C)用户目标级</li>
-        <li type="none"><input type="checkbox" checked>(D)子功能级</li>
-    </ul>
+    </div>
 
-    <span>2.类图由以下哪三部分组成：<br></span>
-    <ul>
-        <li type="none"><input type="checkbox" checked>(A)名称(Name)</li>
-        <li type="none"><input type="checkbox" checked>(B)属性(Attribute)</li>
-        <li type="none"><input type="checkbox" checked>(C)操作(Operation)</li>
-        <li type="none"><input type="checkbox">(D)方法(Function)</li>
-    </ul>
+    <h3>四、判断题 （每题10分，共20分）</h3>
+    <div>
 
-</div>
+        <label> 1.用例图只是用于和客户交流和沟通的，用于确定需求。
+            <input type="radio" name="4.1" value="√">&#8730
+            <input type="radio" name="4.1" value="×" checked>&#215</label><br>
+        <label>2.在状态图中，终止状态在一个状态图中允许有任意多个。
 
+            <input type="radio" name="4.2" value="√" checked>&#8730
+            <input type="radio" name="4.2" value="×" >&#215<br></label>
+    </div>
 
-<h3>四、判断题 （每题10分，共20分）</h3>
-<div>
-
-    <label> 1.用例图只是用于和客户交流和沟通的，用于确定需求。
-        <input type="radio">&#8730
-        <input type="radio" checked>&#215</label><br>
-    <label>2.在状态图中，终止状态在一个状态图中允许有任意多个。
-
-        <input type="radio" checked>&#8730
-        <input type="radio">&#215<br></label>
-</div>
-
-<h3>五、简答题 （每题20分，共20分）</h3>
-<div>
-    <p>1.简述什么是模型以及模型的表现形式？</p>
-    <textarea class="short_answer">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形，或者是一种数学表达式。
+    <h3>五、简答题 （每题20分，共20分）</h3>
+    <div>
+        <p>1.简述什么是模型以及模型的表现形式？</p>
+        <textarea class="short_answer" name="5.1">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形，或者是一种数学表达式。
     </textarea><br>
-</div>
-<input class="score" type="button" value="计算分数">
+    </div>
+    <input class="score" type="button" value="计算分数">
+</form>
 </body>
+
+<!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js" ></script>-->
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".score").click(function () {
+
+//
+//            var txt = $(".short_answer").val();
+//            console.log(txt);
+
+//           var fill_vacancy=$(".fill_vacancy").text();
+//           alert(fill_vacancy);
+            console.log($('form').serializeArray());
+
+//alert($(".fill_vacany").text());
+//            alert("Text:" + $(".short_answer").val());
+//
+        });
+
+    })
+</script>
+
 </html>
