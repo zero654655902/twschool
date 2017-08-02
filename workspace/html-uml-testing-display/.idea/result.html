@@ -5,9 +5,77 @@
     <title>Title</title>
 </head>
 <body>
-hhh
+<table>
+    <tr>
+        <td> 班级：</td>
+        <td id="classNum"></td>
+        <td> 学号：</td>
+        <td id="stuId"></td>
+        <td>姓名：</td>
+        <td id="stuName"></td>
+        <td>E-mail：</td>
+        <td id="email"></td>
+        <td>ID Card：</td>
+        <td id="idCard"></td>
+    </tr>
+</table>
+
+</div>
+<h3>一、填空题 （每空5分，共20分）</h3>
+<div>
+    <span>第1题：</span><span id="1_1"></span><br>
+    <span>第2题：</span>
+    <span id="1_2_1"> </span>
+    <span id="1_2_2"> </span>
+    <span id="1_2_3"> </span>
+
+</div>
+
+<h3>二、选择题 （每空10分，共20分）</h3>
+<div>
+    <span>第1题：</span> <span id="2_1"></span><br>
+    <span>第2题：</span> <span id="2_2"></span>
+
+</div>
+
+<h3>三、多选题 （每题10分，共20分）</h3>
+<div>
+    <span>第1题：</span><span id="3_1_1"> </span>
+    <span id="3_1_2"> </span>
+    <span id="3_1_3"> </span>
+    <span id="3_1_4"> </span><br>
+
+    <span>第2题：</span><span id="3_2_1"> </span>
+    <span id="3_2_2"> </span>
+    <span id="3_2_3"> </span>
+    <span id="3_2_4"> </span><br>
+</div>
+
+<h3>四、判断题 （每题10分，共20分）</h3>
+<div>
+    <span>第1题：</span> <span id="4_1"></span><br>
+    <span>第2题：</span><span id="4_2"></span>
+
+
+</div>
+
+<h3>五、简答题 （每题20分，共20分）</h3>
+
+<p id="5_1"></p>
+
 
 </body>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
 
+    var data = localStorage.getItem('data');
+    var reault = JSON.parse(data);
+    for (let i = 0; i < reault.length; ++i) {
+        var id = '' + "#" + reault[i].name;
+        $(id).html(reault[i].value);
+    }
 
+//    console.log(reault);
+
+</script>
 </html>
