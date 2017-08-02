@@ -15,8 +15,8 @@
       <file leaf-file-name="myweb.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bootstrap-3.3.7-dist/myweb.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+            <state relative-caret-position="178">
+              <caret line="102" column="36" lean-forward="false" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -25,8 +25,18 @@
       <file leaf-file-name="myweb.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bootstrap-3.3.7-dist/css/myweb.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="133" column="72" lean-forward="false" selection-start-line="133" selection-start-column="72" selection-end-line="133" selection-end-column="72" />
+            <state relative-caret-position="223">
+              <caret line="216" column="20" lean-forward="false" selection-start-line="216" selection-start-column="20" selection-end-line="216" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bootstrap-3.3.7-dist/css/bootstrap.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="4100" column="1" lean-forward="true" selection-start-line="4100" selection-start-column="1" selection-end-line="4100" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -42,6 +52,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>nav-</find>
+      <find>nav-pills</find>
+    </findStrings>
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -50,6 +66,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/bootstrap-3.3.7-dist/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/bootstrap-3.3.7-dist/myweb.html" />
         <option value="$PROJECT_DIR$/bootstrap-3.3.7-dist/css/myweb.css" />
       </list>
@@ -62,7 +79,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="477" />
+    <option name="x" value="206" />
+    <option name="y" value="49" />
     <option name="width" value="1440" />
     <option name="height" value="830" />
   </component>
@@ -107,6 +125,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bootstrap-3.3.7-dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-web-page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-web-page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-3.3.7-dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,15 +587,15 @@
       <updated>1501571579849</updated>
       <workItem from="1501571582361" duration="10565000" />
       <workItem from="1501591899861" duration="6761000" />
-      <workItem from="1501634692621" duration="4912000" />
+      <workItem from="1501634692621" duration="10497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22238000" />
+    <option name="totallyTimeSpent" value="27823000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="477" y="0" width="1440" height="830" extended-state="0" />
+    <frame x="206" y="49" width="1440" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -686,18 +722,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap-3.3.7-dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="4100" column="1" lean-forward="true" selection-start-line="4100" selection-start-column="1" selection-end-line="4100" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap-3.3.7-dist/myweb.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+        <state relative-caret-position="178">
+          <caret line="102" column="36" lean-forward="false" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap-3.3.7-dist/css/myweb.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="133" column="72" lean-forward="false" selection-start-line="133" selection-start-column="72" selection-end-line="133" selection-end-column="72" />
+        <state relative-caret-position="223">
+          <caret line="216" column="20" lean-forward="false" selection-start-line="216" selection-start-column="20" selection-end-line="216" selection-end-column="20" />
           <folding />
         </state>
       </provider>
