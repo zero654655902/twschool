@@ -23,8 +23,8 @@
 }
 
 #serviceIntroduce {
-    background-color:#2aabd2;
-    height: 400px;
+    background-color:#cccccc;
+
 }
 
 #footer {
@@ -33,17 +33,19 @@
 }
 
 #nav_logo {
-    width: 20%;
+    width: 50%;
     background-color: #0f0f0f;
 
     box-sizing: border-box;
 }
 
 #nav_right {
-    width: 80%;
+    width: 50%;
     background-color: #0f0f0f;
     box-sizing: border-box;
 }
+
+/*#nav_right ul li a :hover{background-color: #2b542c}*/
 
 #nav_logo img {
     margin-left: 30px;
@@ -67,6 +69,8 @@
     color: white;
     font-size: 16px;
     margin-top: 30px;
+    margin-bottom: 30px;
+    /*line-height: 1.5em;*/
 }
 
 #signUp {
@@ -77,8 +81,9 @@
 #p1 {
     font-size: 100px;
     color: white;
+    font-weight: bold;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 110px;
 }
 
 #p2 {
@@ -114,16 +119,20 @@
 
 
 img{margin-top: 20px; width: 80px; margin-bottom: 20px; margin-left: 40%;}
-h5{text-align: center; color: #9d9d9d}
+
+h5{ color: #9d9d9d; text-align: center;}
 p{text-align: center; margin-bottom: 100px;}
 h2{text-align: center; padding-top: 50px;color: #9d9d9d;padding-bottom: 40px;}
 
 .content{ text-align: center; border: 1px white solid; border-radius:2px;  width: 60%; background-color: white; padding: 10px; margin: auto;}
 
-#serviceIntroduce img{display: inline-block;float: left; width: 80px; height: 80px;}
-#serviceIntroduce h5{display: inline-block; float:left;}
-#serviceIntroduce p{display: inline-block; float:left;}
+#serviceIntroduce img{display: inline-block;float: left; width: 80px; height: 80px; border-radius: 50%; margin-left: 100px;}
+#serviceIntroduce p{display: inline-block; float:left; margin-left: 20px; margin-top: 40px; }
+/*#serviceIntroduce h5{ margin-left: 20px; margin-top: 40px; }*/
 
+#serviceIntroduce span{display: block; }
+#serviceIntroduce h4{ color:black; padding-top: 20px; padding-right: 120px;}
+#serviceIntroduce h5{ color:#9d9d9d;padding-right: 120px; }
 #footer span{text-align: center;}
 #footer img{margin-left: 47%;}
 #footer p{color: #9d9d9d;font-size: 18px;}
