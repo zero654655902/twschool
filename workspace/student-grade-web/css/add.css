@@ -70,6 +70,9 @@ table{
     font-size: 40px;
 }
 
+table tr td{
+    padding-bottom: 20px;
+}
 
 #addStu{ margin-top: 20px; margin-left: 47%; font-size: 40px; border-radius: 3px;}
 
