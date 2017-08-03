@@ -26,7 +26,9 @@ $(function () {
         var all_data=$('#student_message').serializeArray();
 
         let data=JSON.stringify(all_data);
-        console.log(data);
+         console.log(data);
+      localStorage.setItem("data",data);
+        alert("添加成功");
 
     });
 
