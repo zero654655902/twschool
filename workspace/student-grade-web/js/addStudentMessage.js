@@ -20,12 +20,13 @@ $(function () {
         }
     });
 
-    $('#addStu').submit(function () {
+    $('#student_message').submit(function () {
         event.preventDefault();
 
         var all_data=$('#student_message').serializeArray();
-        console.log(all_data);
+
         let data=JSON.stringify(all_data);
+        console.log(data);
 
     });
 
