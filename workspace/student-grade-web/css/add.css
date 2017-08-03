@@ -64,6 +64,13 @@
     color: #9d9d9d;
 }
 
+table{
+    margin-top: 200px;
+    margin-left: 400px;
+    font-size: 40px;
+}
+
+#addStu{ margin-top: 20px; margin-left: 47%; font-size: 40px; border-radius: 3px;}
 
 #footer h1{
     text-align: center;
