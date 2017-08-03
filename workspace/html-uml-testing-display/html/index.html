@@ -46,7 +46,7 @@
     </style>
 </head>
 <body>
-<form>
+<form id="commentForm">
     <h2>统一建模语言理论测试</h2>
     <div>
 
@@ -62,15 +62,15 @@
             </tr>
             <tr>
                 <td> 班级：</td>
-                <td><input class="fill_vacancy" type="text" value="1班" name="classNum"></td>
+                <td><input id="classNum" type="text"  name="classNum" required></td>
                 <td> 学号：</td>
-                <td><input class="fill_vacancy" type="text" value="0234" name="stuId"></td>
+                <td><input class="fill_vacancy" type="text" name="stuId" required></td>
                 <td>姓名：</td>
-                <td><input class="fill_vacancy" type="text" value="王小闹" name="stuName"></td>
+                <td><input class="fill_vacancy" type="text"  name="stuName" required></td>
                 <td>E-mail：</td>
-                <td><input class="fill_vacancy" type="text" value="1234@qq.cpm" name="email"></td>
+                <td><input class="fill_vacancy" type="text"  name="email" required></td>
                 <td>ID Card：</td>
-                <td><input class="fill_vacancy" type="text" value="12345" name="idCard"></td>
+                <td><input class="fill_vacancy" type="text"  name="idCard" required></td>
             </tr>
         </table>
 
@@ -144,33 +144,52 @@
         <textarea class="short_answer" name="5_1">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形，或者是一种数学表达式。
     </textarea><br>
     </div>
-    <input class="score" type="button" value="计算分数">
+    <input class="score" type="submit" value="计算分数">
 </form>
 </body>
 
 <!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js" ></script>-->
 <script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/jquery.validate.min.js"></script>
+<script src="../js/check.js"></script>
 <script>
-    $(document).ready(function () {
-        $(".score").click(function () {
-            var all_data = $('form').serializeArray();
-            let data = JSON.stringify(all_data);
-            console.log(data);
-            localStorage.setItem("data", data);
+//    $(document).ready(function () {
+//        $(".score").click(function () {
+//            var all_data = $('form').serializeArray();
+//            let data = JSON.stringify(all_data);
+//            console.log(data);
+//            localStorage.setItem("data", data);
+//
+//
+////console.log(all_data);
+////console.log(all_data[1]);
+////console.log(all_data[1].name);
+////console.log(all_data[1].value);
+////console.log(all_data.length);
+//
+//            location.href = "result.html";
+//
+//
+//
+//        });
+//        $().ready(function () {
+//            $("#commentForm").validate();
+//        })
+//        $.validator.setDefaults({
+//            submitHandler:function () {
+//                alert("tijiao");
+//
+//            }
+//        });
 
-
-//console.log(all_data);
-//console.log(all_data[1]);
-//console.log(all_data[1].name);
-//console.log(all_data[1].value);
-//console.log(all_data.length);
-
-            location.href = "result.html";
-
-
-        });
-
-    })
+//        $(".score").validate({
+////            showErrors:function (errorMap,errorLIst) {
+////
+////            }
+//
+//        });
+//
+//    })
 </script>
 
 </html>
