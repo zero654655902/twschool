@@ -15,55 +15,55 @@
         <div class="col-md-6" id="logo_homePage">
             <!--<img src="../img/avatar.jpeg">-->
             <img src="../../img/Homepage_Optimization_96px_1142006_easyicon.net.png">
-            <a> HomePage</a>
-
+            <a href="../index.html">  HomePage</a>
         </div>
         <div class="col-md-6" id="nav_right">
             <!--<ul class=" nav nav-pills col-md-offset-6">-->
             <ul>
-                <li type="none"><a href="">add</a></li>
-                <li type="none"><a href="">search</a></li>
-                <li type="none"><a href="">report</a></li>
+                <li type="none"><a href="addStudent.html">add</a></li>
+                <li type="none"><a href="search.html">search</a></li>
+                <li type="none"><a href="report.html">report</a></li>
             </ul>
         </div>
     </div>
+    <form id="student_message">
 
     <div class="row" id="content">
         <div class="col-md-12" id="prompt">学生信息录入</div>
         <div class="col-md-12" id="name">
             <table>
                 <tr>
-                    <td>name:</td>
+                    <td>姓名:</td>
 
                     <td>
                         <input  id="stuName" type="text" name="stuName" required>
                     </td>
                 </tr>
                 <tr>
-                    <td>email:</td>
+                    <td>邮箱:</td>
 
                     <td>
-                        <input  id="email" type="text" name="email" required>
+                        <input  id="email" type="email" name="email" required>
                     </td>
                 </tr>
                 <tr>
-                    <td>phone:</td>
+                    <td>电话:</td>
 
                     <td>
-                        <input  id="phone_number" type="text" name="phone_name" required>
+                        <input  id="phone_number" type="tel" name="phone_name" required>
                     </td>
                 </tr>
 
 
                 <tr>
-                    <td>IdCard:</td>
+                    <td>身份证:</td>
 
                     <td>
                         <input  id="IdCard" type="text" name="IdCard" required>
                     </td>
                 </tr>
                 <tr>
-                    <td>city:</td>
+                    <td>城市:</td>
 
                     <td>
                         <input  id="city" type="text" name="city" required>
@@ -77,6 +77,7 @@
         </div>
 
     </div>
+    </form>
 
     <div class="row" id="footer">
         <div>
@@ -87,5 +88,7 @@
 
 </body>
 <script src="../../js/vender/jquery-3.2.1.min.js"></script>
+<script src="../../js/addStudentMessage.js"></script>
+<script src="../../js/vender/jquery.validate.min.js"></script>
 
 </html>
