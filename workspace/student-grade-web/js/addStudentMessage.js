@@ -2,6 +2,7 @@
  * Created by lwan on 03/08/2017.
  */
 
+var studentMessage=[];
 $(function () {
     $('#student_message').validate({
         rules: {
@@ -25,9 +26,14 @@ $(function () {
 
         var all_data=$('#student_message').serializeArray();
 
-        let data=JSON.stringify(all_data);
+        // let data=JSON.stringify(all_data);
+        studentMessage.push(all_data);
+        let data=JSON.stringify(studentMessage);
          console.log(data);
-      localStorage.setItem("data",data);
+         // console.log(studentMessage);
+      // localStorage.setItem("data",data);
+      //   localStorage.setItem("data",studentMessage);
+        localStorage.setItem("data",data);
         alert("添加成功");
 
     });
