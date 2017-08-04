@@ -29,17 +29,17 @@ public class HelloController {
         return employee;
     }
 //
-//    @RequestMapping(value = "/employee/id",method = RequestMethod.GET)
+//    @RequestMapping(value = "/employee/{id}",method = RequestMethod.GET)
 //    public Map<String,Employee> getAllEmployee(){
 //        return employees;
 //    }
 
-//    @RequestMapping(value = "/employee/id",method = RequestMethod.PUT)
-//    public Employee modifyEmployeeById(@PathVariable String id){
-//        Employee employee=employees.get(id);
-//        employee.setId("002");
-//        return employee;
-//    }
+    @RequestMapping(value = "/employee/{id}",method = RequestMethod.PUT)
+    public Employee modifyEmployeeById(@PathVariable String id){
+        Employee employee=employees.get(id);
+        employee.setId("002");
+        return employee;
+    }
 
     }
 
