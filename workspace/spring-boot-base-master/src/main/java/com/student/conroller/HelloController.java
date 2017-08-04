@@ -2,10 +2,7 @@ package com.student.conroller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +23,25 @@ public class HelloController {
         return new ResponseEntity<Employee>(employee,HttpStatus.CREATED);
     }
 
+    @RequestMapping(value = "/employee/{id}",method = RequestMethod.GET)
+    public Employee getEmployeeById(@PathVariable String id){
+        Employee employee=employees.get(id);
+        return employee;
+    }
+//
+//    @RequestMapping(value = "/employee/id",method = RequestMethod.GET)
+//    public Map<String,Employee> getAllEmployee(){
+//        return employees;
+//    }
+
+//    @RequestMapping(value = "/employee/id",method = RequestMethod.PUT)
+//    public Employee modifyEmployeeById(@PathVariable String id){
+//        Employee employee=employees.get(id);
+//        employee.setId("002");
+//        return employee;
+//    }
+
+    }
 
 
 
-}
