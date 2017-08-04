@@ -35,10 +35,16 @@ public class HelloController {
 //    }
 
     @RequestMapping(value = "/employee/{id}",method = RequestMethod.PUT)
-    public Employee modifyEmployeeById(@PathVariable String id){
-        Employee employee=employees.get(id);
+    public Employee modifyEmployeeById(@PathVariable String id, @RequestBody Employee employee){
+        employee=employees.get(id);
         employee.setId("002");
         return employee;
+    }
+
+    @RequestMapping(value = "/employee/{id}",method = RequestMethod.DELETE)
+    public Map<String, Employee> deleteEmployeeById(@PathVariable String id){
+        employees.remove("001");
+        return employees;
     }
 
     }
