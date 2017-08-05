@@ -11,7 +11,7 @@ public class Menu {
     ScoreManage scoreManage = new ScoreManage();
     private StudentScoreService studentScoreService = new StudentScoreService(kclass, scoreManage);
 
-    private pringStudentMassege psm = new pringStudentMassege();
+//    private pringStudentMassege psm = new pringStudentMassege();
     private ScoreManage sm = new ScoreManage();
 
 
@@ -73,13 +73,13 @@ public class Menu {
                 Kclass kclass = studentScoreService.getkclass();
                 List<Student> students = kclass.getTotalStudent();
                 String[] ids = sp.processId(strInput);
-                students=studentScoreService.getScoreManage().getIdStudent(students, ids);
-                String result=psm.printStuMessage(students);
-                int totalScore=studentScoreService.getScoreManage().calculateTotal(students);
-                int middleScore=studentScoreService.getScoreManage().calculateMiddleScore(students);
-                System.out.println(result);
-                System.out.println("全班总分平均分"+totalScore);
-                System.out.println("全部总分中位数"+middleScore);
+//                students=studentScoreService.getScoreManage().getIdStudent(students, ids);
+//                String result=psm.printStuMessage(students);
+//                int totalScore=studentScoreService.getScoreManage().calculateTotal(students);
+//                int middleScore=studentScoreService.getScoreManage().calculateMiddleScore(students);
+//                System.out.println(result);
+//                System.out.println("全班总分平均分"+totalScore);
+//                System.out.println("全部总分中位数"+middleScore);
 
             }
         }

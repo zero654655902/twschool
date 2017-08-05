@@ -1,3 +1,4 @@
+import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -29,6 +30,31 @@ public class KclassTest {
         assertEquals(3, _class.getTotalStudent().size());
 
 
+    }
+
+
+    @Test
+    public void should_get_2_when_2_id() {
+        Kclass _class = new Kclass();
+        Student student1 = new Student("张三", "1200", 75, 95, 80, 80);
+        Student student2 = new Student("李四", "1201", 75, 95, 80, 80);
+        Student student3 = new Student("王五", "1202", 75, 95, 80, 80);
+        _class.addStudentMessage(student1);
+        _class.addStudentMessage(student2);
+        _class.addStudentMessage(student3);
+
+        String[] id = {"1201", "1202"};
+
+        List<Student> idStudent = new ArrayList<Student>();
+        //when
+        idStudent = _class.getStudentById(id);
+
+        int average = _class.getCalculateMiddleScore(idStudent);
+        int totalScore = _class.getStudentTotalScore(idStudent);
+        //Then
+
+        assertEquals(330, average);
+        assertEquals(330, totalScore);
     }
 
 }

@@ -18,10 +18,6 @@ public class strParse {
         }
 
         return  null;
-
-
-
-
     }
 
     public boolean isStudentMassegeFormatCorrect(String studentMessage){

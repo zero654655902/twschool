@@ -8,8 +8,7 @@ public class Student {
     private final int coding;
     private final String name;
     private final String id;
-    private double average = 0;
-    private int totalScore = 0;
+
 
 
     public Student(String name, String id, int math, int chinese, int english, int coding) {
@@ -22,11 +21,16 @@ public class Student {
 
     }
 
-    public void calculateScore() {
-        this.totalScore = this.chinese + this.math + this.coding + this.english;
-        this.average = (this.chinese + this.math + this.coding + this.english) / 4.0;
-
+    public int getTotalScore(){
+        int totalScore=this.chinese + this.math + this.coding + this.english;
+        return totalScore;
     }
+
+    public double getAverage(){
+        double averageScore=getTotalScore()/4.0;
+        return averageScore;
+    }
+
 
     public int getMath() {
         return this.math;
@@ -52,13 +56,6 @@ public class Student {
         return this.id;
     }
 
-    public double getAverage() {
-        return this.average;
-    }
-
-    public int getTotalScore() {
-        return this.totalScore;
-    }
 
     @Override
     public boolean equals(Object obj) {
