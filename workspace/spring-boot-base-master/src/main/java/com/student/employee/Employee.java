@@ -1,9 +1,12 @@
-package com.student.conroller;
+package com.student.employee;
 
 /**
  * Created by lwan on 04/08/2017.
  */
 public class Employee {
+    private String id;
+    private String name;
+    private int age;
     public void setId(String id) {
         this.id = id;
     }
@@ -28,9 +31,7 @@ public class Employee {
         return age;
     }
 
-    private String id;
-private String name;
-private int age;
+
 
 }
 
