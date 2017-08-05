@@ -67,7 +67,6 @@ get_all_stu = function () {
 
 show_all_stu_format=function(students)
 {
-    // console.log('2222');
     var strAllStudent=``;
     for(let i=0;i<students.length;++i){
         strAllStudent+=getStudentFormat(students[i]);
