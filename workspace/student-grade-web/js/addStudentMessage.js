@@ -1,7 +1,7 @@
 /**
  * Created by lwan on 03/08/2017.
  */
-
+var initId = 100;
 var studentMessage = [];
 $(function () {
     $('#student_message').validate({
@@ -27,20 +27,38 @@ $(function () {
 
     $('#student_message').submit(function () {
         event.preventDefault();
+    });
 
+    const get_stu_massege=function(){
         var all_data = $('#student_message').serializeArray();
+        initId++;
+        console.log(all_data);
+
+
+
+        let student=getStudent(initId,all_data);
+        console.log(student);
 
         // let data=JSON.stringify(all_data);
-        studentMessage.push(all_data);
+        studentMessage.push(student);
         let data = JSON.stringify(studentMessage);
         console.log(data);
         // console.log(studentMessage);
         // localStorage.setItem("data",data);
         //   localStorage.setItem("data",studentMessage);
         localStorage.setItem("data", data);
-        alert("添加成功");
+    }
 
-    });
+    const getStudent = function (initId,stuData) {
+       let student={};
+      student["id"]=initId.toString();
+        for (let attributes in stuData) {
+            student[stuData[attributes].name] = stuData[attributes].value;
+        }
+        return student;
+    }
+
+
 
 })
 
