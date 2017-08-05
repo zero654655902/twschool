@@ -6,32 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-//
-///**
-// * Created by lwan on 04/08/2017.
-// */
-//@RestController
-//public class EmployeeController {
-//
-//    @Autowired
-//
-//    EmployeeService employeeService;
-//
-//    @RequestMapping(value = "/employees",method = RequestMethod.POST)
-//    public ResponseEntity addEmployee(@RequestBody Employee employee){
-//        return new ResponseEntity<>((Employee) employeeService.addEmployee(employee), HttpStatus.CREATED);
-//    }
-//
-//}
 
-//package com.student.conroller;
-//
-//import com.employee.entity.Employee;
-//import com.student.service.EmployeeService;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
