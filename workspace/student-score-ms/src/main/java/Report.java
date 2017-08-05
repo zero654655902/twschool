@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 /**
  * Created by lwan on 27/07/2017.
  */
-public class ScoreManage {
+public class Report {
     public String getScoreMassege(List<Student> idStudent,int average,int totalScore) {
         StringBuilder studentItem = new StringBuilder();
         studentItem.append(Constants.infoStart);

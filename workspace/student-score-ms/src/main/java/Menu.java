@@ -8,11 +8,10 @@ public class Menu {
 
     private strParse sp = new strParse();
     Kclass kclass = new Kclass();
-    ScoreManage scoreManage = new ScoreManage();
-    private StudentScoreService studentScoreService = new StudentScoreService(kclass, scoreManage);
+    Report report = new Report();
+    private StudentScoreService studentScoreService = new StudentScoreService(kclass, report);
 
-    private ScoreManage sm = new ScoreManage();
-
+    private Report sm = new Report();
 
 
     private String status = Constants.MAIN_MENU_STATUS;
@@ -38,21 +37,22 @@ public class Menu {
         return scanner.nextLine();
     }
 
-    public void menu_status(){
+    public void menu_status() {
 
         System.out.println(Constants.menu);
-       String input=getInput();
-        if(input.matches("[1|2|3]"))
+        String input = getInput();
+        if (input.matches("[1|2|3]"))
             changeStatus(input);
     }
-//yiyi,111,数学:78,语文:89,英语:77,编程:99
+
+    //yiyi,111,数学:78,语文:89,英语:77,编程:99
     //erer,112,数学:78,语文:79,英语:77,编程:89
     //san,113,数学:77,语文:89,英语:77,编程:79
-    public void add_student_status(){
+    public void add_student_status() {
 
         System.out.println(Constants.studentPrompt);
         String strInput = getInput();
-        while ( !sp.isStudentMassegeFormatCorrect(strInput)) {
+        while (!sp.isStudentMassegeFormatCorrect(strInput)) {
             System.out.println(Constants.studentWarning);
             strInput = getInput();
         }
@@ -60,11 +60,11 @@ public class Menu {
         studentScoreService.getkclass().addStudentMessage(student);
         System.out.println(Constants.successNotice);
         strInput = getInput();
-        if(strInput.matches("[1|2|3]"))
+        if (strInput.matches("[1|2|3]"))
             changeStatus(strInput);
     }
 
-    public void add_id_status(){
+    public void add_id_status() {
 
         System.out.println(Constants.studentIdPrompt);
 //        String strInput = getInput();
@@ -77,11 +77,11 @@ public class Menu {
         Kclass kclass = studentScoreService.getkclass();
         List<Student> students = kclass.getTotalStudent();
         String[] ids = sp.processId(strInput);
-        students=studentScoreService.getkclass().getStudentById(ids);
-        int middleScore=studentScoreService.getkclass().getStudentTotalScore(students);
-        int totalScore=studentScoreService.getkclass().getStudentTotalScore(students);
-        String result=studentScoreService.getScoreManage().getScoreMassege(students,middleScore,totalScore);
-System.out.println(result);
+        students = studentScoreService.getkclass().getStudentById(ids);
+        int middleScore = studentScoreService.getkclass().getStudentTotalScore(students);
+        int totalScore = studentScoreService.getkclass().getStudentTotalScore(students);
+        String result = studentScoreService.getReport().getScoreMassege(students, middleScore, totalScore);
+        System.out.println(result);
     }
 
     public void appInterface() {
@@ -89,7 +89,7 @@ System.out.println(result);
         while (!this.status.equals(Constants.EXIT_APP_STATUS)) {
 
             if (this.status.equals(Constants.MAIN_MENU_STATUS)) {
-               menu_status();
+                menu_status();
             }
             if (this.status.equals(Constants.ADD_STUDENT_STATUS)) {
                 add_student_status();
@@ -103,8 +103,8 @@ System.out.println(result);
         System.exit(0);
     }
 
-    public static void main(String[] args){
-        Menu menu=new Menu();
+    public static void main(String[] args) {
+        Menu menu = new Menu();
         menu.appInterface();
     }
 }

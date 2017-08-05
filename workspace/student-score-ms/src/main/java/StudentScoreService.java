@@ -4,18 +4,18 @@
 public class StudentScoreService {
 //
     private static Kclass kclass = new Kclass();
-    private ScoreManage scoreManage = new ScoreManage();
+    private Report report = new Report();
 
 
-   public StudentScoreService(Kclass kclass, ScoreManage scoreManage) {
+   public StudentScoreService(Kclass kclass, Report report) {
        this.kclass = kclass;
-       this.scoreManage = scoreManage;
+       this.report = report;
    }
    public Kclass getkclass(){
        return this.kclass;
    }
-   public ScoreManage getScoreManage(){
-       return this.scoreManage;
+   public Report getReport(){
+       return this.report;
    }
 
 }

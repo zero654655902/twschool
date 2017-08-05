@@ -1,4 +1,3 @@
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ import static junit.framework.TestCase.assertEquals;
 /**
  * Created by lwan on 27/07/2017.
  */
-public class ScoreManageTest {
+public class ReportTest {
     @Test
     public void should_print_massege(){
         Kclass _class = new Kclass();
@@ -29,7 +28,7 @@ public class ScoreManageTest {
         int average = _class.getCalculateMiddleScore(idStudent);
         int totalScore = _class.getStudentTotalScore(idStudent);
         //Then
-        ScoreManage SM=new ScoreManage();
+        Report SM=new Report();
         String str=SM.getScoreMassege(idStudent,average,totalScore);
         String expect = "成绩单\n"
                 + "姓名|数学|语文|英语|编程|平均分|总分\n"
