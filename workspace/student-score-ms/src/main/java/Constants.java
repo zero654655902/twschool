@@ -3,7 +3,7 @@
  */
 public class Constants {
 
-    public static final String regex = "([^,]+),(\\w+),语文:(\\d+),数学:(\\d+),英语:(\\d+),编程:(\\d+)";
+    public static final String regex = "([^,]+),(\\w+),数学:(\\d+),语文:(\\d+),英语:(\\d+),编程:(\\d+)";
 
     public static final String infoStart = "成绩单\n姓名|数学|语文|英语|编程|平均分|总分\n========================\n";
     public static final String infoStudentScore = "%s|%s|%d|%d|%d|%.2f|%d\n";

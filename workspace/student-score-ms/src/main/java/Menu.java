@@ -11,7 +11,6 @@ public class Menu {
     ScoreManage scoreManage = new ScoreManage();
     private StudentScoreService studentScoreService = new StudentScoreService(kclass, scoreManage);
 
-//    private pringStudentMassege psm = new pringStudentMassege();
     private ScoreManage sm = new ScoreManage();
 
 
@@ -39,48 +38,65 @@ public class Menu {
         return scanner.nextLine();
     }
 
+    public void menu_status(){
+
+        System.out.println(Constants.menu);
+       String input=getInput();
+        if(input.matches("[1|2|3]"))
+            changeStatus(input);
+    }
+//yiyi,111,数学:78,语文:89,英语:77,编程:99
+    //erer,112,数学:78,语文:79,英语:77,编程:89
+    //san,113,数学:77,语文:89,英语:77,编程:79
+    public void add_student_status(){
+
+        System.out.println(Constants.studentPrompt);
+        String strInput = getInput();
+        while ( !sp.isStudentMassegeFormatCorrect(strInput)) {
+            System.out.println(Constants.studentWarning);
+            strInput = getInput();
+        }
+        Student student = sp.processMassege(strInput);
+        studentScoreService.getkclass().addStudentMessage(student);
+        System.out.println(Constants.successNotice);
+        strInput = getInput();
+        if(strInput.matches("[1|2|3]"))
+            changeStatus(strInput);
+    }
+
+    public void add_id_status(){
+
+        System.out.println(Constants.studentIdPrompt);
+//        String strInput = getInput();
+        String strInput = getInput();
+        while (!sp.isStudentIdFormateCorrect(strInput)) {
+            System.out.println(Constants.studentIdWarning);
+            strInput = getInput();
+        }
+
+        Kclass kclass = studentScoreService.getkclass();
+        List<Student> students = kclass.getTotalStudent();
+        String[] ids = sp.processId(strInput);
+        students=studentScoreService.getkclass().getStudentById(ids);
+        int middleScore=studentScoreService.getkclass().getStudentTotalScore(students);
+        int totalScore=studentScoreService.getkclass().getStudentTotalScore(students);
+        String result=studentScoreService.getScoreManage().getScoreMassege(students,middleScore,totalScore);
+System.out.println(result);
+    }
 
     public void appInterface() {
-        String strInput = "";
+
         while (!this.status.equals(Constants.EXIT_APP_STATUS)) {
+
             if (this.status.equals(Constants.MAIN_MENU_STATUS)) {
-                System.out.println(Constants.menu);
-                strInput = getInput();
-                if(strInput.matches("[1|2|3]"))
-                    changeStatus(strInput);
+               menu_status();
             }
             if (this.status.equals(Constants.ADD_STUDENT_STATUS)) {
-                System.out.println(Constants.studentPrompt);
-                strInput = getInput();
-                while ( !sp.isStudentMassegeFormatCorrect(strInput)) {
-                    System.out.println(Constants.studentWarning);
-                    strInput = getInput();
-                }
-                Student student = sp.processMassege(strInput);
-                studentScoreService.getkclass().addStudentMessage(student);
-                System.out.println(Constants.successNotice);
-                strInput = getInput();
-                if(strInput.matches("[1|2|3]"))
-                    changeStatus(strInput);
+                add_student_status();
+
             }
             if (this.status.equals(Constants.ADD_STUDENT_ID_STATUS)) {
-                System.out.println(Constants.studentIdPrompt);
-                strInput = getInput();
-                while (!sp.isStudentIdFormateCorrect(strInput)) {
-                    System.out.println(Constants.studentIdWarning);
-                    strInput = getInput();
-                }
-                Kclass kclass = studentScoreService.getkclass();
-                List<Student> students = kclass.getTotalStudent();
-                String[] ids = sp.processId(strInput);
-//                students=studentScoreService.getScoreManage().getIdStudent(students, ids);
-//                String result=psm.printStuMessage(students);
-//                int totalScore=studentScoreService.getScoreManage().calculateTotal(students);
-//                int middleScore=studentScoreService.getScoreManage().calculateMiddleScore(students);
-//                System.out.println(result);
-//                System.out.println("全班总分平均分"+totalScore);
-//                System.out.println("全部总分中位数"+middleScore);
-
+                add_id_status();
             }
         }
 
