@@ -1,4 +1,5 @@
 package com.student.service;
+import com.student.employee.Address;
 import com.student.employee.Employee;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +36,8 @@ public class EmployeeService {
     }
 
 
+
+
     public Employee modifyEmployeeById(String id) {
         Employee employee = new Employee();
         for (int i = 0; i < employees.size(); ++i) {
@@ -42,6 +45,10 @@ public class EmployeeService {
                 employee = employees.get(i);
                 employee.setId("003");
                 employee.setAge(24);
+                Address address=new Address();
+                address.setCity("chengdu");
+                address.setProvince("sichuan");
+                employee.setAddresses(address);
             }
         }
         return employee;
