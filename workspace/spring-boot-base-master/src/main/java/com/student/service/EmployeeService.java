@@ -38,17 +38,14 @@ public class EmployeeService {
 
 
 
-    public Employee modifyEmployeeById(String id) {
-        Employee employee = new Employee();
+    public Employee modifyEmployeeById(String id,Employee employee) {
         for (int i = 0; i < employees.size(); ++i) {
             if (id.equals(employees.get(i).getId())) {
-                employee = employees.get(i);
-                employee.setId("003");
-                employee.setAge(24);
-                Address address=new Address();
-                address.setCity("chengdu");
-                address.setProvince("sichuan");
-                employee.setAddresses(address);
+                Employee emp = employees.get(i);
+                emp.setId(employee.getId());
+                emp.setAge(employee.getAge());
+                emp.setName(employee.getName());
+               emp.setAddress(employee.getAddress());
             }
         }
         return employee;
@@ -56,7 +53,7 @@ public class EmployeeService {
     }
 
     public boolean deleteEmployeeById(String id) {
-        Employee employee = new Employee();
+        Employee employee;
         boolean flag = false;
         for (int i = 0; i < employees.size(); ++i) {
             if (id.equals(employees.get(i).getId())) {

@@ -10,8 +10,16 @@ public class Employee {
     private String name;
     private int age;
 
-    private Address address;
+//    public void setAddresses(List<Address> addresses) {
+//        this.addresses = addresses;
+//    }
+//
+//    public List<Address> getAddresses() {
+//        return addresses;
+//    }
 
+        private Address address;
+//private List<Address>addresses;
     public void setId(String id) {
         this.id = id;
     }
@@ -36,15 +44,13 @@ public class Employee {
         return age;
     }
 
-    public void setAddresses(Address address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
     public  Address getAddress() {
         return address;
     }
-
-
 
 }
 

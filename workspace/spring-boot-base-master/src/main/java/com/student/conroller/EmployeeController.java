@@ -37,7 +37,7 @@ public class EmployeeController {
 
     @RequestMapping(value = "/employees/{id}", method = RequestMethod.PUT)
     public Employee modificationEmployeeById(@PathVariable("id") String id, @RequestBody Employee employee) {
-        return employeeService.modifyEmployeeById(id);
+        return employeeService.modifyEmployeeById(id,employee);
     }
 
     @RequestMapping(value = "/employees/{id}", method = RequestMethod.DELETE)
