@@ -1,4 +1,5 @@
-import junit.framework.TestCase;
+import core.Kclass;
+import core.Student;
 import org.junit.Test;
 
 import java.util.ArrayList;

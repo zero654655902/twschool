@@ -1,3 +1,10 @@
+package menu;
+
+import core.Kclass;
+import core.Report;
+import core.Student;
+import core.StudentScoreService;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -37,12 +44,16 @@ public class Menu {
         return scanner.nextLine();
     }
 
+    public void input_matches(String input)
+    {
+        if (input.matches("[1|2|3]"))
+            changeStatus(input);
+    }
     public void menu_status() {
 
         System.out.println(Constants.menu);
         String input = getInput();
-        if (input.matches("[1|2|3]"))
-            changeStatus(input);
+        input_matches(input);
     }
 
     //yiyi,111,数学:78,语文:89,英语:77,编程:99
@@ -60,8 +71,7 @@ public class Menu {
         studentScoreService.getkclass().addStudentMessage(student);
         System.out.println(Constants.successNotice);
         strInput = getInput();
-        if (strInput.matches("[1|2|3]"))
-            changeStatus(strInput);
+        input_matches(strInput);
     }
 
     public void add_id_status() {
@@ -73,7 +83,13 @@ public class Menu {
             System.out.println(Constants.studentIdWarning);
             strInput = getInput();
         }
+        String result=get_student_transcript(strInput);
 
+        System.out.println(result);
+    }
+
+
+    public String get_student_transcript(String strInput){
         Kclass kclass = studentScoreService.getkclass();
         List<Student> students = kclass.getTotalStudent();
         String[] ids = sp.processId(strInput);
@@ -81,8 +97,9 @@ public class Menu {
         int middleScore = studentScoreService.getkclass().getStudentTotalScore(students);
         int totalScore = studentScoreService.getkclass().getStudentTotalScore(students);
         String result = studentScoreService.getReport().getScoreMassege(students, middleScore, totalScore);
-        System.out.println(result);
+        return result;
     }
+
 
     public void appInterface() {
 

@@ -1,3 +1,6 @@
+import core.Kclass;
+import core.Report;
+import core.Student;
 import org.junit.Test;
 
 import java.util.ArrayList;

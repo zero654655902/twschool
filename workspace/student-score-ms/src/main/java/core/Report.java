@@ -1,12 +1,17 @@
-import java.util.ArrayList;
+package core;
+
+import core.Student;
+import menu.Constants;
+
+
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 /**
  * Created by lwan on 27/07/2017.
  */
 public class Report {
-    public String getScoreMassege(List<Student> idStudent,int average,int totalScore) {
+    public String getScoreMassege(List<Student> idStudent, int average, int totalScore) {
         StringBuilder studentItem = new StringBuilder();
         studentItem.append(Constants.infoStart);
 

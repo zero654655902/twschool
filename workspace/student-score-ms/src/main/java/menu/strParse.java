@@ -1,3 +1,8 @@
+package menu;
+
+import core.Student;
+import menu.Constants;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,7 +14,7 @@ import static java.lang.Integer.parseInt;
 public class strParse {
     public Student processMassege(String input) {
 
-        String regex=Constants.regex;
+        String regex= Constants.regex;
         Pattern pattern=Pattern.compile(regex);
         Matcher matcher=pattern.matcher(input);
         if(matcher.matches()){

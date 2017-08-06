@@ -1,3 +1,8 @@
+package core;
+
+import core.Kclass;
+import core.Report;
+
 /**
  * Created by lwan on 27/07/2017.
  */
