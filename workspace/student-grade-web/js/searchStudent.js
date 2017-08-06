@@ -8,8 +8,12 @@
 
 
      //jsontotablr
+     var header={id:"id",stuName:"name",email:"email",phone:"phone",IdCard:"IdCard",city:"city"}
 
      var all_stu=get_all_stu();
+
+     all_stu.splice(0,0,header);
+
      console.log(all_stu);
        $.jsontotable(all_stu,{id:'#message'});
          $("#inquire_summit").click(function () {
@@ -27,7 +31,9 @@
                      //  alert("查找到学生");
                      $('#msg').html("search sucess")
                      var student=[];
+                     // student.push(header);
                      student.push(stu);
+                     student.splice(0,0,header);
                      console.log(stu);
                      console.log(student);
                      $('#message').html("");

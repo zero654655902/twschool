@@ -85,18 +85,18 @@
 }
 #inquire{
     margin-top: 50px;
-    font-size: 30px;
-    margin-left: 500px;
-    margin-bottom: 20px;
+    font-size: 25px;
+    width: 300px;
+    margin-left: 300px;
+    margin-bottom: 10px;
 }
 #inquire_summit{
     margin-left: 30px;
-    font-size: 30px;
+    font-size: 25px;
     border-radius: 3px;
 }
 
-table tr th{text-align: center; background-color: white;
-height: 30px;}
+
 #prompt{font-size: 40px;text-align: center; margin-top: 80px;}
 #footer h1{
     text-align: center;
@@ -104,4 +104,18 @@ height: 30px;}
 
 }
 
-#message{ width: 200px;}
+
+
+#message table, #message th, #message td {
+    border: 1px solid black;
+    margin-left: 300px;
+    margin-top: 50px;
+    text-align: center;
+
+}
+#message tr{text-align: center; background-color: white;
+    height: 30px;}
+#message td{width: 100px;
+    height:30px;}
+
+#msg{margin-left: 300px; margin-top: 20px;width: 300px;margin-bottom: 30px;}
