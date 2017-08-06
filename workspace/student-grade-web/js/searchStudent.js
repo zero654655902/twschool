@@ -12,24 +12,29 @@
      var all_stu=get_all_stu();
      console.log(all_stu);
        $.jsontotable(all_stu,{id:'#message'});
-
-
-
          $("#inquire_summit").click(function () {
              var inquire_message = $("#inquire").val();
              console.log(inquire_message);
              console.log(all_stu);
-
+             $('#msg').html("")
 
              for (let j = 0; j < all_stu.length; ++j) {
                  var stu = all_stu[j];
                  console.log(stu.stuName);
+
                  if (inquire_message === stu.stuName ||inquire_message === stu.id ) {
                      // show_one_sudent(stu);
-                      alert("查找到学生");
-                     $.jsontotable(stu,{id:'#message'});
-
+                     //  alert("查找到学生");
+                     $('#msg').html("search sucess")
+                     var student=[];
+                     student.push(stu);
+                     console.log(stu);
+                     console.log(student);
+                     $('#message').html("");
+                     $.jsontotable(student,{id:'#message'});
+                     return true;
                  }
+                 $('#msg').html("not search sucess")
              }
 
      });
