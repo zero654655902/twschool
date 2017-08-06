@@ -9,9 +9,11 @@
 }
 
 #content{
-    background-image: url("../img/frank-mckenna-117065.jpg");
-    background-size: cover;
-    height: 800px;
+    /*background-image: url("../img/frank-mckenna-117065.jpg");*/
+    /*background-size: cover;*/
+
+    background-color: #cccccc;
+
 
 }
 #footer{
@@ -86,4 +88,12 @@
     text-align: center;
     color:#cccccc;
 
+}
+table{
+    text-align: center;
+    margin-left:300px;
+    margin-top: 200px;
+    width: 400px;
+    margin-right: 200px;
+    margin-bottom: 200px;
 }

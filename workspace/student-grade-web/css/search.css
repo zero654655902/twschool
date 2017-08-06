@@ -9,9 +9,10 @@
 }
 
 #content{
-    background-image: url("../img/frank-mckenna-117065.jpg");
-    background-size: cover;
-    height: 800px;
+    /*background-image: url("../img/frank-mckenna-117065.jpg");*/
+    /*background-size: cover;*/
+    background-color: #cccccc;
+
 
 }
 #footer{
@@ -102,3 +103,5 @@ height: 30px;}
     color:#cccccc;
 
 }
+
+#message{ width: 200px;}

@@ -8,7 +8,7 @@ $(function () {
         rules: {
             stuName: {required: true},
             email: {required: true},
-            phone_num: {
+            phone: {
                 required: true,
                 minlength: 11,
                 maxlength: 11
@@ -17,17 +17,23 @@ $(function () {
             city: {required: true}
         },
         messages: {
-            stuName: "请输入学生姓名",
-            email: "请输入学生的正确邮箱",
-            phone_num: "请输入学生的电话号码",
-            IdCard: "请输入学生的身份证号码",
-            city: "请输入学生所在城市"
+            stuName: "please input your name",
+            email: "please input your email",
+            phone: "please input your phone_num",
+            IdCard: "please input your Idcard",
+            city: "please input the your city"
+        },
+
+        submitHandler:function (form) {
+            const students=get_stu_massege();
         }
+
     });
 
-    $('#student_message').submit(function () {
-        event.preventDefault();
-    });
+    // $('#student_message').submit(function () {
+    //     event.preventDefault();
+    //     get_stu_massege();
+    // });
 
     const get_stu_massege=function(){
         var all_data = $('#student_message').serializeArray();
