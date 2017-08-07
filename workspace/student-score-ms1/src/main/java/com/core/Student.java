@@ -4,14 +4,39 @@ package com.core;
  * Created by lwan on 26/07/2017.
  */
 public class Student {
-    private final int math;
-    private final int chinese;
-    private final int english;
-    private final int coding;
-    private final String name;
-    private final String id;
+    private  int math;
+    private  int chinese;
+    private  int english;
 
+    public void setMath(int math) {
+        this.math = math;
+    }
 
+    public void setChinese(int chinese) {
+        this.chinese = chinese;
+    }
+
+    public void setEnglish(int english) {
+        this.english = english;
+    }
+
+    public void setCoding(int coding) {
+        this.coding = coding;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    private int coding;
+    private  String name;
+    private  String id;
+
+public Student(){}
 
     public Student(String name, String id, int math, int chinese, int english, int coding) {
         this.name = name;

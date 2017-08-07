@@ -3,12 +3,14 @@ package com.service;
 import com.core.Kclass;
 import com.core.Report;
 import com.core.Student;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by lwan on 27/07/2017.
  */
+@Service
 
 public class StudentScoreService {
     //
