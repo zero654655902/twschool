@@ -41,5 +41,11 @@ public class StudentScoreService {
         return report.getScoreMassege(students, average, totalScore);
     }
 
+    public String reportAllStudentScore(){
+        List<Student>students=kclass.getTotalStudent();
+        int totalScore = kclass.getStudentTotalScore(students);
+        int average = kclass.getCalculateMiddleScore(students);
+        return report.getScoreMassege(students, average, totalScore);
+    }
 
 }
