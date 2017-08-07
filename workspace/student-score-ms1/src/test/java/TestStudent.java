@@ -1,5 +1,5 @@
 
-import core.Student;
+import com.core.Student;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

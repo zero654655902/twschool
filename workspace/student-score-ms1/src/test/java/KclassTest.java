@@ -1,5 +1,5 @@
-import core.Kclass;
-import core.Student;
+import com.core.Kclass;
+import com.core.Student;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
-package core;
+package com.core;
 
-import core.Student;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 /**
  * Created by lwan on 27/07/2017.
  */
+@Service
 public class Kclass {
     private List<Student> kclass = new ArrayList<Student>();
 
@@ -19,7 +20,7 @@ public class Kclass {
     }
 
     public void addStudentMessage(Student stu) {
-        this.kclass.add(stu);
+        kclass.add(stu);
     }
 
 

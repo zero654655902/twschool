@@ -1,4 +1,4 @@
-package menu;
+package com.menu;
 
 /**
  * Created by lwan on 30/07/2017.

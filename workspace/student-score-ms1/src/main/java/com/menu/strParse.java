@@ -1,7 +1,7 @@
-package menu;
+package com.menu;
 
-import core.Student;
-import menu.Constants;
+import com.core.Student;
+import com.menu.Constants;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
