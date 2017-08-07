@@ -2,13 +2,16 @@ package com.service;
 
 import com.core.Kclass;
 import com.core.Report;
+import com.core.Student;
+
+import java.util.List;
 
 /**
  * Created by lwan on 27/07/2017.
  */
 
 public class StudentScoreService {
-//
+    //
     private static Kclass kclass = new Kclass();
     private Report report = new Report();
 
@@ -24,7 +27,17 @@ public class StudentScoreService {
 //       return this.report;
 //   }
 
+    public List<Student> addStudentMessage(Student student) {
+        kclass.addStudentMessage(student);
+        return kclass.getTotalStudent();
+    }
 
+    public String reportStudentScore(String[] ids) {
+        List<Student> students = kclass.getStudentById(ids);
+        int totalScore = kclass.getStudentTotalScore(students);
+        int average = kclass.getCalculateMiddleScore(students);
+        return report.getScoreMassege(students, average, totalScore);
+    }
 
 
 }
