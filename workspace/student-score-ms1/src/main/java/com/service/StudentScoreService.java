@@ -3,6 +3,8 @@ package com.service;
 import com.core.Kclass;
 import com.core.Report;
 import com.core.Student;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,9 +31,9 @@ public class StudentScoreService {
 //       return this.report;
 //   }
 
-    public List<Student> addStudentMessage(Student student) {
+    public ResponseEntity<Student> addStudentMessage(Student student) {
         kclass.addStudentMessage(student);
-        return kclass.getTotalStudent();
+        return new ResponseEntity<Student>(student, HttpStatus.OK);
     }
 
     public String reportStudentScore(String[] ids) {
@@ -41,11 +43,11 @@ public class StudentScoreService {
         return report.getScoreMassege(students, average, totalScore);
     }
 
-    public String reportAllStudentScore(){
+    public ResponseEntity<String> reportAllStudentScore(){
         List<Student>students=kclass.getTotalStudent();
         int totalScore = kclass.getStudentTotalScore(students);
         int average = kclass.getCalculateMiddleScore(students);
-        return report.getScoreMassege(students, average, totalScore);
+        return new ResponseEntity<String>(report.getScoreMassege(students, average, totalScore),HttpStatus.OK);
     }
 
 }

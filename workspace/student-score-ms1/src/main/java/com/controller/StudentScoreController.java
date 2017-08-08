@@ -4,6 +4,8 @@ import com.core.Report;
 import com.core.Student;
 import com.service.StudentScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +20,7 @@ public class StudentScoreController {
     private StudentScoreService studentScoreService;
 
     @RequestMapping(value = "/students", method = RequestMethod.POST)
-    public List<Student> addStudent(@RequestBody Student student) {
+    public ResponseEntity<Student> addStudent(@RequestBody Student student) {
         return studentScoreService.addStudentMessage(student);
     }
 
@@ -29,9 +31,16 @@ public class StudentScoreController {
 //
 //}
 
+//    @RequestMapping(value = "/students", method = RequestMethod.POST)
+//    public ResponseEntity<List<Student>> addStudent(@RequestBody Student student) {
+//       List<Student> students=studentScoreService.addStudentMessage(student);
+//        return new ResponseEntity<String>(students,HttpStatus.CREATED);
+//    }
+
     @RequestMapping(value = "students", method = RequestMethod.GET)
-    public String reportAllStudentsScore() {
+    public ResponseEntity<String> reportAllStudentsScore() {
         return studentScoreService.reportAllStudentScore();
     }
+
 
 }
