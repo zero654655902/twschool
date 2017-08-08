@@ -17,37 +17,33 @@ import java.util.List;
 public class StudentScoreService {
     //
     private static Kclass kclass = new Kclass();
-    private Report report = new Report();
+//    private Report report = new Report();
 
-
-//   public StudentScoreService(Kclass kclass, Report report) {
-//       this.kclass = kclass;
-//       this.report = report;
-//   }
-//   public Kclass getkclass(){
-//       return this.kclass;
-//   }
-//   public Report getReport(){
-//       return this.report;
-//   }
 
     public ResponseEntity<Student> addStudentMessage(Student student) {
         kclass.addStudentMessage(student);
         return new ResponseEntity<Student>(student, HttpStatus.OK);
     }
 
-    public String reportStudentScore(String[] ids) {
-        List<Student> students = kclass.getStudentById(ids);
-        int totalScore = kclass.getStudentTotalScore(students);
-        int average = kclass.getCalculateMiddleScore(students);
-        return report.getScoreMassege(students, average, totalScore);
-    }
+//    public String reportStudentScore(String[] ids) {
+//        List<Student> students = kclass.getStudentById(ids);
+//        int totalScore = kclass.getStudentTotalScore(students);
+//        int average = kclass.getCalculateMiddleScore(students);
+//        return report.getScoreMassege(students, average, totalScore);
+//    }
 
-    public ResponseEntity<String> reportAllStudentScore(){
-        List<Student>students=kclass.getTotalStudent();
+//    public ResponseEntity<String> reportAllStudentScore() {
+//        List<Student> students = kclass.getTotalStudent();
+//        int totalScore = kclass.getStudentTotalScore(students);
+//        int average = kclass.getCalculateMiddleScore(students);
+//        return new ResponseEntity<String>(report.getScoreMassege(students, average, totalScore), HttpStatus.OK);
+//    }
+
+    public ResponseEntity<Report>reportAllStudentScore(){
+        List<Student> students = kclass.getTotalStudent();
         int totalScore = kclass.getStudentTotalScore(students);
         int average = kclass.getCalculateMiddleScore(students);
-        return new ResponseEntity<String>(report.getScoreMassege(students, average, totalScore),HttpStatus.OK);
+        return new ResponseEntity<Report>(new Report(students,totalScore,average),HttpStatus.OK);
     }
 
 }

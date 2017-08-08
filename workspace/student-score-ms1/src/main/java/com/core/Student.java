@@ -4,19 +4,16 @@ package com.core;
  * Created by lwan on 26/07/2017.
  */
 public class Student {
-    private int math;
-    private int chinese;
-    private int english;
-    private int coding;
-    private String name;
     private String id;
-
-
+    private String name;
     private String email;
     private String phone;
     private String idCard;
     private String city;
-
+    private int math;
+    private int chinese;
+    private int english;
+    private int coding;
 
     public Student() {
     }
@@ -31,28 +28,11 @@ public class Student {
 
     }
 
-    public void setMath(int math) {
-        this.math = math;
-    }
-
-    public void setChinese(int chinese) {
-        this.chinese = chinese;
-    }
-
-    public void setEnglish(int english) {
-        this.english = english;
-    }
-
-    public void setCoding(int coding) {
-        this.coding = coding;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setId(String id) {
         this.id = id;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setEmail(String email) {
@@ -71,6 +51,24 @@ public class Student {
         this.city = city;
     }
 
+    public void setMath(int math) {
+        this.math = math;
+    }
+
+    public void setChinese(int chinese) {
+        this.chinese = chinese;
+    }
+
+    public void setEnglish(int english) {
+        this.english = english;
+    }
+
+    public void setCoding(int coding) {
+        this.coding = coding;
+    }
+
+
+
     public int getTotalScore() {
         int totalScore = this.chinese + this.math + this.coding + this.english;
         return totalScore;
@@ -81,6 +79,29 @@ public class Student {
         return averageScore;
     }
 
+
+    public String getId() {
+        return this.id;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public String getCity() {
+        return city;
+    }
 
     public int getMath() {
         return this.math;
@@ -99,29 +120,7 @@ public class Student {
         return this.coding;
     }
 
-    public String getName() {
-        return this.name;
-    }
 
-    public String getId() {
-        return this.id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getIdCard() {
-        return idCard;
-    }
-
-    public String getCity() {
-        return city;
-    }
 
     @Override
     public boolean equals(Object obj) {

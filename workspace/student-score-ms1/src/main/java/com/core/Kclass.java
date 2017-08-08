@@ -59,6 +59,7 @@ public class Kclass {
     }
 
     public int getStudentTotalScore(List<Student> kclass){
+
         int totalScore = 0;
         for (int i = 0; i < kclass.size(); ++i) {
             totalScore += kclass.get(i).getTotalScore();

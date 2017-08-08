@@ -14,6 +14,7 @@ import java.util.List;
  * Created by lwan on 07/08/2017.
  */
 @RestController
+@CrossOrigin("*")
 public class StudentScoreController {
 
     @Autowired
@@ -21,26 +22,19 @@ public class StudentScoreController {
 
     @RequestMapping(value = "/students", method = RequestMethod.POST)
     public ResponseEntity<Student> addStudent(@RequestBody Student student) {
+//        System.out.println(student);
         return studentScoreService.addStudentMessage(student);
     }
 
-//@RequestMapping(value = "/students/{id}",method = RequestMethod.GET)
-//    public String ReportStudentScore(@PathVariable String id){
-//        String[] ids={id};
-//       return studentScoreService.reportStudentScore(ids);
-//
-//}
 
-//    @RequestMapping(value = "/students", method = RequestMethod.POST)
-//    public ResponseEntity<List<Student>> addStudent(@RequestBody Student student) {
-//       List<Student> students=studentScoreService.addStudentMessage(student);
-//        return new ResponseEntity<String>(students,HttpStatus.CREATED);
+//    @RequestMapping(value = "students", method = RequestMethod.GET)
+//    public ResponseEntity<String> reportAllStudentsScore() {
+//        return studentScoreService.reportAllStudentScore();
 //    }
 
-    @RequestMapping(value = "students", method = RequestMethod.GET)
-    public ResponseEntity<String> reportAllStudentsScore() {
+    @RequestMapping(value = "/students",method = RequestMethod.GET)
+    public ResponseEntity<Report> reportAllStudentsScore(){
         return studentScoreService.reportAllStudentScore();
     }
-
 
 }
