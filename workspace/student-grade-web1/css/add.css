@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#nav {
+    background-color: #0f0f0f;
+}
+
+#content {
+    background-image: url("../img/frank-mckenna-117065.jpg");
+    background-size: cover;
+
+}
+
+#footer {
+    background-color: black;
+    height: 100px;
+}
+
+#logo_homePage img {
+    margin-left: 30px;
+    margin-top: 20px;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+
+}
+
+#logo_homePage a {
+    display: inline-block;
+    float: left;
+    text-decoration: none;
+    color: white;
+    margin-left: 30px;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+#nav_right {
+    padding-top: 30px;
+    padding-right: 80px;
+}
+
+#nav_right ul {
+    text-align: right;
+}
+
+#nav_right ul li {
+    display: inline-block;
+}
+
+#nav_right ul li a {
+    color: white;
+    font-size: 18px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+#nav_right ul li a:hover {
+    color: #9d9d9d;
+}
+
+#prompt {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+table tr {
+    margin-top: 25px;
+    /*margin-left: 400px;*/
+    font-size: 25px;
+}
+
+table {
+    margin-top: 50px;
+    margin-left: 350px;
+}
+
+table tr td {
+    padding-bottom: 10px;
+}
+
+#addStu {
+    margin-top: 20px;
+    margin-left: 47%;
+    font-size: 25px;
+    border-radius: 3px;
+    margin-bottom: 100px;
+}
+
+#footer h1 {
+    text-align: center;
+    color: #cccccc;
+
+}
