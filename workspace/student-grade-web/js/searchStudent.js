@@ -47,13 +47,13 @@
 
 })
 
-
-get_all_stu = function () {
-    var data = localStorage.getItem("data");
-    var students = JSON.parse(data);
-    console.log(students);
-    return students;
-}
+///8-8
+// get_all_stu = function () {
+//     var data = localStorage.getItem("data");
+//     var students = JSON.parse(data);
+//     console.log(students);
+//     return students;
+// }
 
 
 // show_one_sudent=function(student){
