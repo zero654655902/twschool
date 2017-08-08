@@ -24,28 +24,22 @@ $(function () {
             city: "please input the your city"
         },
 
-        submitHandler:function (form) {
+        submitHandler: function (form) {
             // const students=get_stu_massege();
-             const student=get_one_student();
-             console.log(student);
+            const student = get_one_student();
+            console.log(student);
             alert(JSON.stringify(student))
             $.ajax({
-                type:'POST',
-                // headers:{
-                //     'Accept':'application/json',
-                //     'Content-Type':'text/plain'
-                // },
-                url:'http://localhost:8080/students',
-                 data:JSON.stringify(student),
+                type: 'POST',
+                url: 'http://localhost:8080/students',
+                data: JSON.stringify(student),
                 contentType: "application/json; charset=utf-8",
-                // data:student,
-                // cache:false,
-                dataType:'json',
-                success:function (data) {
+                dataType: 'json',
+                success: function (data) {
                     alert(data)
 
                 },
-                failure:function (errMsg) {
+                failure: function (errMsg) {
                     alert(errMsg)
                 }
 
@@ -72,24 +66,22 @@ $(function () {
     //     localStorage.setItem("data", data);
     // }
 
-    const get_one_student=function () {
+    const get_one_student = function () {
         var all_data = $('#student_message').serializeArray();
         initId++;
         console.log(all_data);
-        let student=getStudent(initId,all_data);
+        let student = getStudent(initId, all_data);
         return student;
 
     }
-    const getStudent = function (initId,stuData) {
-       let student={};
-      student["id"]=initId.toString();
+    const getStudent = function (initId, stuData) {
+        let student = {};
+        student["id"] = initId.toString();
         for (let attributes in stuData) {
             student[stuData[attributes].name] = stuData[attributes].value;
         }
         return student;
     }
-
-
 
 })
 

@@ -1,55 +1,79 @@
-/**
- * Created by lwan on 05/08/2017.
- */
-let studentsMassege=[{id:"101",name:"zz",math:89,language:87,english:84,coding:86},
-    {id:"102",name:"ll",math:84,language:79,english:94,coding:85},
-    {id:"103",name:"yy",math:85,language:77,english:74,coding:76},
-    {id:"104",name:"tt",math:79,language:88,english:85,coding:96}];
+// /**
+//  * Created by lwan on 05/08/2017.
+//  */
+// let studentsMassege=[{id:"101",name:"zz",math:89,language:87,english:84,coding:86},
+//     {id:"102",name:"ll",math:84,language:79,english:94,coding:85},
+//     {id:"103",name:"yy",math:85,language:77,english:74,coding:76},
+//     {id:"104",name:"tt",math:79,language:88,english:85,coding:96}];
+//
+//
+// const tableHeard=`<tr>` +
+//     `<th>id</th>` +
+//     `<th>name</th>` +
+//     `<th>math</th>` +
+//     `<th>language</th>` +
+//     `<th>english</th>` +
+//     `<th>coding</th>` +
+//     `</tr>`;
+//
+// $(function () {
+//     var all_stu_format=show_all_stu_format(studentsMassege);
+//     // console.log(all_stu_format);
+//
+//
+//     $("table").html(tableHeard+all_stu_format);
+// });
+//
+// getStudentFormat = function (student) {
+//     console.log("hee")
+//     return `<tr>` +
+//         `<th>${student.id}</th>` +
+//         `<th>${student.name}</th>` +
+//         `<th>${student.math}</th>` +
+//         `<th>${student.language}</th>` +
+//         `<th>${student.english}</th>` +
+//         `<th>${student.coding}</th>` +
+//         `</tr>`
+// }
+//
+// show_all_stu_format=function(students)
+// {
+//     var strAllStudent=``;
+//     for(let i=0;i<students.length;++i){
+//         strAllStudent+=getStudentFormat(students[i]);
+//     }
+//     return strAllStudent;
+//
+// }
+//
+// show_stu_massege=function(all_stu){
+//
+//      var all_stu_format=show_all_stu_format(studentsMassege);
+//
+//     $("table").html(tableHeard+all_stu_format);
+//
+// }
 
-
-const tableHeard=`<tr>` +
-    `<th>id</th>` +
-    `<th>name</th>` +
-    `<th>math</th>` +
-    `<th>language</th>` +
-    `<th>english</th>` +
-    `<th>coding</th>` +
-    `</tr>`;
 
 $(function () {
-    var all_stu_format=show_all_stu_format(studentsMassege);
-    // console.log(all_stu_format);
+    var header={id:"id",stuName:"name",email:"email",phone:"phone",idCard:"IdCard",city:"city",math:"math",
+    chinese:"language",english:"english",coding:"coding",average:"average",totalScore:"totalScore"}
+
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8080/students',
+        data: {get_param: 'value'},
+        dataType:'json',
+        success: function (data) {
+            // var names = data
+            console.log(data)
+            var studentList=data.studentList
+            console.log(studentList)
+            studentList.splice(0,0,header);
+            console.log(studentList)
+            $.jsontotable(studentList,{id:'#message'});
+        },
 
 
-    $("table").html(tableHeard+all_stu_format);
+    });
 });
-
-getStudentFormat = function (student) {
-    console.log("hee")
-    return `<tr>` +
-        `<th>${student.id}</th>` +
-        `<th>${student.name}</th>` +
-        `<th>${student.math}</th>` +
-        `<th>${student.language}</th>` +
-        `<th>${student.english}</th>` +
-        `<th>${student.coding}</th>` +
-        `</tr>`
-}
-
-show_all_stu_format=function(students)
-{
-    var strAllStudent=``;
-    for(let i=0;i<students.length;++i){
-        strAllStudent+=getStudentFormat(students[i]);
-    }
-    return strAllStudent;
-
-}
-
-show_stu_massege=function(all_stu){
-
-     var all_stu_format=show_all_stu_format(studentsMassege);
-
-    $("table").html(tableHeard+all_stu_format);
-
-}

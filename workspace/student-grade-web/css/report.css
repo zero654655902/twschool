@@ -91,26 +91,39 @@
 
 }
 
-table {
+/*table {*/
+    /*text-align: center;*/
+    /*margin-left: 300px;*/
+    /*margin-top: 100px;*/
+    /*margin-bottom: 100px;*/
+    /*width: 400px;*/
+    /*margin-right: 200px;*/
+    /*border: 1px black solid;*/
+
+/*}*/
+
+/*table tr {*/
+    /*text-align: center;*/
+    /*background-color: white;*/
+    /*height: 30px;*/
+/*}*/
+
+/*table th {*/
+    /*width: 200px;*/
+    /*height: 30px;*/
+    /*border: solid 1px black;*/
+    /*text-align: center;*/
+/*}*/
+
+#message table, #message th, #message td {
+    border: 1px solid black;
+    margin-left: 50px;
+    margin-top: 50px;
     text-align: center;
-    margin-left: 300px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    width: 400px;
-    margin-right: 200px;
-    border: 1px black solid;
 
 }
-
-table tr {
-    text-align: center;
-    background-color: white;
-    height: 30px;
-}
-
-table th {
-    width: 200px;
-    height: 30px;
-    border: solid 1px black;
-    text-align: center;
-}
+table tr{text-align: center; background-color: white;
+    height: 30px;}
+table th{width: 100px;
+    height:30px;}
+table{margin-bottom: 50px;}
