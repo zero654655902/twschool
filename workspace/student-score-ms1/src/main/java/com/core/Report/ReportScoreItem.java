@@ -1,11 +1,13 @@
-package com.core;
+package com.core.Report;
+
+import com.core.Student;
 
 import java.util.List;
 
 /**
  * Created by lwan on 09/08/2017.
  */
-public class ReportItem {
+public class ReportScoreItem {
 
 
     //    private Student student;
@@ -16,37 +18,48 @@ public class ReportItem {
     private int english;
     private int coding;
 
+
     private int totalScore;
     private int average;
-    public ReportItem(){}
-    public ReportItem(Student student,int totalScore,int average){
-        this.id=student.getId();
-        this.name=student.getName();
-        this.math=student.getMath();
-        this.chinese=student.getChinese();
-        this.english=student.getEnglish();
-        this.coding=student.getCoding();
-        this.average=average;
-        this.totalScore=totalScore;
+
+
+
+
+
+    public ReportScoreItem() {
     }
+
+    public ReportScoreItem(Student student, int totalScore, int average) {
+        this.id = student.getId();
+        this.name = student.getName();
+        this.math = student.getMath();
+        this.chinese = student.getChinese();
+        this.english = student.getEnglish();
+        this.coding = student.getCoding();
+        this.average = average;
+        this.totalScore = totalScore;
+    }
+
+
 //    public void setStudent(Student student) {
 //        this.student = student;
 //    }
 
 
-
     public void setTotalScore(int totalScore) {
         this.totalScore = totalScore;
     }
+
     public void setAverage(int average) {
         this.average = average;
     }
-//    public Student getStudent() {
+
+    //    public Student getStudent() {
 //        return student;
 //    }
-public String getId() {
-    return id;
-}
+    public String getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -71,16 +84,17 @@ public String getId() {
     public int getTotalScore() {
         return totalScore;
     }
+
     public int getAverage() {
         return average;
     }
 
 
-
-    public int calculateOneTotalScore(Student student){
-        return (student.getMath()+student.getChinese()+student.getEnglish()+student.getCoding());
+    public int calculateOneTotalScore(Student student) {
+        return (student.getMath() + student.getChinese() + student.getEnglish() + student.getCoding());
     }
-    public int calculateOneAverage(Student student){
-        return (student.getMath()+student.getChinese()+student.getEnglish()+student.getCoding())/4;
+
+    public int calculateOneAverage(Student student) {
+        return (student.getMath() + student.getChinese() + student.getEnglish() + student.getCoding()) / 4;
     }
 }

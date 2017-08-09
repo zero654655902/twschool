@@ -1,14 +1,11 @@
 package com.controller;
 
-import com.core.Report;
+import com.core.Report.Report;
 import com.core.Student;
 import com.service.StudentScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * Created by lwan on 07/08/2017.
@@ -35,6 +32,12 @@ public class StudentScoreController {
     @RequestMapping(value = "/students",method = RequestMethod.GET)
     public ResponseEntity<Report> reportAllStudentsScore(){
         return studentScoreService.reportAllStudentScore();
+    }
+
+
+    @RequestMapping(value = "/searchStudents",method = RequestMethod.GET)
+    public ResponseEntity<Report> reportAllStudentsMessage(){
+        return studentScoreService.reportAllStudentMassege();
     }
 
 }

@@ -1,8 +1,9 @@
 package com.service;
 
 import com.core.Kclass;
-import com.core.Report;
-import com.core.ReportItem;
+import com.core.Report.Report;
+import com.core.Report.ReportMessageItem;
+import com.core.Report.ReportScoreItem;
 import com.core.Student;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -50,10 +51,18 @@ public class StudentScoreService {
     public ResponseEntity<Report>reportAllStudentScore(){
         List<Student>students=kclass.getTotalStudent();
         Report report=new Report();
-        List<ReportItem>reportItemList=report.buildReportItem(students);
-        int totalScore=report.getStudentTotalScore(reportItemList);
-        int average=report.getCalculateMiddleScore(reportItemList);
-        return new ResponseEntity<Report>(new Report(reportItemList,totalScore,average),HttpStatus.OK);
+        List<ReportScoreItem> reportScoreItemList =report.buildReportItem(students);
+        int totalScore=report.getStudentTotalScore(reportScoreItemList);
+        int average=report.getCalculateMiddleScore(reportScoreItemList);
+        return new ResponseEntity<Report>(new Report(reportScoreItemList,totalScore,average),HttpStatus.OK);
+    }
+
+
+    public ResponseEntity<Report>reportAllStudentMassege(){
+        List<Student>students=kclass.getTotalStudent();
+        Report report=new Report();
+        List<ReportMessageItem> reportMessageItemList =report.buildReportStudentItem(students);
+        return new ResponseEntity<Report>(new Report(reportMessageItemList),HttpStatus.OK);
     }
 
 }
