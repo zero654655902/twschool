@@ -68,16 +68,16 @@ public class Student {
     }
 
 
-
-    public int getTotalScore() {
-        int totalScore = this.chinese + this.math + this.coding + this.english;
-        return totalScore;
-    }
-
-    public double getAverage() {
-        double averageScore = getTotalScore() / 4.0;
-        return averageScore;
-    }
+//
+//    public int getTotalScore() {
+//        int totalScore = this.chinese + this.math + this.coding + this.english;
+//        return totalScore;
+//    }
+//
+//    public double getAverage() {
+//        double averageScore = getTotalScore() / 4.0;
+//        return averageScore;
+//    }
 
 
     public String getId() {

@@ -13,8 +13,14 @@ import java.util.stream.Collectors;
  * Created by lwan on 27/07/2017.
  */
 public class Report {
-    public void setStudentList(List<Student> studentList) {
-        this.studentList = studentList;
+
+    private List<ReportItem> reportItemList;
+    private int average;
+    private int totalScore;
+
+
+    public void setReportItemList(List<ReportItem> reportItemList) {
+        this.reportItemList = reportItemList;
     }
 
     public void setAverage(int average) {
@@ -25,8 +31,8 @@ public class Report {
         this.totalScore = totalScore;
     }
 
-    public List<Student> getStudentList() {
-        return studentList;
+    public List<ReportItem> getReportItemList() {
+        return reportItemList;
     }
 
     public int getAverage() {
@@ -37,15 +43,52 @@ public class Report {
         return totalScore;
     }
 
-    private List<Student> studentList;
-    private int average;
-    private int totalScore;
-
-    public Report(List<Student> idStudent, int average, int totalScore){
-        this.studentList=idStudent;
-        this.average=average;
-        this.totalScore=totalScore;
+    public Report() {
     }
+
+    public Report(List<ReportItem> reportItemList, int average, int totalScore) {
+        this.reportItemList = reportItemList;
+        this.average = average;
+        this.totalScore = totalScore;
+    }
+
+
+    public int getCalculateMiddleScore(List<ReportItem> oldReportItemList) {
+        int middleScore = 0;
+        reportItemList = oldReportItemList.stream()
+                .sorted((s1, s2) -> s1.getTotalScore() - s2.getTotalScore())
+                .collect(Collectors.toList());
+        if (reportItemList.size() % 2 == 0) {
+            middleScore = (reportItemList.get(reportItemList.size() / 2 - 1).getTotalScore() + reportItemList.get(reportItemList.size() / 2).getTotalScore()) / 2;
+
+        } else {
+            middleScore = reportItemList.get((reportItemList.size() - 1) / 2).getTotalScore();
+        }
+        return middleScore;
+    }
+
+    public int getStudentTotalScore(List<ReportItem> reportItemList) {
+
+        int totalScore = 0;
+        for (int i = 0; i < reportItemList.size(); ++i) {
+            totalScore += reportItemList.get(i).getTotalScore();
+        }
+        return totalScore / reportItemList.size();
+    }
+
+    public List<ReportItem> buildReportItem(List<Student> studentList) {
+        List<ReportItem> reportItemList = new ArrayList<>();
+        for (int i = 0; i < studentList.size(); ++i) {
+            Student student = studentList.get(i);
+            ReportItem reportItem = new ReportItem();
+            int average = reportItem.calculateOneAverage(student);
+            int totalScore = reportItem.calculateOneTotalScore(student);
+            reportItemList.add(new ReportItem(student,average,totalScore));
+        }
+        return reportItemList;
+
+    }
+
 
 //    public String getScoreMassege(List<Student> idStudent, int average, int totalScore) {
 //        StringBuilder studentItem = new StringBuilder();
@@ -70,7 +113,6 @@ public class Report {
 //
 //        return studentItem.toString();
 //    }
-
 
 
 }

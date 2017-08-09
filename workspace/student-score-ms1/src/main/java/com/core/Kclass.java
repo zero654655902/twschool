@@ -44,27 +44,27 @@ public class Kclass {
         return this.kclass;
     }
 
-    public int getCalculateMiddleScore(List<Student> kclass) {
-        int middleScore = 0;
-        List<Student> students = kclass.stream()
-                .sorted((s1, s2) -> s1.getTotalScore() - s2.getTotalScore())
-                .collect(Collectors.toList());
-        if (students.size() % 2 == 0) {
-            middleScore = (students.get(students.size()/ 2-1).getTotalScore()+students.get(students.size()/ 2).getTotalScore())/2;
-
-        } else {
-            middleScore = students.get((students.size()-1 )/ 2).getTotalScore();
-        }
-        return middleScore;
-    }
-
-    public int getStudentTotalScore(List<Student> kclass){
-
-        int totalScore = 0;
-        for (int i = 0; i < kclass.size(); ++i) {
-            totalScore += kclass.get(i).getTotalScore();
-        }
-        return totalScore/kclass.size();
-    }
+//    public int getCalculateMiddleScore(List<Student> kclass) {
+//        int middleScore = 0;
+//        List<Student> students = kclass.stream()
+//                .sorted((s1, s2) -> s1.getTotalScore() - s2.getTotalScore())
+//                .collect(Collectors.toList());
+//        if (students.size() % 2 == 0) {
+//            middleScore = (students.get(students.size()/ 2-1).getTotalScore()+students.get(students.size()/ 2).getTotalScore())/2;
+//
+//        } else {
+//            middleScore = students.get((students.size()-1 )/ 2).getTotalScore();
+//        }
+//        return middleScore;
+//    }
+//
+//    public int getStudentTotalScore(List<Student> kclass){
+//
+//        int totalScore = 0;
+//        for (int i = 0; i < kclass.size(); ++i) {
+//            totalScore += kclass.get(i).getTotalScore();
+//        }
+//        return totalScore/kclass.size();
+//    }
 
 }
