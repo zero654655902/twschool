@@ -56,7 +56,7 @@
 
 
 $(function () {
-    var header={id:"id",stuName:"name",email:"email",phone:"phone",idCard:"IdCard",city:"city",math:"math",
+    var header={id:"id",stuName:"name",math:"math",
     chinese:"language",english:"english",coding:"coding",average:"average",totalScore:"totalScore"}
 
     $.ajax({
@@ -66,9 +66,11 @@ $(function () {
         dataType:'json',
         success: function (data) {
             // var names = data
-            console.log(data)
-            var studentList=data.studentList
+            // console.log(data)
+            var studentList=data.reportItemList
+
             console.log(studentList)
+            alert(JSON.stringify(studentList))
             studentList.splice(0,0,header);
             console.log(studentList)
             $.jsontotable(studentList,{id:'#message'});
