@@ -40,4 +40,10 @@ public class StudentScoreController {
         return studentScoreService.reportAllStudentMassege();
     }
 
+    @RequestMapping(value = "/modifyStudent/{id}",method = RequestMethod.PUT)
+    public ResponseEntity<Report> modifyStudentMessage(@RequestBody Student student,@PathVariable String id){
+        return studentScoreService.modifyStudentMessage(student,id);
+
+    }
+
 }
