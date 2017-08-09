@@ -57,7 +57,7 @@
 
 $(function () {
     var header={id:"id",stuName:"name",math:"math",
-    chinese:"language",english:"english",coding:"coding",average:"average",totalScore:"totalScore"}
+    chinese:"language",english:"english",coding:"coding",totalScore:"totalScore",average:"average"}
 
     $.ajax({
         type: 'GET',
@@ -66,14 +66,16 @@ $(function () {
         dataType:'json',
         success: function (data) {
             // var names = data
-            // console.log(data)
+            console.log(data)
             var studentList=data.reportItemList
 
             console.log(studentList)
-            alert(JSON.stringify(studentList))
+            // alert(JSON.stringify(studentList))
             studentList.splice(0,0,header);
             console.log(studentList)
             $.jsontotable(studentList,{id:'#message'});
+             $("#average").html(data.average)
+            $("#totalScore").html(data.totalScore)
         },
 
 

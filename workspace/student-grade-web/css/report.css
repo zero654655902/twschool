@@ -117,13 +117,20 @@
 
 #message table, #message th, #message td {
     border: 1px solid black;
-    margin-left: 50px;
-    margin-top: 50px;
+    margin: 50px auto;
     text-align: center;
 
 }
+
 table tr{text-align: center; background-color: white;
     height: 30px;}
 table th{width: 100px;
     height:30px;}
-table{margin-bottom: 50px;}
+table{margin-bottom: 100px; }
+
+#prompt{font-size: 40px;text-align: center; margin-top: 80px;}
+
+.score{margin-left: 300px;}
+
+/*#totalScore{margin-bottom: 100px}*/
+
