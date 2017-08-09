@@ -67,7 +67,7 @@ $(function () {
         success: function (data) {
             // var names = data
             console.log(data)
-            var studentList=data.reportItemList
+            var studentList=data.reportScoreItemList
 
             console.log(studentList)
             // alert(JSON.stringify(studentList))
