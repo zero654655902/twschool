@@ -6,18 +6,31 @@ import java.util.List;
  * Created by lwan on 09/08/2017.
  */
 public class ReportItem {
-    private Student student;
+
+
+    //    private Student student;
+    private String id;
+    private String name;
+    private int math;
+    private int chinese;
+    private int english;
+    private int coding;
     private int average;
     private int totalScore;
     public ReportItem(){}
     public ReportItem(Student student,int average,int totalScore){
-        this.student=student;
+        this.id=student.getId();
+        this.name=student.getName();
+        this.math=student.getMath();
+        this.chinese=student.getChinese();
+        this.english=student.getEnglish();
+        this.coding=student.getCoding();
         this.average=average;
         this.totalScore=totalScore;
     }
-    public void setStudent(Student student) {
-        this.student = student;
-    }
+//    public void setStudent(Student student) {
+//        this.student = student;
+//    }
 
     public void setAverage(int average) {
         this.average = average;
@@ -26,10 +39,32 @@ public class ReportItem {
     public void setTotalScore(int totalScore) {
         this.totalScore = totalScore;
     }
-    public Student getStudent() {
-        return student;
+//    public Student getStudent() {
+//        return student;
+//    }
+public String getId() {
+    return id;
+}
+
+    public String getName() {
+        return name;
     }
 
+    public int getMath() {
+        return math;
+    }
+
+    public int getChinese() {
+        return chinese;
+    }
+
+    public int getEnglish() {
+        return english;
+    }
+
+    public int getCoding() {
+        return coding;
+    }
     public int getAverage() {
         return average;
     }
