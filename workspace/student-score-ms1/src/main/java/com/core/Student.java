@@ -8,7 +8,7 @@ import javax.persistence.Id;
  * Created by lwan on 26/07/2017.
  */
 @Entity
-public class Student {
+public class Student implements Comparable {
     @Id
     @GeneratedValue()
     private String id;
@@ -26,21 +26,24 @@ public class Student {
     }
 
     public Student( String id,String name, String email,String phone,String idCard,String city) {
-//        ,int math, int chinese, int english, int coding
-
         this.name = name;
         this.id = id;
         this.email=email;
         this.phone=phone;
         this.idCard=idCard;
         this.city=city;
-//        this.math = math;
-//        this.chinese = chinese;
-//        this.english = english;
-//        this.coding = coding;
 
     }
 
+    public Student( String id,String name,int math, int chinese, int english, int coding) {
+        this.name = name;
+        this.id = id;
+        this.math = math;
+        this.chinese = chinese;
+        this.english = english;
+        this.coding = coding;
+
+    }
     public void setId(String id) {
         this.id = id;
     }
@@ -79,19 +82,6 @@ public class Student {
     public void setCoding(int coding) {
         this.coding = coding;
     }
-
-
-//
-//    public int getTotalScore() {
-//        int totalScore = this.chinese + this.math + this.coding + this.english;
-//        return totalScore;
-//    }
-//
-//    public double getAverage() {
-//        double averageScore = getTotalScore() / 4.0;
-//        return averageScore;
-//    }
-
 
     public String getId() {
         return this.id;
@@ -133,25 +123,16 @@ public class Student {
         return this.coding;
     }
 
+   @Override
+    public int compareTo(Object obj)
+   {
+       return 0;
+   }
 
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj.getClass() == this.getClass()) {
-            if (this.name == ((Student) obj).getName()) {
-                if (this.id == ((Student) obj).getId()) {
-                    if (this.math == ((Student) obj).getMath()) {
-                        if (this.chinese == ((Student) obj).getChinese()) {
-                            if (this.english == ((Student) obj).getEnglish()) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return false;
-    }
+   @Override
+    public boolean equals(Object obj){
+        return toString().equals(obj.toString());
+   }
 
 
 }

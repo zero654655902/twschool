@@ -35,11 +35,6 @@ public class ReportScoreItem {
     }
 
 
-//    public void setStudent(Student student) {
-//        this.student = student;
-//    }
-
-
     public void setTotalScore(int totalScore) {
         this.totalScore = totalScore;
     }
@@ -48,9 +43,6 @@ public class ReportScoreItem {
         this.average = average;
     }
 
-    //    public Student getStudent() {
-//        return student;
-//    }
     public String getId() {
         return id;
     }
