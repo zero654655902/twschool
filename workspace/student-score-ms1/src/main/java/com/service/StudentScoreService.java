@@ -22,50 +22,30 @@ public class StudentScoreService {
 //    private Report report = new Report();
 
 
-    public ResponseEntity<Student> addStudentMessage(Student student) {
+    public Student addStudentMessage(Student student) {
         kclass.addStudentMessage(student);
-        return new ResponseEntity<Student>(student, HttpStatus.OK);
+        return student;
+
     }
 
-//    public String reportStudentScore(String[] ids) {
-//        List<Student> students = kclass.getStudentById(ids);
-//        int totalScore = kclass.getStudentTotalScore(students);
-//        int average = kclass.getCalculateMiddleScore(students);
-//        return report.getScoreMassege(students, average, totalScore);
-//    }
-
-//    public ResponseEntity<String> reportAllStudentScore() {
-//        List<Student> students = kclass.getTotalStudent();
-//        int totalScore = kclass.getStudentTotalScore(students);
-//        int average = kclass.getCalculateMiddleScore(students);
-//        return new ResponseEntity<String>(report.getScoreMassege(students, average, totalScore), HttpStatus.OK);
-//    }
-
-//    public ResponseEntity<Report>reportAllStudentScore(){
-//        List<Student> students = kclass.getTotalStudent();
-//        int totalScore = kclass.getStudentTotalScore(students);
-//        int average = kclass.getCalculateMiddleScore(students);
-//        return new ResponseEntity<Report>(new Report(students,totalScore,average),HttpStatus.OK);
-//    }
-
-    public ResponseEntity<Report>reportAllStudentScore(){
+    public Report reportAllStudentScore(){
         List<Student>students=kclass.getTotalStudent();
         Report report=new Report();
         List<ReportScoreItem> reportScoreItemList =report.buildReportItem(students);
         int totalScore=report.getStudentTotalScore(reportScoreItemList);
         int average=report.getCalculateMiddleScore(reportScoreItemList);
-        return new ResponseEntity<Report>(new Report(reportScoreItemList,totalScore,average),HttpStatus.OK);
+        return (new Report(reportScoreItemList,totalScore,average));
     }
 
 
-    public ResponseEntity<Report>reportAllStudentMassege(){
+    public Report reportAllStudentMassege(){
         List<Student>students=kclass.getTotalStudent();
         Report report=new Report();
         List<ReportMessageItem> reportMessageItemList =report.buildReportStudentItem(students);
-        return new ResponseEntity<Report>(new Report(reportMessageItemList),HttpStatus.OK);
+        return (new Report(reportMessageItemList));
     }
 
-    public ResponseEntity<Student>getOneStudentScore(String id){
+    public Student getOneStudentScore(String id){
         List<Student>students=kclass.getTotalStudent();
         Student student=new Student();
         for(int i=0;i<students.size();++i)
@@ -74,11 +54,11 @@ public class StudentScoreService {
             student=students.get(i);
             }
         }
-        return new ResponseEntity<Student>(student, HttpStatus.OK);
+        return student;
 
     }
 
-    public ResponseEntity<Report> modifyStudentScores(Student student,String id) {
+    public Report modifyStudentScores(Student student,String id) {
         List<Student>students=kclass.getTotalStudent();
         for(int i=0;i<students.size();++i)
         {
@@ -94,7 +74,8 @@ public class StudentScoreService {
         List<ReportScoreItem> reportScoreItemList =report.buildReportItem(students);
         int totalScore=report.getStudentTotalScore(reportScoreItemList);
         int average=report.getCalculateMiddleScore(reportScoreItemList);
-        return new ResponseEntity<Report>(new Report(reportScoreItemList,totalScore,average),HttpStatus.OK);
+        return (new Report(reportScoreItemList,totalScore,average));
+
     }
 
 
