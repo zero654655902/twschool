@@ -1,9 +1,16 @@
 package com.core;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by lwan on 26/07/2017.
  */
+@Entity
 public class Student {
+    @Id
+    @GeneratedValue()
     private String id;
     private String name;
     private String email;
@@ -18,13 +25,19 @@ public class Student {
     public Student() {
     }
 
-    public Student(String name, String id, int math, int chinese, int english, int coding) {
+    public Student( String id,String name, String email,String phone,String idCard,String city) {
+//        ,int math, int chinese, int english, int coding
+
         this.name = name;
         this.id = id;
-        this.math = math;
-        this.chinese = chinese;
-        this.english = english;
-        this.coding = coding;
+        this.email=email;
+        this.phone=phone;
+        this.idCard=idCard;
+        this.city=city;
+//        this.math = math;
+//        this.chinese = chinese;
+//        this.english = english;
+//        this.coding = coding;
 
     }
 

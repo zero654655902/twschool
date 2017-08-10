@@ -12,13 +12,8 @@ import java.util.stream.Collectors;
  * Created by lwan on 27/07/2017.
  */
 public class Report {
-
     private List<ReportScoreItem> reportScoreItemList;
-
-
-
     private List<ReportMessageItem> reportMessageItems;
-
     private int totalScore;
     private int average;
 

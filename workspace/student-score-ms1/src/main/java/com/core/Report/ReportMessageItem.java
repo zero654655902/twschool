@@ -7,7 +7,6 @@ import com.core.Student;
  */
 public class ReportMessageItem {
 
-
     private String id;
     private String name;
     private String email;
@@ -69,8 +68,5 @@ public class ReportMessageItem {
         this.phone=student.getPhone();
         this.idCard=student.getIdCard();
         this.city=student.getCity();
-
-
     }
-
 }
