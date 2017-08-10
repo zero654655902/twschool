@@ -11,7 +11,7 @@
 //@Test
 //    public void testStudent(){
 //    //Give
-//        Student ZhangSan=new Student("张三","1200",75,95,80,80);
+//        StudentJpaEntity ZhangSan=new StudentJpaEntity("张三","1200",75,95,80,80);
 //     //when
 ////        ZhangSan.calculateScore();
 //        //then

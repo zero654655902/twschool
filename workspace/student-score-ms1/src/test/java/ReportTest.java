@@ -15,16 +15,16 @@
 //    @Test
 //    public void should_print_massege(){
 //        Kclass _class = new Kclass();
-//        Student student1 = new Student("张三", "1200", 75, 95, 80, 80);
-//        Student student2 = new Student("李四", "1201", 70, 95, 80, 80);
-//        Student student3 = new Student("王五", "1202", 75, 95, 80, 80);
+//        StudentJpaEntity student1 = new StudentJpaEntity("张三", "1200", 75, 95, 80, 80);
+//        StudentJpaEntity student2 = new StudentJpaEntity("李四", "1201", 70, 95, 80, 80);
+//        StudentJpaEntity student3 = new StudentJpaEntity("王五", "1202", 75, 95, 80, 80);
 //        _class.addStudentMessage(student1);
 //        _class.addStudentMessage(student2);
 //        _class.addStudentMessage(student3);
 //
 //        String[] id = {"1200", "1201"};
 //
-//        List<Student> idStudent = new ArrayList<Student>();
+//        List<StudentJpaEntity> idStudent = new ArrayList<StudentJpaEntity>();
 //        //when
 //        idStudent = _class.getStudentById(id);
 //

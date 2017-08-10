@@ -10,10 +10,10 @@ public class Student {
     private String phone;
     private String idCard;
     private String city;
-    private int math;
-    private int chinese;
-    private int english;
-    private int coding;
+    private int math=0;
+    private int chinese=0;
+    private int english=0;
+    private int coding=0;
 
     public Student() {
     }

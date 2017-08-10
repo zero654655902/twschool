@@ -8,8 +8,6 @@ import java.util.List;
  * Created by lwan on 09/08/2017.
  */
 public class ReportScoreItem {
-
-
     //    private Student student;
     private String id;
     private String name;
@@ -21,10 +19,6 @@ public class ReportScoreItem {
 
     private int totalScore;
     private int average;
-
-
-
-
 
     public ReportScoreItem() {
     }
