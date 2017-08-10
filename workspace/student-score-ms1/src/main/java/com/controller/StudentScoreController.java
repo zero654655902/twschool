@@ -40,9 +40,16 @@ public class StudentScoreController {
         return studentScoreService.reportAllStudentMassege();
     }
 
-    @RequestMapping(value = "/modifyStudent/{id}",method = RequestMethod.PUT)
-    public ResponseEntity<Report> modifyStudentMessage(@RequestBody Student student,@PathVariable String id){
-        return studentScoreService.modifyStudentMessage(student,id);
+    @RequestMapping(value = "/students/{id}",method = RequestMethod.GET)
+    public ResponseEntity<Student> getOneStudentScore(@PathVariable String id)
+    {
+        return studentScoreService.getOneStudentScore(id);
+
+    }
+
+    @RequestMapping(value = "/students/{id}",method = RequestMethod.PUT)
+    public ResponseEntity<Report> modifyStudentScore(@RequestBody Student student,@PathVariable String id){
+        return studentScoreService.modifyStudentScores(student,student.getId());
 
     }
 

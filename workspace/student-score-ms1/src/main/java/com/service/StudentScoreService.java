@@ -65,7 +65,20 @@ public class StudentScoreService {
         return new ResponseEntity<Report>(new Report(reportMessageItemList),HttpStatus.OK);
     }
 
-    public ResponseEntity<Report> modifyStudentMessage(Student student,String id) {
+    public ResponseEntity<Student>getOneStudentScore(String id){
+        List<Student>students=kclass.getTotalStudent();
+        Student student=new Student();
+        for(int i=0;i<students.size();++i)
+        {
+            if(id.equals(students.get(i).getId())){
+            student=students.get(i);
+            }
+        }
+        return new ResponseEntity<Student>(student, HttpStatus.OK);
+
+    }
+
+    public ResponseEntity<Report> modifyStudentScores(Student student,String id) {
         List<Student>students=kclass.getTotalStudent();
         for(int i=0;i<students.size();++i)
         {
