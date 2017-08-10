@@ -1,6 +1,7 @@
 package com.core.Report;
 
 import com.core.Student;
+import com.menu.Constants;
 
 
 import java.util.ArrayList;
@@ -75,19 +76,22 @@ public class Report {
         }
         return totalScore / reportScoreItemList.size();
     }
+
     public int getCalculateMiddleScore(List<ReportScoreItem> oldReportScoreItemList) {
         int middleScore = 0;
         reportScoreItemList = oldReportScoreItemList.stream()
                 .sorted((s1, s2) -> s1.getTotalScore() - s2.getTotalScore())
                 .collect(Collectors.toList());
         if (reportScoreItemList.size() % 2 == 0) {
-            middleScore = (reportScoreItemList.get(reportScoreItemList.size() / 2 - 1).getTotalScore() + reportScoreItemList.get(reportScoreItemList.size() / 2).getTotalScore()) / 2;
+            middleScore = (reportScoreItemList.get(reportScoreItemList.size() / 2 - 1).getTotalScore()
+                    + reportScoreItemList.get(reportScoreItemList.size() / 2).getTotalScore()) / 2;
 
         } else {
             middleScore = reportScoreItemList.get((reportScoreItemList.size() - 1) / 2).getTotalScore();
         }
         return middleScore;
     }
+
     public List<ReportScoreItem> buildReportItem(List<Student> studentList) {
         List<ReportScoreItem> reportScoreItemList = new ArrayList<>();
         for (int i = 0; i < studentList.size(); ++i) {
@@ -123,9 +127,9 @@ public class Report {
 //                    , idStudent.get(i).getMath()
 //                    , idStudent.get(i).getChinese()
 //                    , idStudent.get(i).getEnglish()
-//                    , idStudent.get(i).getCoding()
-//                    , idStudent.get(i).getAverage()
-//                    , idStudent.get(i).getTotalScore()));
+//                    , idStudent.get(i).getCoding()));
+////                    , idStudent.get(i).getAverage()
+////                    , idStudent.get(i).getTotalScore()));
 //
 //        }
 //        String infoEnd = "========================\n";
