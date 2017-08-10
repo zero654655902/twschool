@@ -11,18 +11,32 @@ $(function () {
             phone: {
                 required: true,
                 minlength: 11,
-                maxlength: 11
+                maxlength: 11,
+                digits:true
             },
-            IdCard: {required: true},
-            city: {required: true}
+            idCard: {required: true},
+            city: {required: true},
+            math:{required:true,digits:true},
+            chinese:{required:true,
+            digits:true},
+            english:{required:true,
+                digits:true},
+            coding:{required:true,
+                digits:true}
         },
         messages: {
             stuName: "please input your name",
             email: "please input your email",
             phone: "please input your phone_num",
-            IdCard: "please input your Idcard",
-            city: "please input the your city"
+            idCard: "please input your Idcard",
+            city: "please input the your city",
+            math: "please input your math score",
+            chinese: "please input your language score",
+            english: "please input your english score",
+            coding: "please input the your coding score"
         },
+
+
 
         submitHandler: function (form) {
             // const students=get_stu_massege();

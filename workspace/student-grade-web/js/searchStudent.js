@@ -5,7 +5,7 @@
 $(function () {
     var header={id:"id",stuName:"name",email:"email",
         phone:"phone",idcard:"idCard",city:"city"}
-       var studentList=[]
+        var studentList=[]
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080/searchStudents',
@@ -13,19 +13,20 @@ $(function () {
         dataType:'json',
         success: function (data) {
             // var names = data
-            console.log(data)
-             studentList=data.reportMessageItems
-
+            console.log(data.reportMessageItems)
+            studentList=data.reportMessageItems
             console.log(studentList)
             // alert(JSON.stringify(studentList))
             studentList.splice(0,0,header);
-            console.log(studentList)
+            // console.log(students)
             $.jsontotable(studentList,{id:'#message'});
-
             getSearchStudent(studentList,header)
         },
 
     });
+    // var students=studentList[0];
+
+
 });
 
 getSearchStudent=function(studentList,header){

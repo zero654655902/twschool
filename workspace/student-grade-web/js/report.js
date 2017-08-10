@@ -1,83 +1,94 @@
 // /**
 //  * Created by lwan on 05/08/2017.
 //  */
-// let studentsMassege=[{id:"101",name:"zz",math:89,language:87,english:84,coding:86},
-//     {id:"102",name:"ll",math:84,language:79,english:94,coding:85},
-//     {id:"103",name:"yy",math:85,language:77,english:74,coding:76},
-//     {id:"104",name:"tt",math:79,language:88,english:85,coding:96}];
-//
-//
-// const tableHeard=`<tr>` +
-//     `<th>id</th>` +
-//     `<th>name</th>` +
-//     `<th>math</th>` +
-//     `<th>language</th>` +
-//     `<th>english</th>` +
-//     `<th>coding</th>` +
-//     `</tr>`;
-//
-// $(function () {
-//     var all_stu_format=show_all_stu_format(studentsMassege);
-//     // console.log(all_stu_format);
-//
-//
-//     $("table").html(tableHeard+all_stu_format);
-// });
-//
-// getStudentFormat = function (student) {
-//     console.log("hee")
-//     return `<tr>` +
-//         `<th>${student.id}</th>` +
-//         `<th>${student.name}</th>` +
-//         `<th>${student.math}</th>` +
-//         `<th>${student.language}</th>` +
-//         `<th>${student.english}</th>` +
-//         `<th>${student.coding}</th>` +
-//         `</tr>`
-// }
-//
-// show_all_stu_format=function(students)
-// {
-//     var strAllStudent=``;
-//     for(let i=0;i<students.length;++i){
-//         strAllStudent+=getStudentFormat(students[i]);
-//     }
-//     return strAllStudent;
-//
-// }
-//
-// show_stu_massege=function(all_stu){
-//
-//      var all_stu_format=show_all_stu_format(studentsMassege);
-//
-//     $("table").html(tableHeard+all_stu_format);
-//
-// }
-
 
 $(function () {
-    var header={id:"id",stuName:"name",math:"math",
-    chinese:"language",english:"english",coding:"coding",totalScore:"totalScore",average:"average"}
+    var header = {
+        id: "id", stuName: "name", math: "math",
+        chinese: "language", english: "english", coding: "coding", totalScore: "totalScore", average: "average"
+    }
 
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080/students',
         data: {get_param: 'value'},
-        dataType:'json',
+        dataType: 'json',
         success: function (data) {
-            // var names = data
             console.log(data)
-            var studentList=data.reportScoreItemList
-
+            var studentList = data.reportScoreItemList
             console.log(studentList)
-            // alert(JSON.stringify(studentList))
-            studentList.splice(0,0,header);
+            studentList.splice(0, 0, header);
             console.log(studentList)
-            $.jsontotable(studentList,{id:'#message'});
-             $("#average").html(data.average)
+            $.jsontotable(studentList, {id: '#message'});
+            $("#average").html(data.average)
             $("#totalScore").html(data.totalScore)
         },
 
-
     });
+
+    $('#modifyStudentScore').validate({
+        rules: {
+            math: {required: true, digits: true},
+            chinese: {
+                required: true,
+                digits: true
+            },
+            english: {
+                required: true,
+                digits: true
+            },
+            coding: {
+                required: true,
+                digits: true
+            }
+        },
+        messages: {
+            math: "please input your math score",
+            chinese: "please input your language score",
+            english: "please input your english score",
+            coding: "please input the your coding score"
+        },
+
+
+        submitHandler: function (form) {
+            // const students=get_stu_massege();
+            const student = get_one_student();
+            console.log(student);
+            alert(JSON.stringify(student))
+            $.ajax({
+                type: 'PUT',
+                url: 'http://localhost:8080/students/{id}',
+                data: JSON.stringify(student),
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                success: function (data) {
+                    alert(data)
+
+                },
+                failure: function (errMsg) {
+                    alert(errMsg)
+                }
+            });
+
+        }
+    });
+
+
+    const get_one_student = function () {
+        var all_data = $('#modifyStudentScore').serializeArray();
+        // initId++;
+        console.log(all_data);
+        let student = getStudent(all_data);
+        return student;
+
+    }
+    const getStudent = function (stuData) {
+        let student = {};
+        for (let attributes in stuData) {
+            student[stuData[attributes].name] = stuData[attributes].value;
+        }
+        return student;
+    }
+
+
 });
