@@ -8,6 +8,8 @@ $(function () {
         chinese: "language", english: "english", coding: "coding", totalScore: "totalScore", average: "average"
     }
 
+
+
     $.ajax({
         type: 'GET',
         url: 'http://localhost:8080/students',
@@ -22,8 +24,12 @@ $(function () {
             $.jsontotable(studentList, {id: '#message'});
             $("#average").html(data.average)
             $("#totalScore").html(data.totalScore)
-        },
 
+             $("#inquire_summit").click(function () {
+                 var inquire_message = $("#inquire").val();
+                 searchStudent(studentList,inquire_message)
+             })
+        },
     });
 
     $('#modifyStudentScore').validate({
@@ -74,6 +80,19 @@ $(function () {
     });
 
 
+    const searchStudent=function (studentList,inquire_message) {
+        for (let j = 0; j <studentList.length; ++j) {
+            var stu = studentList[j];
+            console.log(stu.name);
+            if (inquire_message === stu.name ||inquire_message === stu.id ) {
+                // show_one_sudent(stu);
+                //  alert("查找到学生");
+                $('#msg').html("search sucess")
+                return true;
+            }
+            $('#msg').html("not search sucess")
+        }
+    }
     const get_one_student = function () {
         var all_data = $('#modifyStudentScore').serializeArray();
         // initId++;
@@ -89,6 +108,4 @@ $(function () {
         }
         return student;
     }
-
-
 });
