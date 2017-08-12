@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student_score_sm</title>
+    <link rel="stylesheet", href="../../css/vender/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" id="header">
+            <h1>welcome to student score manager system</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2" id="nav">
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="../index.html">HomePage</a></li>
+                <li><a href="../page/addStudentMessage.html">addStudentMessage</a></li>
+                <li><a href="../page/searchStudentMessage.html">searchStudentMessage</a></li>
+                <li><a href="../page/reportAllStudentScore.html">reportStudentcores</a></li>
+            </ul>
+        </div>
+        <div class="col-md-8" id="content">
+            <form id="studentMessage">
+                <div class="input-group">
+                    <span class="input-group-addon">name</span>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">email</span>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">phone</span>
+                    <input type="text" class="form-control" id="phone" name="phone">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">idcard</span>
+                    <input type="text" class="form-control" id="idCard" name="idCard">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">city</span>
+                    <input type="text" class="form-control" id="city" name="city">
+                </div>
+
+                   <input id="addStu" type="submit" value="add student">
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../../js/vender/jquery-3.2.1.min.js"></script>
+<script src="../../js/vender/jquery.validate.min.js"></script>
+<script src="../../js/page/addStudentMessage.js"></script>
+
+</html>

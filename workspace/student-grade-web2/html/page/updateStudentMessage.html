@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student_score_sm</title>
+    <link rel="stylesheet", href="../../css/vender/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" id="header">
+            <h1>welcome to student score manager system</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2" id="nav">
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="../index.html">HomePage</a></li>
+                <li><a href="../page/addStudentMessage.html">addStudentMessage</a></li>
+                <li><a href="../page/searchStudentMessage.html">searchStudentMessage</a></li>
+                <li><a href="../page/reportAllStudentScore.html">reportStudentcores</a></li>
+            </ul>
+        </div>
+        <div class="col-md-8" id="content">
+            <form id="studentScore">
+                <div class="input-group">
+                    <span class="input-group-addon">math</span>
+                    <input type="text" class="form-control" id="math" name="math">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">language</span>
+                    <input type="text" class="form-control" id="chinese" name="chinese">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">english</span>
+                    <input type="text" class="form-control" id="english" name="english">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">coding</span>
+                    <input type="text" class="form-control" id="coding" name="coding">
+                </div>
+
+                <input id="addScore" type="submit" value="modify">
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../../js/vender/jquery-3.2.1.min.js"></script>
+<script src="../../js/vender/jquery.validate.min.js"></script>
+<script src="../../js/page/updateStudentScore.js"></script>
+
+</html>
