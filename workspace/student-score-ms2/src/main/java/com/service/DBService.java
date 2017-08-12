@@ -1,51 +1,61 @@
 package com.service;
 
-import com.core.Kclass;
 import com.core.Report.Report;
 import com.core.Report.ReportBuilder;
 import com.core.Student;
 import com.core.StudentScore;
+import com.repository.ReportBuilderRepository;
+import com.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
- * Created by lwan on 10/08/2017.
+ * Created by lwan on 12/08/2017.
  */
 @Service
-public class StudentScoreService {
-    private Kclass kclass = new Kclass();
-    private Report report = new Report();
+public class DBService {
+    @Autowired
+    private StudentRepository studentRepository;
+    @Autowired
+    private ReportBuilderRepository reportBuilderRepository;
 
     public Student addStudentMessage(Student student) {
-        kclass.addStudentMessage(student);
+        studentRepository.save(student);
         return student;
     }
 
     public List<Student> reportAllStudentMessage() {
-        List<Student> students = kclass.getTotalStudent();
-        return students;
+        List<Student> allStudents = studentRepository.findAll();
+        return allStudents;
 
     }
 
-    public ReportBuilder reportStudentScore(StudentScore studentScore) {
-        List<Student> studentList = kclass.getTotalStudent();
+    public Student getStudentById(String id) {
+        Student student = studentRepository.findById(id);
+        return student;
+    }
+
+    public ReportBuilder addStudentScore(StudentScore studentScore) {
+        List<Student> studentList = studentRepository.findAll();
         ReportBuilder reportBuilder = new ReportBuilder(studentList, studentScore);
-        report.addReportBuilder(reportBuilder);
+        reportBuilderRepository.save(reportBuilder);
         return reportBuilder;
     }
 
     public Report reportAllStudentScore() {
-        List<ReportBuilder> reportBuilderList = report.getReportBuilderList();
+
+        List<ReportBuilder> reportBuilderList = reportBuilderRepository.findAll();
         Report report1 = new Report(reportBuilderList);
         return report1;
     }
 
-
     public Report updateStudentScore(StudentScore studentScore) {
-        List<ReportBuilder> reportBuilderList = report.getReportBuilderList();
-        List<Student> studentList = kclass.getTotalStudent();
+        List<Student> studentList = studentRepository.findAll();
         ReportBuilder reportBuilder = new ReportBuilder(studentList, studentScore);
+        List<ReportBuilder> reportBuilderList = reportBuilderRepository.findAll();
+
         for (int i = 0; i < reportBuilderList.size(); ++i) {
             if (reportBuilder.getId().equals(reportBuilderList.get(i).getId())) {
                 reportBuilderList.get(i).setMath(reportBuilder.getMath());
@@ -54,11 +64,12 @@ public class StudentScoreService {
                 reportBuilderList.get(i).setCoding(reportBuilder.getCoding());
                 reportBuilderList.get(i).setTotolScore(reportBuilder.getTotalScore());
                 reportBuilderList.get(i).setAverage(reportBuilder.getAverage());
+
             }
         }
-        Report report1 = new Report(reportBuilderList);
-        return report1;
+        return new Report(reportBuilderList);
 
     }
+
 
 }

@@ -1,9 +1,17 @@
 package com.core;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Created by lwan on 26/07/2017.
  */
+
+@Entity
 public class Student {
+@Id
     private String id;
     private String name;
     private String email;
@@ -11,10 +19,17 @@ public class Student {
     private String idCard;
     private String city;
 
-
     public Student() {
     }
+    public Student( String id,String name, String email,String phone,String idCard,String city) {
+        this.name = name;
+        this.id = id;
+        this.email=email;
+        this.phone=phone;
+        this.idCard=idCard;
+        this.city=city;
 
+    }
     public void setId(String id) {
         this.id = id;
     }
@@ -36,6 +51,7 @@ public class Student {
     public void setCity(String city) {
         this.city = city;
     }
+
 
     public String getId() {
         return this.id;
@@ -59,5 +75,7 @@ public class Student {
     public String getCity() {
         return city;
     }
+
+
 
 }
